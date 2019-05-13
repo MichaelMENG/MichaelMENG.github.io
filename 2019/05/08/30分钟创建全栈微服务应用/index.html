@@ -8,23 +8,24 @@
   <link rel="dns-prefetch" href="https://michaelmeng.github.io">
   <title>30分钟创建全栈微服务应用 - JHipster Domain Language | Dreamstep36</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Create full Microservice stack using JHipster Domain Language under 30 minutes It’s been quite a while since I wrote a blog, I did a few some years ago but never really continued writing. So when I de">
-<meta name="keywords" content="JHipster,JDL,Spring Cloud,Docker">
+  <meta name="description" content="Create full Microservice stack using JHipster Domain Language under 30 minutes It’s been quite a while since I wrote a blog, I did a few some years ago but never really continued writing. So when I d">
+<meta name="keywords" content="Docker,JHipster,JDL,Spring Cloud">
 <meta property="og:type" content="article">
 <meta property="og:title" content="30分钟创建全栈微服务应用 - JHipster Domain Language">
 <meta property="og:url" content="https://michaelmeng.github.io/2019/05/08/30分钟创建全栈微服务应用/index.html">
 <meta property="og:site_name" content="Dreamstep36">
-<meta property="og:description" content="Create full Microservice stack using JHipster Domain Language under 30 minutes It’s been quite a while since I wrote a blog, I did a few some years ago but never really continued writing. So when I de">
+<meta property="og:description" content="Create full Microservice stack using JHipster Domain Language under 30 minutes It’s been quite a while since I wrote a blog, I did a few some years ago but never really continued writing. So when I d">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://farm1.staticflickr.com/825/27129015427_01a6d6afd6_o.png">
 <meta property="og:image" content="https://cdn-images-1.medium.com/max/1200/1*b4krMVZ-mqjxAIh_EM1jhQ.png">
 <meta property="og:image" content="https://cdn-images-1.medium.com/max/1200/1*NR3QX_Q88_a4cWJ9X3fcnw.png">
 <meta property="og:image" content="https://cdn-images-1.medium.com/max/1200/1*F-MV1Q_jsBvUHHeInJR8TA.png">
 <meta property="og:image" content="https://cdn-images-1.medium.com/max/1200/1*v2tJsdLIJcVwm7RDAI_YVg.png">
-<meta property="og:updated_time" content="2019-05-08T09:40:51.650Z">
+<meta property="og:updated_time" content="2019-05-13T03:29:20.746Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="30分钟创建全栈微服务应用 - JHipster Domain Language">
-<meta name="twitter:description" content="Create full Microservice stack using JHipster Domain Language under 30 minutes It’s been quite a while since I wrote a blog, I did a few some years ago but never really continued writing. So when I de">
-<meta name="twitter:image" content="https://cdn-images-1.medium.com/max/1200/1*b4krMVZ-mqjxAIh_EM1jhQ.png">
+<meta name="twitter:description" content="Create full Microservice stack using JHipster Domain Language under 30 minutes It’s been quite a while since I wrote a blog, I did a few some years ago but never really continued writing. So when I d">
+<meta name="twitter:image" content="https://farm1.staticflickr.com/825/27129015427_01a6d6afd6_o.png">
   
     <link rel="alternative" href="/atom.xml" title="Dreamstep36" type="application/atom+xml">
   
@@ -172,7 +173,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="Create-full-Microservice-stack-using-JHipster-Domain-Language-under-30-minutes"><a href="#Create-full-Microservice-stack-using-JHipster-Domain-Language-under-30-minutes" class="headerlink" title="Create full Microservice stack using JHipster Domain Language under 30 minutes"></a>Create full Microservice stack using JHipster Domain Language under 30 minutes</h3><blockquote>
+        <p><img src="https://farm1.staticflickr.com/825/27129015427_01a6d6afd6_o.png" alt="JHipster Microservices"></p>
+<h3 id="Create-full-Microservice-stack-using-JHipster-Domain-Language-under-30-minutes"><a href="#Create-full-Microservice-stack-using-JHipster-Domain-Language-under-30-minutes" class="headerlink" title="Create full Microservice stack using JHipster Domain Language under 30 minutes"></a>Create full Microservice stack using JHipster Domain Language under 30 minutes</h3><blockquote>
 <p>It’s been quite a while since I wrote a blog, I did <a href="https://mytechnorage.blogspot.com/" target="_blank" rel="noopener">a few</a> some years ago but never really continued writing. So when I decided to start writing again, I didn’t have to think a lot about a topic as it was very obvious — <a href="https://www.jhipster.tech/" target="_blank" rel="noopener">JHipster</a>.</p>
 </blockquote>
 <p>我已经很长时间没有写博客了，几年前写过一些但没有坚持下来。所以当我现在决定重新开始写作时，根本不需要对博文的主题想太多了，因为很明显就是 -  <a href="https://www.jhipster.tech/" target="_blank" rel="noopener">JHipster</a>.<br><a id="more"></a></p>
@@ -209,17 +211,17 @@
 <p>In order to follow this tutorial, you would need a recent version of <strong>Docker</strong>, <strong>Docker-compose</strong>, <strong>NodeJS</strong> and <strong>Java 8</strong> installed on your computer. The below are the versions I have installed.</p>
 </blockquote>
 <p>为了能够跟进下面的试验，你需要在你的电脑上安装好新版的 <strong>Docker</strong>, <strong>Docker-compose</strong>, <strong>NodeJS</strong> and <strong>Java 8</strong> ，下面是我电脑上的各个软件的版本</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> docker -v                                                                                                                       </span><br><span class="line">Docker version 18.06.1-ce, build e68fc7a</span><br><span class="line"></span><br><span class="line"><span class="meta">$</span> docker-compose -v                                </span><br><span class="line">docker-compose version 1.20.1, build 5d8c71b</span><br><span class="line"></span><br><span class="line"><span class="meta">$</span> node -v                </span><br><span class="line">v8.11.4</span><br><span class="line"></span><br><span class="line"><span class="meta">$</span> java -version          </span><br><span class="line">java version "1.8.0_131"</span><br><span class="line">Java(TM) SE Runtime Environment (build 1.8.0_131-b11)</span><br><span class="line">Java HotSpot(TM) 64-Bit Server VM (build 25.131-b11, mixed mode)</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> docker -v                                                                                                                       </span></span><br><span class="line">Docker version 18.06.1-ce, build e68fc7a</span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> docker-compose -v                                </span></span><br><span class="line">docker-compose version 1.20.1, build 5d8c71b</span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> node -v                </span></span><br><span class="line">v8.11.4</span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> java -version          </span></span><br><span class="line">java version "1.8.0_131"</span><br><span class="line">Java(TM) SE Runtime Environment (build 1.8.0_131-b11)</span><br><span class="line">Java HotSpot(TM) 64-Bit Server VM (build 25.131-b11, mixed mode)</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>First, install the latest version of JHipster</p>
 </blockquote>
 <p>首先，安装最新版的 JHipster</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> npm install generator-jhipster -g</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> npm install generator-jhipster -g</span></span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>Verify that you have version <strong>5.3.4</strong> or above by running</p>
 </blockquote>
 <p>验证你的 JHipster 的版本 &gt;= 5.3.4</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> jhipster --version</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> jhipster --version</span></span><br></pre></td></tr></table></figure>
 <h4 id="Creating-the-JDL-创建-JDL"><a href="#Creating-the-JDL-创建-JDL" class="headerlink" title="Creating the JDL 创建 JDL"></a>Creating the JDL 创建 JDL</h4><blockquote>
 <p>Now let us create our JDL. Head over to the <a href="https://www.jhipster.tech/jdl-studio/" target="_blank" rel="noopener">JDL Studio</a>(<em>use the older version for now as JDL 3 update is not released for the new JDL studio yet</em>) or your favorite IDE/Editor(<em>You can use</em> <a href="https://www.jhipster.tech/jhipster-ide/" target="_blank" rel="noopener"><em>JHipster IDE</em></a> <em>plugin if you like</em>).</p>
 </blockquote>
@@ -460,6 +462,10 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Docker</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">JHipster</a>
         		</li>
       		 
@@ -469,10 +475,6 @@
       		 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Spring Cloud</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Docker</a>
         		</li>
       		
 		</ul>
@@ -541,6 +543,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2019/05/13/Vagrant-Tips-md/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Vagrant Tips
+        
+      </div>
+    </a>
   
   
     <a href="/2019/05/08/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
@@ -683,11 +694,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">JHipster</a>
+                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Vagrant</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Hello</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">JHipster</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -699,7 +718,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
+                <a href="javascript:void(0)" class="js-tag color1">Kubernetes</a>
               </li>
             
             <div class="clearfix"></div>

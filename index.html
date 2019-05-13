@@ -148,6 +148,244 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Kubernetes-Tips" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/13/Kubernetes-Tips/">Kubernetes Tips</a>
+    </h1>
+  
+
+        
+        <a href="/2019/05/13/Kubernetes-Tips/" class="archive-article-date">
+  	<time datetime="2019-05-13T03:53:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-13</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="https://res.cloudinary.com/dukp6c7f7/image/upload/f_auto,fl_lossy,q_auto/s3-ghost/2016/06/o7leok.png" alt="Kubernetes"></p>
+<h2 id="批量删除-Evicted-Pods"><a href="#批量删除-Evicted-Pods" class="headerlink" title="批量删除 Evicted Pods"></a>批量删除 Evicted Pods</h2><blockquote>
+<p>第一种写法</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>!/bin/bash</span><br><span class="line">for each in $(kubectl get pods|grep Evicted|awk '&#123;print $1&#125;');</span><br><span class="line">do</span><br><span class="line">  kubectl delete pods $each</span><br><span class="line">done</span><br></pre></td></tr></table></figure>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Docker</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Kubernetes</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/05/13/Kubernetes-Tips/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Docker-Tips" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/13/Docker-Tips/">Docker Tips</a>
+    </h1>
+  
+
+        
+        <a href="/2019/05/13/Docker-Tips/" class="archive-article-date">
+  	<time datetime="2019-05-13T03:43:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-13</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="CentOS-docker-运行权限设置"><a href="#CentOS-docker-运行权限设置" class="headerlink" title="CentOS docker 运行权限设置"></a>CentOS docker 运行权限设置</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1. sudo groupadd docker # 一般安装docker后已经创建</span><br><span class="line">2. sudo gpasswd -a vagrant docker # 用户vagrant加入docker组</span><br><span class="line">3. sudo service docker restart # 重启docker</span><br><span class="line">4. exit -&gt; vagrant ssh # 退出 &amp; 重新进入</span><br></pre></td></tr></table></figure>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Docker</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/05/13/Docker-Tips/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Vagrant-Tips-md" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/13/Vagrant-Tips-md/">Vagrant Tips</a>
+    </h1>
+  
+
+        
+        <a href="/2019/05/13/Vagrant-Tips-md/" class="archive-article-date">
+  	<time datetime="2019-05-13T02:43:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-13</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="共享目录"><a href="#共享目录" class="headerlink" title="共享目录"></a>共享目录</h3><p><strong>问题</strong></p>
+<blockquote>
+<p>共享文件夹失效,  提示：</p>
+<p>Vagrant was unable to mount VirtualBox shared folders. This is usually</p>
+<p>because the filesystem “vboxsf” is not available. This filesystem is</p>
+<p>made available via the VirtualBox Guest Additions and kernel module.</p>
+<p>Please verify that these guest additions are properly installed in the</p>
+<p>guest. This is not a bug in Vagrant and is usually caused by a faulty</p>
+<p>Vagrant box.<br>
+        
+      
+
+      
+    </p></blockquote></div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Vagrant</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/05/13/Vagrant-Tips-md/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-30分钟创建全栈微服务应用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -168,7 +406,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="Create-full-Microservice-stack-using-JHipster-Domain-Language-under-30-minutes"><a href="#Create-full-Microservice-stack-using-JHipster-Domain-Language-under-30-minutes" class="headerlink" title="Create full Microservice stack using JHipster Domain Language under 30 minutes"></a>Create full Microservice stack using JHipster Domain Language under 30 minutes</h3><blockquote>
+        <p><img src="https://farm1.staticflickr.com/825/27129015427_01a6d6afd6_o.png" alt="JHipster Microservices"></p>
+<h3 id="Create-full-Microservice-stack-using-JHipster-Domain-Language-under-30-minutes"><a href="#Create-full-Microservice-stack-using-JHipster-Domain-Language-under-30-minutes" class="headerlink" title="Create full Microservice stack using JHipster Domain Language under 30 minutes"></a>Create full Microservice stack using JHipster Domain Language under 30 minutes</h3><blockquote>
 <p>It’s been quite a while since I wrote a blog, I did <a href="https://mytechnorage.blogspot.com/" target="_blank" rel="noopener">a few</a> some years ago but never really continued writing. So when I decided to start writing again, I didn’t have to think a lot about a topic as it was very obvious — <a href="https://www.jhipster.tech/" target="_blank" rel="noopener">JHipster</a>.</p>
 </blockquote>
 <p>我已经很长时间没有写博客了，几年前写过一些但没有坚持下来。所以当我现在决定重新开始写作时，根本不需要对博文的主题想太多了，因为很明显就是 -  <a href="https://www.jhipster.tech/" target="_blank" rel="noopener">JHipster</a>.<br>
@@ -185,6 +424,10 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Docker</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">JHipster</a>
         		</li>
       		 
@@ -194,10 +437,6 @@
       		 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Spring Cloud</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Docker</a>
         		</li>
       		
 		</ul>
@@ -404,11 +643,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">JHipster</a>
+                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Vagrant</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Hello</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">JHipster</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -420,7 +667,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
+                <a href="javascript:void(0)" class="js-tag color1">Kubernetes</a>
               </li>
             
             <div class="clearfix"></div>
