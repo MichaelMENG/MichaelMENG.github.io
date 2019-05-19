@@ -9,7 +9,7 @@
   <title>30分钟创建全栈微服务应用 - JHipster Domain Language | Dreamstep36</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="Create full Microservice stack using JHipster Domain Language under 30 minutes It’s been quite a while since I wrote a blog, I did a few some years ago but never really continued writing. So when I d">
-<meta name="keywords" content="Docker,JHipster,JDL,Spring Cloud">
+<meta name="keywords" content="Docker,Spring Cloud,JHipster,JDL">
 <meta property="og:type" content="article">
 <meta property="og:title" content="30分钟创建全栈微服务应用 - JHipster Domain Language">
 <meta property="og:url" content="https://michaelmeng.github.io/2019/05/08/30分钟创建全栈微服务应用/index.html">
@@ -21,7 +21,7 @@
 <meta property="og:image" content="https://cdn-images-1.medium.com/max/1200/1*NR3QX_Q88_a4cWJ9X3fcnw.png">
 <meta property="og:image" content="https://cdn-images-1.medium.com/max/1200/1*F-MV1Q_jsBvUHHeInJR8TA.png">
 <meta property="og:image" content="https://cdn-images-1.medium.com/max/1200/1*v2tJsdLIJcVwm7RDAI_YVg.png">
-<meta property="og:updated_time" content="2019-05-13T03:29:20.746Z">
+<meta property="og:updated_time" content="2019-05-19T06:52:22.419Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="30分钟创建全栈微服务应用 - JHipster Domain Language">
 <meta name="twitter:description" content="Create full Microservice stack using JHipster Domain Language under 30 minutes It’s been quite a while since I wrote a blog, I did a few some years ago but never really continued writing. So when I d">
@@ -92,6 +92,10 @@
 				
 					<a class="github" target="_blank" href="https://github.com/MichaelMENG" title="github"><i class="icon-github"></i></a>
 		        
+					<a class="weixin" target="_blank" href="/dreamstep" title="weixin"><i class="icon-weixin"></i></a>
+		        
+					<a class="mail" target="_blank" href="mailto:dreamstep36@163.com" title="mail"><i class="icon-mail"></i></a>
+		        
 			</div>
 		</nav>
 	</header>		
@@ -128,6 +132,10 @@
 				<div class="social">
 					
 						<a class="github" target="_blank" href="https://github.com/MichaelMENG" title="github"><i class="icon-github"></i></a>
+			        
+						<a class="weixin" target="_blank" href="/dreamstep" title="weixin"><i class="icon-weixin"></i></a>
+			        
+						<a class="mail" target="_blank" href="mailto:dreamstep36@163.com" title="mail"><i class="icon-mail"></i></a>
 			        
 				</div>
 			</nav>
@@ -183,7 +191,9 @@
 <h3 id="Create-full-Microservice-stack-using-JHipster-Domain-Language-under-30-minutes"><a href="#Create-full-Microservice-stack-using-JHipster-Domain-Language-under-30-minutes" class="headerlink" title="Create full Microservice stack using JHipster Domain Language under 30 minutes"></a>Create full Microservice stack using JHipster Domain Language under 30 minutes</h3><blockquote>
 <p>It’s been quite a while since I wrote a blog, I did <a href="https://mytechnorage.blogspot.com/" target="_blank" rel="noopener">a few</a> some years ago but never really continued writing. So when I decided to start writing again, I didn’t have to think a lot about a topic as it was very obvious — <a href="https://www.jhipster.tech/" target="_blank" rel="noopener">JHipster</a>.</p>
 </blockquote>
-<p>我已经很长时间没有写博客了，几年前写过一些但没有坚持下来。所以当我现在决定重新开始写作时，根本不需要对博文的主题想太多了，因为很明显就是 -  <a href="https://www.jhipster.tech/" target="_blank" rel="noopener">JHipster</a>.<br><a id="more"></a></p>
+<p>我已经很长时间没有写博客了，几年前写过一些但没有坚持下来。所以当我现在决定重新开始写作时，根本不需要对博文的主题想太多了，因为很明显就是 -  <a href="https://www.jhipster.tech/" target="_blank" rel="noopener">JHipster</a>.</p>
+<a id="more"></a>
+
 <blockquote>
 <p>JHipster is a development platform for Java web applications and microservices development. If you are a JVM developer you might have already heard about <a href="https://www.jhipster.tech/" target="_blank" rel="noopener">JHipster</a>. If not, well, you are missing out on a lot and I highly recommend you check it out. You can also check out my book “<strong>Full Stack Development with JHipster</strong>” on <a href="https://www.amazon.com/Stack-Development-JHipster-Deepu-Sasidharan/dp/178847631X" target="_blank" rel="noopener">Amazon</a> and <a href="https://www.packtpub.com/application-development/full-stack-development-jhipster" target="_blank" rel="noopener">Packt</a> to learn about JHipster.</p>
 </blockquote>
@@ -217,17 +227,20 @@
 <p>In order to follow this tutorial, you would need a recent version of <strong>Docker</strong>, <strong>Docker-compose</strong>, <strong>NodeJS</strong> and <strong>Java 8</strong> installed on your computer. The below are the versions I have installed.</p>
 </blockquote>
 <p>为了能够跟进下面的试验，你需要在你的电脑上安装好新版的 <strong>Docker</strong>, <strong>Docker-compose</strong>, <strong>NodeJS</strong> and <strong>Java 8</strong> ，下面是我电脑上的各个软件的版本</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> docker -v                                                                                                                       </span></span><br><span class="line">Docker version 18.06.1-ce, build e68fc7a</span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> docker-compose -v                                </span></span><br><span class="line">docker-compose version 1.20.1, build 5d8c71b</span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> node -v                </span></span><br><span class="line">v8.11.4</span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> java -version          </span></span><br><span class="line">java version "1.8.0_131"</span><br><span class="line">Java(TM) SE Runtime Environment (build 1.8.0_131-b11)</span><br><span class="line">Java HotSpot(TM) 64-Bit Server VM (build 25.131-b11, mixed mode)</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> docker -v                                                                                                                       </span><br><span class="line">Docker version 18.06.1-ce, build e68fc7a</span><br><span class="line"></span><br><span class="line"><span class="meta">$</span> docker-compose -v                                </span><br><span class="line">docker-compose version 1.20.1, build 5d8c71b</span><br><span class="line"></span><br><span class="line"><span class="meta">$</span> node -v                </span><br><span class="line">v8.11.4</span><br><span class="line"></span><br><span class="line"><span class="meta">$</span> java -version          </span><br><span class="line">java version "1.8.0_131"</span><br><span class="line">Java(TM) SE Runtime Environment (build 1.8.0_131-b11)</span><br><span class="line">Java HotSpot(TM) 64-Bit Server VM (build 25.131-b11, mixed mode)</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p>First, install the latest version of JHipster</p>
 </blockquote>
 <p>首先，安装最新版的 JHipster</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> npm install generator-jhipster -g</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> npm install generator-jhipster -g</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p>Verify that you have version <strong>5.3.4</strong> or above by running</p>
 </blockquote>
 <p>验证你的 JHipster 的版本 &gt;= 5.3.4</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> jhipster --version</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> jhipster --version</span><br></pre></td></tr></table></figure>
+
 <h4 id="Creating-the-JDL-创建-JDL"><a href="#Creating-the-JDL-创建-JDL" class="headerlink" title="Creating the JDL 创建 JDL"></a>Creating the JDL 创建 JDL</h4><blockquote>
 <p>Now let us create our JDL. Head over to the <a href="https://www.jhipster.tech/jdl-studio/" target="_blank" rel="noopener">JDL Studio</a>(<em>use the older version for now as JDL 3 update is not released for the new JDL studio yet</em>) or your favorite IDE/Editor(<em>You can use</em> <a href="https://www.jhipster.tech/jhipster-ide/" target="_blank" rel="noopener"><em>JHipster IDE</em></a> <em>plugin if you like</em>).</p>
 </blockquote>
@@ -237,6 +250,7 @@
 </blockquote>
 <p>首先，让我们定义 applications，我们先从 Gateway 开始</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">application &#123;</span><br><span class="line">  config &#123;</span><br><span class="line">    baseName store,</span><br><span class="line">    applicationType gateway,</span><br><span class="line">    packageName com.jhipster.demo.store,</span><br><span class="line">    serviceDiscoveryType eureka,</span><br><span class="line">    authenticationType jwt,</span><br><span class="line">    prodDatabaseType mysql,</span><br><span class="line">    cacheProvider hazelcast,</span><br><span class="line">    buildTool gradle,</span><br><span class="line">    clientFramework react,</span><br><span class="line">    useSass true,</span><br><span class="line">    testFrameworks [protractor]</span><br><span class="line">  &#125;</span><br><span class="line">  entities *</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p>Most of the options are self-explanatory, we are building an application named <strong>Store</strong> of type <strong>Gateway</strong> with <strong>JWT</strong> authentication and <strong>Eureka</strong>-based service discovery. The application uses a <strong>MySQL</strong> database and <strong>Hazelcast</strong> for the cache. It’s built using <strong>Gradle</strong>. For the client-side, it uses <strong>React</strong> and <strong>Sass</strong>. It also has <strong>Protractor</strong> for end-to-end testing.</p>
 <p>At the end of the definition you can see <code>entities *</code>, we will come to this later.</p>
@@ -251,6 +265,7 @@
 </blockquote>
 <p>现在让我们来定义 <strong>Invoice microservice</strong></p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">application &#123;</span><br><span class="line">  config &#123;</span><br><span class="line">    baseName invoice,</span><br><span class="line">    applicationType microservice,</span><br><span class="line">    packageName com.jhipster.demo.invoice,</span><br><span class="line">    serviceDiscoveryType eureka,</span><br><span class="line">    authenticationType jwt,</span><br><span class="line">    prodDatabaseType mysql,</span><br><span class="line">    buildTool gradle,</span><br><span class="line">    serverPort 8081,</span><br><span class="line">    skipUserManagement true</span><br><span class="line">  &#125;</span><br><span class="line">  entities Invoice, Shipment</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p>It follows similar options like our Gateway and since it is microservice it doesn’t define any client-side options and also skips user management as it will be handled by the Gateway. Additionally, we have also mentioned a custom port <strong>8081</strong> since we do not want this application to conflict with the default port 8080 used by the Gateway.</p>
 </blockquote>
@@ -260,6 +275,7 @@
 </blockquote>
 <p>现在让我们定义第 2 个微服务，<strong>Notification application</strong></p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">application &#123;</span><br><span class="line">  config &#123;</span><br><span class="line">    baseName notification,</span><br><span class="line">    applicationType microservice,</span><br><span class="line">    packageName com.jhipster.demo.notification,</span><br><span class="line">    serviceDiscoveryType eureka,</span><br><span class="line">    authenticationType jwt,</span><br><span class="line">    databaseType mongodb,</span><br><span class="line">    prodDatabaseType mongodb,</span><br><span class="line">    devDatabaseType mongodb,</span><br><span class="line">    cacheProvider no,</span><br><span class="line">    enableHibernateCache false,</span><br><span class="line">    buildTool gradle,</span><br><span class="line">    serverPort 8082,</span><br><span class="line">    skipUserManagement true</span><br><span class="line">  &#125;</span><br><span class="line">  entities Notification</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p>This application follows many options similar to the Gateway and Invoice application but instead of using MySQL it uses <strong>MongoDB</strong> as its database and also disables cache.</p>
 </blockquote>
@@ -269,6 +285,7 @@
 </blockquote>
 <p>我们的应用定义已经完成了，现在让我们来定义实体( entity )</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line">/** Product sold by the Online store */</span><br><span class="line">entity Product &#123;</span><br><span class="line">    name String required</span><br><span class="line">    description String</span><br><span class="line">    price BigDecimal required min(0)</span><br><span class="line">    size Size required</span><br><span class="line">    image ImageBlob</span><br><span class="line">&#125;</span><br><span class="line">enum Size &#123;</span><br><span class="line">    S, M, L, XL, XXL</span><br><span class="line">&#125;</span><br><span class="line">entity ProductCategory &#123;</span><br><span class="line">    name String required</span><br><span class="line">    description String</span><br><span class="line">&#125;</span><br><span class="line">entity Customer &#123;</span><br><span class="line">    firstName String required</span><br><span class="line">    lastName String required</span><br><span class="line">    gender Gender required</span><br><span class="line">    email String required pattern(/^[^@\s]+@[^@\s]+\.[^@\s]+$/)</span><br><span class="line">    phone String required</span><br><span class="line">    addressLine1 String required</span><br><span class="line">    addressLine2 String</span><br><span class="line">    city String required</span><br><span class="line">    country String required</span><br><span class="line">&#125;</span><br><span class="line">enum Gender &#123;</span><br><span class="line">    MALE, FEMALE, OTHER</span><br><span class="line">&#125;</span><br><span class="line">entity ProductOrder &#123;</span><br><span class="line">    placedDate Instant required</span><br><span class="line">    status OrderStatus required</span><br><span class="line">    code String required</span><br><span class="line">    invoiceId Long</span><br><span class="line">&#125;</span><br><span class="line">enum OrderStatus &#123;</span><br><span class="line">    COMPLETED, PENDING, CANCELLED</span><br><span class="line">&#125;</span><br><span class="line">entity OrderItem &#123;</span><br><span class="line">    quantity Integer required min(0)</span><br><span class="line">    totalPrice BigDecimal required min(0)</span><br><span class="line">    status OrderItemStatus required</span><br><span class="line">&#125;</span><br><span class="line">enum OrderItemStatus &#123;</span><br><span class="line">    AVAILABLE, OUT_OF_STOCK, BACK_ORDER</span><br><span class="line">&#125;</span><br><span class="line">relationship OneToOne &#123;</span><br><span class="line">    Customer&#123;user(login) required&#125; to User</span><br><span class="line">&#125;</span><br><span class="line">relationship ManyToOne &#123;</span><br><span class="line">    OrderItem&#123;product(name) required&#125; to Product</span><br><span class="line">&#125;</span><br><span class="line">relationship OneToMany &#123;</span><br><span class="line">    Customer&#123;order&#125; to ProductOrder&#123;customer(email) required&#125;,</span><br><span class="line">    ProductOrder&#123;orderItem&#125; to OrderItem&#123;order(code) required&#125; ,</span><br><span class="line">    ProductCategory&#123;product&#125; to Product&#123;productCategory(name)&#125;</span><br><span class="line">&#125;</span><br><span class="line">service Product, ProductCategory, Customer, ProductOrder, OrderItem with serviceClass</span><br><span class="line">paginate Product, Customer, ProductOrder, OrderItem with pagination</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p>The JDL defines the entities, enums, the relationship between entities and options like pagination and service layer.</p>
 </blockquote>
@@ -278,6 +295,7 @@
 </blockquote>
 <p>实体字段的定义遵从的语法规则</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">entity &lt;entity name&gt; &#123;</span><br><span class="line">  &lt;field name&gt; &lt;type&gt; [&lt;validation&gt;*]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p>The relationship definition follows the syntax</p>
 </blockquote>
@@ -294,6 +312,7 @@
 </blockquote>
 <p><strong>Invoice microservice</strong> 实体定义</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">entity Invoice &#123;</span><br><span class="line">    code String required</span><br><span class="line">    date Instant required</span><br><span class="line">    details String</span><br><span class="line">    status InvoiceStatus required</span><br><span class="line">    paymentMethod PaymentMethod required</span><br><span class="line">    paymentDate Instant required</span><br><span class="line">    paymentAmount BigDecimal required</span><br><span class="line">&#125;</span><br><span class="line">enum InvoiceStatus &#123;</span><br><span class="line">    PAID, ISSUED, CANCELLED</span><br><span class="line">&#125;</span><br><span class="line">entity Shipment &#123;</span><br><span class="line">    trackingCode String</span><br><span class="line">    date Instant required</span><br><span class="line">    details String</span><br><span class="line">&#125;</span><br><span class="line">enum PaymentMethod &#123;</span><br><span class="line">    CREDIT_CARD, CASH_ON_DELIVERY, PAYPAL</span><br><span class="line">&#125;</span><br><span class="line">relationship OneToMany &#123;</span><br><span class="line">    Invoice&#123;shipment&#125; to Shipment&#123;invoice(code) required&#125;</span><br><span class="line">&#125;</span><br><span class="line">service Invoice, Shipment with serviceClass</span><br><span class="line">paginate Invoice, Shipment with pagination</span><br><span class="line">microservice Invoice, Shipment with invoice</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p>Pay attention to the last <strong>microservice</strong> option declared here, it specifies that these entities belong to the microservice named <strong>invoice</strong> so that our Gateway knows where to route requests for these entities.</p>
 </blockquote>
@@ -303,11 +322,13 @@
 </blockquote>
 <p>现在我们看一下 <strong>Notification microservice</strong> 的实体</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">entity Notification &#123;</span><br><span class="line">    date Instant required</span><br><span class="line">    details String</span><br><span class="line">    sentDate Instant required</span><br><span class="line">    format NotificationType required</span><br><span class="line">    userId Long required</span><br><span class="line">    productId Long required</span><br><span class="line">&#125;</span><br><span class="line">enum NotificationType &#123;</span><br><span class="line">    EMAIL, SMS, PARCEL</span><br><span class="line">&#125;</span><br><span class="line">microservice Notification with notification</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p>Now let us go back to the entities keyword we used in our application definitions.</p>
 </blockquote>
 <p>现在让我们回到之前提到过的，在我们之前定义的应用中的 <code>entities</code> 关键字</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">application &#123;</span><br><span class="line">  config &#123;</span><br><span class="line">    ...</span><br><span class="line">  &#125;</span><br><span class="line">  entities *</span><br><span class="line">&#125;</span><br><span class="line">application &#123;</span><br><span class="line">  config &#123;</span><br><span class="line">    ...</span><br><span class="line">  &#125;</span><br><span class="line">  entities Invoice, Shipment</span><br><span class="line">&#125;</span><br><span class="line">application &#123;</span><br><span class="line">  config &#123;</span><br><span class="line">    ...</span><br><span class="line">  &#125;</span><br><span class="line">  entities Notification</span><br><span class="line">&#125;</span><br><span class="line">/* Entities for Store Gateway */</span><br><span class="line">entity Product &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br><span class="line">entity ProductCategory &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br><span class="line">entity Customer &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br><span class="line">entity ProductOrder &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br><span class="line">entity OrderItem &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br><span class="line">microservice Invoice, Shipment with invoice</span><br><span class="line">/* Entities for Invoice microservice */</span><br><span class="line">entity Invoice &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br><span class="line">entity Shipment &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br><span class="line">/* Entities for notification microservice */</span><br><span class="line">entity Notification &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br><span class="line">microservice Notification with notification</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p>Here we instruct the store gateway application that it should contain all the entities defined in the JDL and the gateway will know to skip server-side code for the entities that belong to another microservice and hence will only generate the client-side code for those, here namely <strong>Invoice</strong>, <strong>Shipment</strong>, and <strong>Notification</strong>. We also instruct the Invoice application and Notification application to include its entities.</p>
 </blockquote>
@@ -317,16 +338,19 @@
 </blockquote>
 <p>创建一个新的文件夹，用来生成我们的的整个微服务栈。</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> mkdir ecommerce &amp;&amp; <span class="built_in">cd</span> ecommerce</span></span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p>Now, let us put everything together into a JDL file. Let us call it <code>app.jdl</code> and save it into this folder.</p>
 </blockquote>
 <p>现在，让我们将所有的定义放到一个 JDL 文件中，起名叫 <code>app.jdl</code>, 保存到文件夹中。</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br></pre></td><td class="code"><pre><span class="line">application &#123;</span><br><span class="line">  config &#123;</span><br><span class="line">    baseName store,</span><br><span class="line">    applicationType gateway,</span><br><span class="line">    packageName com.jhipster.demo.store,</span><br><span class="line">    serviceDiscoveryType eureka,</span><br><span class="line">    authenticationType jwt,</span><br><span class="line">    prodDatabaseType mysql,</span><br><span class="line">    cacheProvider hazelcast,</span><br><span class="line">    buildTool gradle,</span><br><span class="line">    clientFramework react,</span><br><span class="line">    useSass true,</span><br><span class="line">    testFrameworks [protractor]</span><br><span class="line">  &#125;</span><br><span class="line">  entities *</span><br><span class="line">&#125;</span><br><span class="line">application &#123;</span><br><span class="line">  config &#123;</span><br><span class="line">    baseName invoice,</span><br><span class="line">    applicationType microservice,</span><br><span class="line">    packageName com.jhipster.demo.invoice,</span><br><span class="line">    serviceDiscoveryType eureka,</span><br><span class="line">    authenticationType jwt,</span><br><span class="line">    prodDatabaseType mysql,</span><br><span class="line">    buildTool gradle,</span><br><span class="line">    serverPort 8081,</span><br><span class="line">    skipUserManagement true</span><br><span class="line">  &#125;</span><br><span class="line">  entities Invoice, Shipment</span><br><span class="line">&#125;</span><br><span class="line">application &#123;</span><br><span class="line">  config &#123;</span><br><span class="line">    baseName notification,</span><br><span class="line">    applicationType microservice,</span><br><span class="line">    packageName com.jhipster.demo.notification,</span><br><span class="line">    serviceDiscoveryType eureka,</span><br><span class="line">    authenticationType jwt,</span><br><span class="line">    databaseType mongodb,</span><br><span class="line">    prodDatabaseType mongodb,</span><br><span class="line">    devDatabaseType mongodb,</span><br><span class="line">    cacheProvider no,</span><br><span class="line">    enableHibernateCache false,</span><br><span class="line">    buildTool gradle,</span><br><span class="line">    serverPort 8082,</span><br><span class="line">    skipUserManagement true</span><br><span class="line">  &#125;</span><br><span class="line">  entities Notification</span><br><span class="line">&#125;</span><br><span class="line">/* Entities for Store Gateway */</span><br><span class="line">/** Product sold by the Online store */</span><br><span class="line">entity Product &#123;</span><br><span class="line">    name String required</span><br><span class="line">    description String</span><br><span class="line">    price BigDecimal required min(0)</span><br><span class="line">    size Size required</span><br><span class="line">    image ImageBlob</span><br><span class="line">&#125;</span><br><span class="line">enum Size &#123;</span><br><span class="line">    S, M, L, XL, XXL</span><br><span class="line">&#125;</span><br><span class="line">entity ProductCategory &#123;</span><br><span class="line">    name String required</span><br><span class="line">    description String</span><br><span class="line">&#125;</span><br><span class="line">entity Customer &#123;</span><br><span class="line">    firstName String required</span><br><span class="line">    lastName String required</span><br><span class="line">    gender Gender required</span><br><span class="line">    email String required pattern(/^[^@\s]+@[^@\s]+\.[^@\s]+$/)</span><br><span class="line">    phone String required</span><br><span class="line">    addressLine1 String required</span><br><span class="line">    addressLine2 String</span><br><span class="line">    city String required</span><br><span class="line">    country String required</span><br><span class="line">&#125;</span><br><span class="line">enum Gender &#123;</span><br><span class="line">    MALE, FEMALE, OTHER</span><br><span class="line">&#125;</span><br><span class="line">entity ProductOrder &#123;</span><br><span class="line">    placedDate Instant required</span><br><span class="line">    status OrderStatus required</span><br><span class="line">    code String required</span><br><span class="line">    invoiceId Long</span><br><span class="line">&#125;</span><br><span class="line">enum OrderStatus &#123;</span><br><span class="line">    COMPLETED, PENDING, CANCELLED</span><br><span class="line">&#125;</span><br><span class="line">entity OrderItem &#123;</span><br><span class="line">    quantity Integer required min(0)</span><br><span class="line">    totalPrice BigDecimal required min(0)</span><br><span class="line">    status OrderItemStatus required</span><br><span class="line">&#125;</span><br><span class="line">enum OrderItemStatus &#123;</span><br><span class="line">    AVAILABLE, OUT_OF_STOCK, BACK_ORDER</span><br><span class="line">&#125;</span><br><span class="line">relationship OneToOne &#123;</span><br><span class="line">    Customer&#123;user(login) required&#125; to User</span><br><span class="line">&#125;</span><br><span class="line">relationship ManyToOne &#123;</span><br><span class="line"> OrderItem&#123;product(name) required&#125; to Product</span><br><span class="line">&#125;</span><br><span class="line">relationship OneToMany &#123;</span><br><span class="line">   Customer&#123;order&#125; to ProductOrder&#123;customer(email) required&#125;,</span><br><span class="line">   ProductOrder&#123;orderItem&#125; to OrderItem&#123;order(code) required&#125; ,</span><br><span class="line">   ProductCategory&#123;product&#125; to Product&#123;productCategory(name)&#125;</span><br><span class="line">&#125;</span><br><span class="line">service Product, ProductCategory, Customer, ProductOrder, OrderItem with serviceClass</span><br><span class="line">paginate Product, Customer, ProductOrder, OrderItem with pagination</span><br><span class="line">/* Entities for Invoice microservice */</span><br><span class="line">entity Invoice &#123;</span><br><span class="line">    code String required</span><br><span class="line">    date Instant required</span><br><span class="line">    details String</span><br><span class="line">    status InvoiceStatus required</span><br><span class="line">    paymentMethod PaymentMethod required</span><br><span class="line">    paymentDate Instant required</span><br><span class="line">    paymentAmount BigDecimal required</span><br><span class="line">&#125;</span><br><span class="line">enum InvoiceStatus &#123;</span><br><span class="line">    PAID, ISSUED, CANCELLED</span><br><span class="line">&#125;</span><br><span class="line">entity Shipment &#123;</span><br><span class="line">    trackingCode String</span><br><span class="line">    date Instant required</span><br><span class="line">    details String</span><br><span class="line">&#125;</span><br><span class="line">enum PaymentMethod &#123;</span><br><span class="line">    CREDIT_CARD, CASH_ON_DELIVERY, PAYPAL</span><br><span class="line">&#125;</span><br><span class="line">relationship OneToMany &#123;</span><br><span class="line">    Invoice&#123;shipment&#125; to Shipment&#123;invoice(code) required&#125;</span><br><span class="line">&#125;</span><br><span class="line">service Invoice, Shipment with serviceClass</span><br><span class="line">paginate Invoice, Shipment with pagination</span><br><span class="line">microservice Invoice, Shipment with invoice</span><br><span class="line">/* Entities for notification microservice */</span><br><span class="line">entity Notification &#123;</span><br><span class="line">    date Instant required</span><br><span class="line">    details String</span><br><span class="line">    sentDate Instant required</span><br><span class="line">    format NotificationType required</span><br><span class="line">    userId Long required</span><br><span class="line">    productId Long required</span><br><span class="line">&#125;</span><br><span class="line">enum NotificationType &#123;</span><br><span class="line">    EMAIL, SMS, PARCEL</span><br><span class="line">&#125;</span><br><span class="line">microservice Notification with notification</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p>Now let us invoke JHipster CLI to import this file</p>
 </blockquote>
 <p>现在让我们用 <code>JHipster CLI</code> 去 <code>import</code> 这个文件。</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> jhipster import-jdl app.jdl</span></span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p>This will create the <strong>store</strong>, <strong>invoice</strong> and <strong>notification</strong> folders and will do the below in each of the folders</p>
 <ul>
@@ -346,6 +370,7 @@
 </blockquote>
 <p>运行结束时，应该在 <code>console</code> 上看到如下信息</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Entity Product generated successfully.</span><br><span class="line">Entity ProductCategory generated successfully.</span><br><span class="line">Entity Customer generated successfully.</span><br><span class="line">Entity ProductOrder generated successfully.</span><br><span class="line">Entity OrderItem generated successfully.</span><br><span class="line">Entity Invoice generated successfully.</span><br><span class="line">Entity Shipment generated successfully.</span><br><span class="line">Entity Notification generated successfully.</span><br><span class="line">Congratulations, JHipster execution is complete!</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p>Walk around the generated code to familiarize yourself.</p>
 </blockquote>
@@ -359,6 +384,7 @@
 </blockquote>
 <p>( 在当前目录下 ) 创建一个新的 <code>ecommerce</code> 文件夹，然后运行如下 <code>docker-compose</code> 命令。</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> mkdir docker-compose &amp;&amp; <span class="built_in">cd</span> docker-compose</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> jhipster docker-compose</span></span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p>It will prompt you with a few questions, choose the answers as highlighted below</p>
 </blockquote>
@@ -387,7 +413,9 @@
 </blockquote>
 <p>注意：在最新版的 JHipster 中，我们已经整合了 <a href="https://github.com/GoogleContainerTools/jib" target="_blank" rel="noopener">Jib</a> 来创建 Docker 镜像。这个相对以前我们使用的 Docker Maven plugin 来说，是一个很大的进步！创建镜像的命令更改为 </p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./gradlew -Pprod bootWar jibDockerBuild</span><br></pre></td></tr></table></figure>
+
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Docker Compose configuration generated with missing images!</span><br><span class="line">To generate the missing Docker image(s), please run:</span><br><span class="line">  ./gradlew -Pprod bootWar buildDocker in /home/deepu/workspace/temp/ecommerce/invoice</span><br><span class="line">  ./gradlew -Pprod bootWar buildDocker in /home/deepu/workspace/temp/ecommerce/notification</span><br><span class="line">  ./gradlew -Pprod bootWar buildDocker in /home/deepu/workspace/temp/ecommerce/store</span><br></pre></td></tr></table></figure>
+
 <p>(</p>
 <p> 译者注 ：最新版的命令又有新的变化，具体可以</p>
 <ul>
@@ -400,11 +428,13 @@
 </blockquote>
 <p>根据相关的指导完成 docker 镜像的创建，完成 3 个镜像的创建后，在生成的 <strong>docker-compose</strong> 文件夹中运行如下命令来启动所有的应用。</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> docker-compose up -d</span></span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p>Once the containers start you can stream the logs using below command</p>
 </blockquote>
 <p>一旦容器开始启动，你就可以用以下命令来查看、跟踪日志( logs )</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> docker-compose logs -f</span></span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p>Now point your favorite browser to <a href="http://localhost:8080/" target="_blank" rel="noopener">http://localhost:8080/</a> and see the E-Commerce microservice application in action.</p>
 </blockquote>
@@ -413,7 +443,7 @@
 <blockquote>
 <p>You can see the JHipster registry in action at <a href="http://localhost:8761/#/" target="_blank" rel="noopener">http://localhost:8761/</a></p>
 </blockquote>
-<p>你可以看到 <strong>JHipster registry </strong> 正在运行，<a href="http://localhost:8761/" target="_blank" rel="noopener">http://localhost:8761/</a></p>
+<p>你可以看到 *<em>JHipster registry *</em> 正在运行，<a href="http://localhost:8761/" target="_blank" rel="noopener">http://localhost:8761/</a></p>
 <p><img src="https://cdn-images-1.medium.com/max/1200/1*F-MV1Q_jsBvUHHeInJR8TA.png" alt="JHipster registry"></p>
 <blockquote>
 <p>And finally the JHipster console at <a href="http://localhost:5601/" target="_blank" rel="noopener">http://localhost:5601</a>/</p>
@@ -425,6 +455,7 @@
 </blockquote>
 <p>当你运行、测试完毕时，可以在  <strong>docker-compose</strong> 文件夹运行如下命令来关闭( shut everything down ) 所有的应用。</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> docker-compose down</span></span><br></pre></td></tr></table></figure>
+
 <h4 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h4><blockquote>
 <p>Hope you had fun creating microservices using JHipster. To learn how to convert a JHipster monolith to microservices check out my book “<em>Full Stack Development with JHipster</em>” on <a href="https://www.amazon.com/Stack-Development-JHipster-Deepu-Sasidharan/dp/178847631X" target="_blank" rel="noopener">Amazon</a> and <a href="https://www.packtpub.com/application-development/full-stack-development-jhipster" target="_blank" rel="noopener">Packt</a>.</p>
 </blockquote>
@@ -434,6 +465,7 @@
 </blockquote>
 <p>如果你喜欢 JHipster，请不要忘记在 <a href="https://github.com/jhipster/generator-jhipster" target="_blank" rel="noopener">Github</a> 上给出你的 <strong>star</strong></p>
 <p>英文原文 <a href="https://medium.com/jhipster/create-full-microservice-stack-using-jhipster-domain-language-under-30-minutes-ecc6e7fc3f77" target="_blank" rel="noopener">Create full Microservice stack using JHipster Domain Language under 30 minutes</a></p>
+<p>Code Demo <a href="https://github.com/MichaelMENG/jhipster-jdl-demo" target="_blank" rel="noopener">https://github.com/MichaelMENG/jhipster-jdl-demo</a></p>
 
       
 
@@ -472,15 +504,15 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Spring Cloud</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">JHipster</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">JDL</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Spring Cloud</a>
         		</li>
       		
 		</ul>
@@ -608,6 +640,22 @@
   
 
   
+  <div id="gitment-ctn"></div> 
+<link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
+<script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  id: "https://michaelmeng.github.io/2019/05/08/30分钟创建全栈微服务应用/",
+  owner: 'MichaelMENG',
+  repo: 'https://github.com/MichaelMENG/jhipster-jdl-demo',
+  oauth: {
+    client_id: 'e1c4257ed12fabc7079e',
+    client_secret: '76a2b28debbce832cf280c53f2923f1a792df3c2',
+  },
+})
+gitment.render('gitment-ctn')
+</script>
+  
 
 
           </div>
@@ -709,10 +757,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Vagrant</a>
               </li>
              
@@ -721,15 +765,31 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Microservices</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Spring Cloud</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Service Mesh</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Istio</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">JHipster</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">JDL</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Spring Cloud</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -786,6 +846,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           
             <li class="search-li">
               <a href="https://www.infoq.cn/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>InfoQ</a>
+            </li>
+          
+            <li class="search-li">
+              <a href="https://www.oschina.net/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>开源中国</a>
+            </li>
+          
+            <li class="search-li">
+              <a href="https://www.kubernetes.org.cn/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>Kubernetes中文社区</a>
+            </li>
+          
+            <li class="search-li">
+              <a href="https://yq.aliyun.com/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>云栖社区</a>
             </li>
           
         </ul>

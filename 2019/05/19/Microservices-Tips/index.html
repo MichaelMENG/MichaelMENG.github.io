@@ -6,19 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://michaelmeng.github.io">
-  <title>Tag: JHipster | Dreamstep36</title>
+  <title>Microservices Tips | Dreamstep36</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="IT从业人员">
-<meta name="keywords" content="Microservices,SpringBoot,SpringCloud,Docker,Kubernetes,DevOps,Linux,PMP,Solution,Java,Golang,Scala,Flutter">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Dreamstep36">
-<meta property="og:url" content="https://michaelmeng.github.io/tags/JHipster/index.html">
+  <meta name="keywords" content="Microservices,Spring Cloud,Service Mesh,Istio">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Microservices Tips">
+<meta property="og:url" content="https://michaelmeng.github.io/2019/05/19/Microservices-Tips/index.html">
 <meta property="og:site_name" content="Dreamstep36">
-<meta property="og:description" content="IT从业人员">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://www.metoffice.gov.uk/binaries/content/gallery/metofficegovuk/hero-images/weather/summer/yellow-flowers-in-a-sunny-field-photo-jeremy-bishop.jpg/yellow-flowers-in-a-sunny-field-photo-jeremy-bishop.jpg/metofficegovuk%3AheroMedium">
+<meta property="og:image" content="https://michaelmeng.github.io/Users/dreamstep36/markdown/dreamstep36/_images/eureka-server.jpg">
+<meta property="og:updated_time" content="2019-05-19T06:47:30.746Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Dreamstep36">
-<meta name="twitter:description" content="IT从业人员">
+<meta name="twitter:title" content="Microservices Tips">
+<meta name="twitter:image" content="https://www.metoffice.gov.uk/binaries/content/gallery/metofficegovuk/hero-images/weather/summer/yellow-flowers-in-a-sunny-field-photo-jeremy-bishop.jpg/yellow-flowers-in-a-sunny-field-photo-jeremy-bishop.jpg/metofficegovuk%3AheroMedium">
   
     <link rel="alternative" href="/atom.xml" title="Dreamstep36" type="application/atom+xml">
   
@@ -154,43 +155,211 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Microservices-Tips" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2019/05/08/30分钟创建全栈微服务应用/" class="archive-article-date">
-  	<time datetime="2019-05-08T08:25:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-08</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/08/30分钟创建全栈微服务应用/">30分钟创建全栈微服务应用 - JHipster Domain Language</a>
+    <h1 class="article-title" itemprop="name">
+      Microservices Tips
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        
+	<!-- 不蒜子统计 -->
+	<span id="busuanzi_container_page_pv" style="display:none" class="archive-article-date">
+		  <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+			</span>
+
+<a href="/2019/05/19/Microservices-Tips/" class="archive-article-date">
+  	<time datetime="2019-05-19T06:24:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-19</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="https://www.metoffice.gov.uk/binaries/content/gallery/metofficegovuk/hero-images/weather/summer/yellow-flowers-in-a-sunny-field-photo-jeremy-bishop.jpg/yellow-flowers-in-a-sunny-field-photo-jeremy-bishop.jpg/metofficegovuk%3AheroMedium" alt="Spring"></p>
+<a id="more"></a>
+<h3 id="方案选择"><a href="#方案选择" class="headerlink" title="方案选择"></a>方案选择</h3><h4 id="成熟方案-Spring-Cloud"><a href="#成熟方案-Spring-Cloud" class="headerlink" title="成熟方案 Spring Cloud"></a>成熟方案 Spring Cloud</h4><blockquote>
+<p>Spring Cloud 是业界成熟的微服务解决方案，开箱即用的<strong>全家桶</strong></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>用途</th>
+<th>Spring Cloud</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>服务发现</td>
+<td>Eureka</td>
+</tr>
+<tr>
+<td>配置中心</td>
+<td>Config</td>
+</tr>
+<tr>
+<td>API 网关</td>
+<td>Zuul</td>
+</tr>
+<tr>
+<td>客户端负载均衡器</td>
+<td>Ribbon</td>
+</tr>
+<tr>
+<td>声明式HTTP客户端</td>
+<td>Feign</td>
+</tr>
+<tr>
+<td>熔断、降级、限流</td>
+<td>Hystrix</td>
+</tr>
+<tr>
+<td>链路跟踪</td>
+<td>Sleuth ( 对Zipkin的封装 )</td>
+</tr>
+<tr>
+<td>日志分析</td>
+<td>ELK ( Third Party )</td>
+</tr>
+<tr>
+<td>认证服务</td>
+<td>OAuth2 tokens</td>
+</tr>
+<tr>
+<td>监控面板</td>
+<td>Turbine + Hystrix Dashboard</td>
+</tr>
+</tbody></table>
+<h4 id="终极方案-Kubernetes-Istio"><a href="#终极方案-Kubernetes-Istio" class="headerlink" title="终极方案 Kubernetes + Istio"></a>终极方案 Kubernetes + Istio</h4><h5 id="为什么"><a href="#为什么" class="headerlink" title="为什么"></a>为什么</h5><blockquote>
+<p>以 Spring Cloud 为例的微服务架构中，除了微服务自身模块（也就是应用的<strong>业务逻辑</strong>）之外，其它的绝大部分模块，例如：服务发现、配置中心、链路跟踪、日志监控等等，都是通用的，都可以【下沉】到平台级别，做到一体化。</p>
+<p>其实这也是 <strong><em>PaaS</em></strong> 平台要实现的目标，而 <strong><em>Kubernetes + Istio</em></strong> 可以很好地帮助微服务实现此目标。</p>
+<p>最后，我们只需要关心具体的<strong>业务逻辑</strong>，其它的一切都可以交给平台来实现。</p>
+<p>所以说，以 Kubernetes + Istio 为代表的服务网格 ( Service Mesh ) 是微服务的终极方案。</p>
+</blockquote>
+<h5 id="怎么做"><a href="#怎么做" class="headerlink" title="怎么做"></a>怎么做</h5><blockquote>
+<p>Istio 已经到了 1.11 版本，但业界大规模使用，特别是大厂的应用还不普遍。目前阶段，最好是持续关注 + 深入学习。</p>
+<p>一个有趣的案例， JHipster + Istio 解决方案。</p>
+</blockquote>
+<h4 id="可选方案-Spring-Cloud-Alibaba"><a href="#可选方案-Spring-Cloud-Alibaba" class="headerlink" title="可选方案 Spring Cloud Alibaba"></a>可选方案 Spring Cloud Alibaba</h4><blockquote>
+<p>阿里的 Spring Cloud 解决方案，正在孵化阶段。</p>
+</blockquote>
+<h3 id="Spring-Cloud"><a href="#Spring-Cloud" class="headerlink" title="Spring Cloud"></a>Spring Cloud</h3><blockquote>
+<p><strong>Spring Cloud为开发人员提供了快速构建分布式系统中一些常见模式的工具（例如配置管理，服务发现，断路器，智能路由，微代理，控制总线）。分布式系统的协调导致了样板模式, 使用Spring Cloud开发人员可以快速地支持实现这些模式的服务和应用程序。</strong></p>
+</blockquote>
+<h4 id="Eureka-服务发现"><a href="#Eureka-服务发现" class="headerlink" title="Eureka - 服务发现"></a>Eureka - 服务发现</h4><blockquote>
+<ul>
+<li>*<em>Eureka 是一个基于REST的服务,用于服务的的注册与发现 *</em></li>
+<li>*<em>Sureka采用C-S的设计架构,Eureka Server作为服务注册功能的服务器,它是服务注册中心， *</em></li>
+<li>*<em>Eureka 又可细分为 <font color="RED">Eureka Server</font> 和 <font color="RED">Eureka Client ( @EnableDiscoveryClient  )</font> *</em></li>
+</ul>
+</blockquote>
+<p><img src="/Users/dreamstep36/markdown/dreamstep36/_images/eureka-server.jpg" alt="Eureka Server"></p>
+<h5 id="pom-xml"><a href="#pom-xml" class="headerlink" title="pom.xml"></a>pom.xml</h5><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">	&lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;</span><br><span class="line">	&lt;artifactId&gt;spring-cloud-starter-netflix-eureka-server&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+
+<h5 id="application-yml"><a href="#application-yml" class="headerlink" title="application.yml"></a>application.yml</h5><blockquote>
+<ul>
+<li>Eureka高可用配置，1. 两台，互相注册，2. 三台，1向2，3注册，..… 3. 多台，类似，..…</li>
+<li>prefer-ip-address: true 设置IP查找</li>
+<li>register-with-eureka: false 是否注册到 eureka, 高可用配置时默认为true</li>
+<li>enable-self-preservation: false 默认为true, 开发模式下设为false, 生产环境下要恢复默认</li>
+</ul>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"># Eureka高可用配置，1. 两台，互相注册，2. 三台，1向2，3注册，... 3. 多台，类似，...</span><br><span class="line">eureka:</span><br><span class="line">  client:</span><br><span class="line">    service-url:</span><br><span class="line">      defaultZone: http:<span class="comment">//eureka-2:8762/eureka/</span></span><br><span class="line">  instance:</span><br><span class="line">    prefer-ip-address: <span class="keyword">true</span></span><br><span class="line"># 是否注册到 eureka, 高可用配置时默认为true</span><br><span class="line">    register-with-eureka: <span class="keyword">false</span></span><br><span class="line"># Eureka Server自我保护,如果频繁的重启Client，Eureka会有红色错误提示，但仍然会显示Client存在</span><br><span class="line"># 默认为true, 开发模式下设为false, 生产环境下要恢复默认</span><br><span class="line">  server:</span><br><span class="line">    enable-self-preservation: <span class="keyword">false</span></span><br><span class="line">spring:</span><br><span class="line">  application:</span><br><span class="line">    name: eureka-<span class="number">1</span></span><br><span class="line">server:</span><br><span class="line">  port: <span class="number">8761</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="EurekaApplication-java"><a href="#EurekaApplication-java" class="headerlink" title="EurekaApplication.java"></a>EurekaApplication.java</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@SpringBootApplication</span></span><br><span class="line"><span class="meta">@EnableEurekaServer</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">EurekaApplication</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		SpringApplication.run(EurekaApplication.class, args);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="Config-配置中心"><a href="#Config-配置中心" class="headerlink" title="Config - 配置中心"></a>Config - 配置中心</h4><h5 id="pom-xml-1"><a href="#pom-xml-1" class="headerlink" title="pom.xml"></a>pom.xml</h5><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-cloud-config-server&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-cloud-starter-netflix-eureka-client&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+
+<h5 id="application-yml-1"><a href="#application-yml-1" class="headerlink" title="application.yml"></a>application.yml</h5><blockquote>
+<p>1） 配置 gitee.com 服务器 uri: <a href="https://gitee.com/dreamstep36/config-repo" target="_blank" rel="noopener">https://gitee.com/dreamstep36/config-repo</a></p>
+<p>2） 配置 gitlab 服务器，必须以 .git 结尾 uri: <a href="http://192.168.1.99/michael/config-repo.git" target="_blank" rel="noopener">http://192.168.1.99/michael/config-repo.git</a></p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">spring:</span><br><span class="line">  application:</span><br><span class="line">    name: config</span><br><span class="line">  cloud:</span><br><span class="line">    config:</span><br><span class="line">      server:</span><br><span class="line">        git:</span><br><span class="line"># 1) 配置 gitee.com 服务器</span><br><span class="line">#          uri: https://gitee.com/dreamstep36/config-repo</span><br><span class="line">#          username: dreamstep36@163.com</span><br><span class="line">#          password: passw0RD</span><br><span class="line">#          basedir: /Users/dreamstep36/ds/dreams-spring-clouid/dreams-spring-cloud-config/basedir-001</span><br><span class="line"># 2）配置 gitlab 服务器，注意必须以 .git 结尾</span><br><span class="line">          uri: http:<span class="comment">//192.168.1.99/michael/config-repo.git</span></span><br><span class="line">          username: michael</span><br><span class="line">          password: password</span><br><span class="line">          basedir: ./basedir</span><br></pre></td></tr></table></figure>
+
+<h5 id="ConfigApplication-java"><a href="#ConfigApplication-java" class="headerlink" title="ConfigApplication.java"></a>ConfigApplication.java</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@SpringBootApplication</span></span><br><span class="line"><span class="meta">@EnableDiscoveryClient</span></span><br><span class="line"><span class="meta">@EnableConfigServer</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ConfigApplication</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		SpringApplication.run(ConfigApplication.class, args);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="Zuul-服务网关"><a href="#Zuul-服务网关" class="headerlink" title="Zuul - 服务网关"></a>Zuul - 服务网关</h4><h5 id="pom-xml-2"><a href="#pom-xml-2" class="headerlink" title="pom.xml"></a>pom.xml</h5><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-cloud-starter-netflix-eureka-client&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-cloud-starter-netflix-zuul&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+
+<h5 id="bootstrap-yml"><a href="#bootstrap-yml" class="headerlink" title="bootstrap.yml"></a>bootstrap.yml</h5><blockquote>
+<ul>
+<li><p>bootstrap.yml 先于 application.yml 加载，因为要通过 eureka-server 找到 config-server 获取配置</p>
+</li>
+<li><p>Eureka server 高可用配置如下</p>
+</li>
+</ul>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">spring:</span><br><span class="line">  application:</span><br><span class="line">    name: api-gateway</span><br><span class="line">  cloud:</span><br><span class="line">    config:</span><br><span class="line">      discovery:</span><br><span class="line">        enabled: <span class="keyword">true</span></span><br><span class="line">        service-id: CONFIG</span><br><span class="line">      profile: dev</span><br><span class="line">eureka:</span><br><span class="line">  client:</span><br><span class="line">    service-url:</span><br><span class="line">      defaultZone: http:<span class="comment">//eureka-1:8761/eureka/, http://eureka-2:8762/eureka/</span></span><br><span class="line">  instance:</span><br><span class="line">    prefer-ip-address: <span class="keyword">true</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="ApiGatewayApplication-java"><a href="#ApiGatewayApplication-java" class="headerlink" title="ApiGatewayApplication.java"></a>ApiGatewayApplication.java</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@SpringBootApplication</span></span><br><span class="line"><span class="meta">@EnableDiscoveryClient</span></span><br><span class="line"><span class="meta">@EnableZuulProxy</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ApiGatewayApplication</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		SpringApplication.run(ApiGatewayApplication.class, args);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@ConfigurationProperties</span>(<span class="string">"zuul"</span>)</span><br><span class="line">	<span class="meta">@RefreshScope</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> ZuulProperties <span class="title">zuulProperties</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">new</span> ZuulProperties();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="Feign-声明式服务调用"><a href="#Feign-声明式服务调用" class="headerlink" title="Feign - 声明式服务调用"></a>Feign - 声明式服务调用</h4><blockquote>
+<ul>
+<li>依赖改为 spring-cloud-starter-openfeign</li>
+<li>@FeignClient 一般在Api( or Client ) 包中配置，与 hystrix 整合使用，fallback 参数指定的类返回 null</li>
+<li>Feign默认集成了<font color="RED">Ribbon</font>，并和Eureka结合，默认实现了负载均衡的效果</li>
+<li>注意：负载均衡是加在<font color="RED">客户端</font>中，而不是服务端中</li>
+</ul>
+</blockquote>
+<h5 id="pom-xml-3"><a href="#pom-xml-3" class="headerlink" title="pom.xml"></a>pom.xml</h5><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-cloud-starter-openfeign&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+
+<h5 id="EnableFeignClients"><a href="#EnableFeignClients" class="headerlink" title="@EnableFeignClients"></a>@EnableFeignClients</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@SpringBootApplication</span></span><br><span class="line"><span class="meta">@EnableDiscoveryClient</span></span><br><span class="line"><span class="meta">@EnableCircuitBreaker</span></span><br><span class="line"><span class="meta">@EnableFeignClients</span>(basePackages = <span class="string">"com.dreams.product.client"</span>)</span><br><span class="line"><span class="meta">@RefreshScope</span></span><br><span class="line"><span class="meta">@ComponentScan</span>(basePackages = <span class="string">"com.dreams"</span>)</span><br><span class="line"><span class="meta">@EnableHystrixDashboard</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">OrderApplication</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		SpringApplication.run(OrderApplication.class, args);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="ProductClient-java"><a href="#ProductClient-java" class="headerlink" title="ProductClient.java"></a>ProductClient.java</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@FeignClient</span>(name = <span class="string">"product"</span>, fallback = ProductClient.ProductClientFallback.class)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">ProductClient</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@PostMapping</span>(<span class="string">"/product/listForOrder"</span>)</span><br><span class="line">    <span class="function">List&lt;ProductInfoOutput&gt; <span class="title">listForOrder</span><span class="params">(@RequestBody List&lt;String&gt; productIdList)</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@PostMapping</span>(<span class="string">"/product/decreaseStock"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">decreaseStock</span><span class="params">(@RequestBody List&lt;DecreaseStockInput&gt; decreaseStockInputList)</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * feign &amp; hystrix 整合</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Component</span></span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">ProductClientFallback</span> <span class="keyword">implements</span> <span class="title">ProductClient</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> List&lt;ProductInfoOutput&gt; <span class="title">listForOrder</span><span class="params">(List&lt;String&gt; productIdList)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">decreaseStock</span><span class="params">(List&lt;DecreaseStockInput&gt; decreaseStockInputList)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="Ribbon-负载均衡工具"><a href="#Ribbon-负载均衡工具" class="headerlink" title="Ribbon - 负载均衡工具"></a>Ribbon - 负载均衡工具</h4><blockquote>
+<p><strong>Spring Cloud Ribbon是一个基于HTTP和TCP的客户端负载均衡工具，它基于Netflix Ribbon实现。通过Spring Cloud的封装，可以让我们轻松地将面向服务的REST模版请求自动转换成<font color="RED">客户端负载均衡</font>的服务调用。Spring Cloud Ribbon虽然只是一个<font color="RED">工具类框架</font>，它不像服务注册中心、配置中心、API网关那样需要独立部署，但是它几乎存在于每一个Spring Cloud构建的微服务和基础设施中。因为<font color="RED">微服务间的调用，API网关的请求转发</font>等内容，实际上都是通过Ribbon来实现的，包括<font color="RED">Feign</font>，也是基于Ribbon实现的工具。</strong></p>
+<p><strong>Ribbon工作时分为两步：第一步先选择 Eureka Server, 它优先选择在同一个Zone且负载较少的Server；第二步再根据用户指定的策略，在从Server取到的服务注册列表中选择一个地址。其中Ribbon提供了多种策略，例如轮询、随机、根据响应时间加权等。</strong></p>
+</blockquote>
+<h5 id="RestTemplate"><a href="#RestTemplate" class="headerlink" title="RestTemplate"></a>RestTemplate</h5><blockquote>
+<p>ConfigBean 添加新注解 @LoadBalanced, 用于加入 Ribbon 配置</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ConfigBean</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="meta">@LoadBalanced</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> RestTemplate <span class="title">getRestTemplate</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> RestTemplate();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="Feign"><a href="#Feign" class="headerlink" title="Feign"></a>Feign</h5><blockquote>
+<p>Feign默认集成了<font color="RED">Ribbon</font>，并和Eureka结合，默认实现了负载均衡的效果</p>
+</blockquote>
+<h4 id="Hystrix-限流-降级-熔断"><a href="#Hystrix-限流-降级-熔断" class="headerlink" title="Hystrix - 限流 降级 熔断"></a>Hystrix - 限流 降级 熔断</h4><blockquote>
+<p><strong>Hystrix熔断器，容错管理工具，旨在通过熔断机制控制服务和第三方库的节点,从而对延迟和故障提供更强大的容错能力。在Spring Cloud Hystrix中实现了线程隔离、断路器等一系列的服务保护功能。它也是基于Netflix的开源框架 Hystrix实现的，该框架目标在于通过控制那些访问远程系统、服务和第三方库的节点，从而对延迟和故障提供更强大的容错能力。Hystrix具备了<font color="RED">服务降级、服务熔断、线程隔离、请求缓存、请求合并以及服务监控</font>等强大功能。</strong></p>
+</blockquote>
+<h4 id="Sleuth-Zipkin-链路追踪"><a href="#Sleuth-Zipkin-链路追踪" class="headerlink" title="Sleuth + Zipkin - 链路追踪"></a>Sleuth + Zipkin - 链路追踪</h4><h4 id="EL2K-日志分析"><a href="#EL2K-日志分析" class="headerlink" title="EL2K - 日志分析"></a>EL2K - 日志分析</h4>
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Docker</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Microservices</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
@@ -198,29 +367,145 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">JHipster</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Service Mesh</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">JDL</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Istio</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://michaelmeng.github.io/2019/05/19/Microservices-Tips/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2019/05/13/Kubernetes-Tips/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Kubernetes Tips</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#方案选择"><span class="toc-number">1.</span> <span class="toc-text">方案选择</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#成熟方案-Spring-Cloud"><span class="toc-number">1.1.</span> <span class="toc-text">成熟方案 Spring Cloud</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#终极方案-Kubernetes-Istio"><span class="toc-number">1.2.</span> <span class="toc-text">终极方案 Kubernetes + Istio</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#为什么"><span class="toc-number">1.2.1.</span> <span class="toc-text">为什么</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#怎么做"><span class="toc-number">1.2.2.</span> <span class="toc-text">怎么做</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#可选方案-Spring-Cloud-Alibaba"><span class="toc-number">1.3.</span> <span class="toc-text">可选方案 Spring Cloud Alibaba</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Spring-Cloud"><span class="toc-number">2.</span> <span class="toc-text">Spring Cloud</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Eureka-服务发现"><span class="toc-number">2.1.</span> <span class="toc-text">Eureka - 服务发现</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#pom-xml"><span class="toc-number">2.1.1.</span> <span class="toc-text">pom.xml</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#application-yml"><span class="toc-number">2.1.2.</span> <span class="toc-text">application.yml</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#EurekaApplication-java"><span class="toc-number">2.1.3.</span> <span class="toc-text">EurekaApplication.java</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Config-配置中心"><span class="toc-number">2.2.</span> <span class="toc-text">Config - 配置中心</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#pom-xml-1"><span class="toc-number">2.2.1.</span> <span class="toc-text">pom.xml</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#application-yml-1"><span class="toc-number">2.2.2.</span> <span class="toc-text">application.yml</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#ConfigApplication-java"><span class="toc-number">2.2.3.</span> <span class="toc-text">ConfigApplication.java</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Zuul-服务网关"><span class="toc-number">2.3.</span> <span class="toc-text">Zuul - 服务网关</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#pom-xml-2"><span class="toc-number">2.3.1.</span> <span class="toc-text">pom.xml</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#bootstrap-yml"><span class="toc-number">2.3.2.</span> <span class="toc-text">bootstrap.yml</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#ApiGatewayApplication-java"><span class="toc-number">2.3.3.</span> <span class="toc-text">ApiGatewayApplication.java</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Feign-声明式服务调用"><span class="toc-number">2.4.</span> <span class="toc-text">Feign - 声明式服务调用</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#pom-xml-3"><span class="toc-number">2.4.1.</span> <span class="toc-text">pom.xml</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#EnableFeignClients"><span class="toc-number">2.4.2.</span> <span class="toc-text">@EnableFeignClients</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#ProductClient-java"><span class="toc-number">2.4.3.</span> <span class="toc-text">ProductClient.java</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Ribbon-负载均衡工具"><span class="toc-number">2.5.</span> <span class="toc-text">Ribbon - 负载均衡工具</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#RestTemplate"><span class="toc-number">2.5.1.</span> <span class="toc-text">RestTemplate</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Feign"><span class="toc-number">2.5.2.</span> <span class="toc-text">Feign</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Hystrix-限流-降级-熔断"><span class="toc-number">2.6.</span> <span class="toc-text">Hystrix - 限流 降级 熔断</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Sleuth-Zipkin-链路追踪"><span class="toc-number">2.7.</span> <span class="toc-text">Sleuth + Zipkin - 链路追踪</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#EL2K-日志分析"><span class="toc-number">2.8.</span> <span class="toc-text">EL2K - 日志分析</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
+  <div id="gitment-ctn"></div> 
+<link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
+<script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  id: "https://michaelmeng.github.io/2019/05/19/Microservices-Tips/",
+  owner: 'MichaelMENG',
+  repo: 'https://github.com/MichaelMENG/jhipster-jdl-demo',
+  oauth: {
+    client_id: 'e1c4257ed12fabc7079e',
+    client_secret: '76a2b28debbce832cf280c53f2923f1a792df3c2',
+  },
+})
+gitment.render('gitment-ctn')
+</script>
+  
 
 
           </div>
@@ -252,9 +537,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: true,
 		toc_hide_index: true,

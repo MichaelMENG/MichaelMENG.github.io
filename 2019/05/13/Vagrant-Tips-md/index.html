@@ -86,6 +86,10 @@
 				
 					<a class="github" target="_blank" href="https://github.com/MichaelMENG" title="github"><i class="icon-github"></i></a>
 		        
+					<a class="weixin" target="_blank" href="/dreamstep" title="weixin"><i class="icon-weixin"></i></a>
+		        
+					<a class="mail" target="_blank" href="mailto:dreamstep36@163.com" title="mail"><i class="icon-mail"></i></a>
+		        
 			</div>
 		</nav>
 	</header>		
@@ -122,6 +126,10 @@
 				<div class="social">
 					
 						<a class="github" target="_blank" href="https://github.com/MichaelMENG" title="github"><i class="icon-github"></i></a>
+			        
+						<a class="weixin" target="_blank" href="/dreamstep" title="weixin"><i class="icon-weixin"></i></a>
+			        
+						<a class="mail" target="_blank" href="mailto:dreamstep36@163.com" title="mail"><i class="icon-mail"></i></a>
 			        
 				</div>
 			</nav>
@@ -181,12 +189,18 @@
 <p>made available via the VirtualBox Guest Additions and kernel module.</p>
 <p>Please verify that these guest additions are properly installed in the</p>
 <p>guest. This is not a bug in Vagrant and is usually caused by a faulty</p>
-<p>Vagrant box.<br><a id="more"></a><br><strong>解决</strong></p>
+<p>Vagrant box. </p>
 </blockquote>
+<a id="more"></a>
+<p><strong>解决</strong></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vagrant plugin install vagrant-vbguest</span><br></pre></td></tr></table></figure>
+
 <h3 id="磁盘扩容"><a href="#磁盘扩容" class="headerlink" title="磁盘扩容"></a>磁盘扩容</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> 停止虚拟机</span><br><span class="line">vagrant halt &lt;machine_name&gt;</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 进入VirtualBox VMs目录，查看并记录原磁盘uuid，留作后用</span><br><span class="line">vboxmanage showhdinfo box-disk1.vmdk</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 克隆磁盘，vmdk格式无法调整大小，需要转成vdi格式</span><br><span class="line">vboxmanage clonehd box-disk1.vmdk new-virtualdisk.vdi --format vdi</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 调整克隆磁盘的大小，这里调整为400G</span><br><span class="line">vboxmanage modifyhd new-virtualdisk.vdi --resize 409600</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 在克隆磁盘的基础上再克隆vdi格式的磁盘</span><br><span class="line">vboxmanage clonehd new-virtualdisk.vdi resized.vmdk --format vmdk</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 覆盖原磁盘（如果担心磁盘数据出现不可逆损坏，请先做好备份）</span><br><span class="line">mv resized.vmdk box-disk1.vmdk</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 此时节已删除中间文件</span><br><span class="line">rm new-virtualdisk.vdi</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> !!!此时启动虚机或查看磁盘信息会报错，提示uuid不匹配，因为磁盘已经变了，需要改回之前记录的uuid</span><br><span class="line">vboxmanage internalcommands sethduuid box-disk1.vmdk &lt;old_uuid&gt;</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> done，可以重启虚机了，可根据需要在虚机上进行磁盘分配，这里不再展开</span><br><span class="line">vagrant up &lt;machine_name&gt;</span><br></pre></td></tr></table></figure>
+
 <h3 id="Docker运行权限设置"><a href="#Docker运行权限设置" class="headerlink" title="Docker运行权限设置"></a>Docker运行权限设置</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1. sudo groupadd docker # 一般安装docker后已经创建</span><br><span class="line">2. sudo gpasswd -a vagrant docker # 用户vagrant加入docker组</span><br><span class="line">3. sudo service docker restart # 重启docker</span><br><span class="line">4. exit -&gt; vagrant ssh # 退出 &amp; 重新进入</span><br></pre></td></tr></table></figure>
+
 <h3 id="SSH免密登录Permission-denied"><a href="#SSH免密登录Permission-denied" class="headerlink" title="SSH免密登录Permission denied"></a>SSH免密登录Permission denied</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> Log in as root</span><br><span class="line"><span class="meta">#</span> Edit ssh config: </span><br><span class="line">sudo vim /etc/ssh/sshd_config</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> Change this line:</span><br><span class="line"><span class="meta">#</span> PasswordAuthentication no</span><br><span class="line"><span class="meta">#</span> to</span><br><span class="line"><span class="meta">#</span> PasswordAuthentication yes</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> Restart daemon: </span><br><span class="line">sudo systemctl restart sshd</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> Do ssh-copy-id:</span><br><span class="line">ssh-copy-id someuser@&lt;my-ip&gt;</span><br></pre></td></tr></table></figure>
+
 <h3 id="Vagrant-ssh使用本机私钥"><a href="#Vagrant-ssh使用本机私钥" class="headerlink" title="Vagrant ssh使用本机私钥"></a>Vagrant ssh使用本机私钥</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> 启动虚机 &amp; ssh 进入虚机 </span><br><span class="line">vagrant up (—provision)</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span>	生成密钥对</span><br><span class="line">ssh-keygen -t rsa </span><br><span class="line"></span><br><span class="line"><span class="meta">#</span>	本地主机拷贝公钥到虚机 ~/.ssh/authorized_keys</span><br><span class="line">ssh-copy-id -i ~/.ssh/id_rsa.pub vagrant@虚机</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 停止虚机</span><br><span class="line"> vagrant halt</span><br><span class="line"> </span><br><span class="line"><span class="meta">#</span> 修改配置 </span><br><span class="line">sudo vim Vagrantfile</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> Add code</span><br><span class="line">Vagrant.configure("2") do |config|</span><br><span class="line">  config.ssh.private_key_path = "~/.ssh/id_rsa"</span><br><span class="line">  config.ssh.forward_agent = true</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 重启 &amp; vagrant ssh</span><br><span class="line">vagrant up &amp; vagrant ssh</span><br></pre></td></tr></table></figure>
       
 
@@ -349,6 +363,22 @@
   
 
   
+  <div id="gitment-ctn"></div> 
+<link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
+<script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  id: "https://michaelmeng.github.io/2019/05/13/Vagrant-Tips-md/",
+  owner: 'MichaelMENG',
+  repo: 'https://github.com/MichaelMENG/jhipster-jdl-demo',
+  oauth: {
+    client_id: 'e1c4257ed12fabc7079e',
+    client_secret: '76a2b28debbce832cf280c53f2923f1a792df3c2',
+  },
+})
+gitment.render('gitment-ctn')
+</script>
+  
 
 
           </div>
@@ -450,10 +480,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Vagrant</a>
               </li>
              
@@ -462,15 +488,31 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Microservices</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Spring Cloud</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Service Mesh</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Istio</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">JHipster</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">JDL</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Spring Cloud</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -527,6 +569,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           
             <li class="search-li">
               <a href="https://www.infoq.cn/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>InfoQ</a>
+            </li>
+          
+            <li class="search-li">
+              <a href="https://www.oschina.net/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>开源中国</a>
+            </li>
+          
+            <li class="search-li">
+              <a href="https://www.kubernetes.org.cn/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>Kubernetes中文社区</a>
+            </li>
+          
+            <li class="search-li">
+              <a href="https://yq.aliyun.com/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>云栖社区</a>
             </li>
           
         </ul>
