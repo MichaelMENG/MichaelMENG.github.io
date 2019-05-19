@@ -191,14 +191,14 @@
 <li><strong><em>Union file systems</em></strong> - Container 和 Image 分层 </li>
 </ul>
 </blockquote>
-<h3 id="Docker-secret-的两种方式"><a href="#Docker-secret-的两种方式" class="headerlink" title="Docker secret 的两种方式"></a>Docker secret 的两种方式</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 文件</span></span><br><span class="line">docker secret create my-pw password</span><br><span class="line"><span class="meta">#</span><span class="bash"> 命令行</span></span><br><span class="line">echo "adminadmin" | docker secret create my-pw2 -</span><br></pre></td></tr></table></figure>
+<h3 id="Docker-secret-的两种方式"><a href="#Docker-secret-的两种方式" class="headerlink" title="Docker secret 的两种方式"></a>Docker secret 的两种方式</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> 文件</span><br><span class="line">docker secret create my-pw password</span><br><span class="line"><span class="meta">#</span> 命令行</span><br><span class="line">echo "adminadmin" | docker secret create my-pw2 -</span><br></pre></td></tr></table></figure>
 
 <h3 id="RabbitMQ-Docker-设置"><a href="#RabbitMQ-Docker-设置" class="headerlink" title="RabbitMQ Docker 设置"></a>RabbitMQ Docker 设置</h3><p><strong><em>问题</em></strong></p>
 <blockquote>
 <p>RabbitMQ的原始镜像没有设置admin用户及相应的权限</p>
 </blockquote>
 <p><strong><em>解决</em></strong></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 镜像</span></span><br><span class="line">docker pull rabbitmq:3.7.7-management</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 创建容器</span></span><br><span class="line">docker run -d --name rabbitmq --hostname my-rabbit -p 5672:5672 -p 15672:15672 rabbitmq:3.7.7-management</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 进入容器</span></span><br><span class="line">docker exec -it rabbitmq /bin/bash</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 添加用户</span></span><br><span class="line">rabbitmqctl add_user admin 123456</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 添加权限</span></span><br><span class="line">rabbitmqctl set_permissions -p "/" admin ".*" ".*" ".*"</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 修改用户角色</span></span><br><span class="line">rabbitmqctl set_user_tags admin administrator</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> 镜像</span><br><span class="line">docker pull rabbitmq:3.7.7-management</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 创建容器</span><br><span class="line">docker run -d --name rabbitmq --hostname my-rabbit -p 5672:5672 -p 15672:15672 rabbitmq:3.7.7-management</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 进入容器</span><br><span class="line">docker exec -it rabbitmq /bin/bash</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 添加用户</span><br><span class="line">rabbitmqctl add_user admin 123456</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 添加权限</span><br><span class="line">rabbitmqctl set_permissions -p "/" admin ".*" ".*" ".*"</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 修改用户角色</span><br><span class="line">rabbitmqctl set_user_tags admin administrator</span><br></pre></td></tr></table></figure>
 
 <h3 id="Docker-mirror-amp-Insecure-registry-设置"><a href="#Docker-mirror-amp-Insecure-registry-设置" class="headerlink" title="Docker mirror &amp; Insecure-registry 设置"></a>Docker mirror &amp; Insecure-registry 设置</h3><blockquote>
 <p>Harbor默认需要配置SSL，如果不配置，需要在 docker 端配置 insecure-registry 才可以 PUSH </p>
@@ -401,7 +401,7 @@
 var gitment = new Gitment({
   id: "https://michaelmeng.github.io/2019/05/13/Docker-Tips/",
   owner: 'MichaelMENG',
-  repo: 'https://github.com/MichaelMENG/jhipster-jdl-demo',
+  repo: 'https://github.com/MichaelMENG/MichaelMENG.github.io.git',
   oauth: {
     client_id: 'e1c4257ed12fabc7079e',
     client_secret: '76a2b28debbce832cf280c53f2923f1a792df3c2',
@@ -511,7 +511,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Vagrant</a>
+                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -519,7 +519,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
+                <a href="javascript:void(0)" class="js-tag color3">Vagrant</a>
               </li>
              
               <li class="article-tag-list-item">
