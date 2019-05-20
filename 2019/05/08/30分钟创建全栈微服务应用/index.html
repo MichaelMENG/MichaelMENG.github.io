@@ -18,10 +18,10 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://farm1.staticflickr.com/825/27129015427_01a6d6afd6_o.png">
 <meta property="og:image" content="https://cdn-images-1.medium.com/max/1200/1*b4krMVZ-mqjxAIh_EM1jhQ.png">
-<meta property="og:image" content="https://michaelmeng.github.io/2019/05/08/images/jdl-01.png">
-<meta property="og:image" content="https://michaelmeng.github.io/2019/05/08/images/jdl-02.png">
-<meta property="og:image" content="https://michaelmeng.github.io/2019/05/08/images/jdl-03.png">
-<meta property="og:updated_time" content="2019-05-20T04:19:37.462Z">
+<meta property="og:image" content="https://github.com/MichaelMENG/MichaelMENG.github.io/blob/master/images/jdl-01.png">
+<meta property="og:image" content="https://github.com/MichaelMENG/MichaelMENG.github.io/blob/master/images/jdl-02.png">
+<meta property="og:image" content="https://github.com/MichaelMENG/MichaelMENG.github.io/blob/master/images/jdl-03.png">
+<meta property="og:updated_time" content="2019-05-20T04:22:58.588Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="30分钟创建全栈微服务应用 - JHipster Domain Language">
 <meta name="twitter:description" content="Create full Microservice stack using JHipster Domain Language under 30 minutes It’s been quite a while since I wrote a blog, I did a few some years ago but never really continued writing. So when I d">
@@ -219,19 +219,19 @@
 <p>In order to follow this tutorial, you would need a recent version of <strong>Docker</strong>, <strong>Docker-compose</strong>, <strong>NodeJS</strong> and <strong>Java 8</strong> installed on your computer. The below are the versions I have installed.</p>
 </blockquote>
 <p>为了能够跟进下面的试验，你需要在你的电脑上安装好新版的 <strong>Docker</strong>, <strong>Docker-compose</strong>, <strong>NodeJS</strong> and <strong>Java 8</strong> ，下面是我电脑上的各个软件的版本</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> docker -v                                                                                                                       </span><br><span class="line">Docker version 18.06.1-ce, build e68fc7a</span><br><span class="line"></span><br><span class="line"><span class="meta">$</span> docker-compose -v                                </span><br><span class="line">docker-compose version 1.20.1, build 5d8c71b</span><br><span class="line"></span><br><span class="line"><span class="meta">$</span> node -v                </span><br><span class="line">v8.11.4</span><br><span class="line"></span><br><span class="line"><span class="meta">$</span> java -version          </span><br><span class="line">java version "1.8.0_131"</span><br><span class="line">Java(TM) SE Runtime Environment (build 1.8.0_131-b11)</span><br><span class="line">Java HotSpot(TM) 64-Bit Server VM (build 25.131-b11, mixed mode)</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> docker -v                                                                                                                       </span></span><br><span class="line">Docker version 18.06.1-ce, build e68fc7a</span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> docker-compose -v                                </span></span><br><span class="line">docker-compose version 1.20.1, build 5d8c71b</span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> node -v                </span></span><br><span class="line">v8.11.4</span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> java -version          </span></span><br><span class="line">java version "1.8.0_131"</span><br><span class="line">Java(TM) SE Runtime Environment (build 1.8.0_131-b11)</span><br><span class="line">Java HotSpot(TM) 64-Bit Server VM (build 25.131-b11, mixed mode)</span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <p>First, install the latest version of JHipster</p>
 </blockquote>
 <p>首先，安装最新版的 JHipster</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> npm install generator-jhipster -g</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> npm install generator-jhipster -g</span></span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <p>Verify that you have version <strong>5.3.4</strong> or above by running</p>
 </blockquote>
 <p>验证你的 JHipster 的版本 &gt;= 5.3.4</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> jhipster --version</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> jhipster --version</span></span><br></pre></td></tr></table></figure>
 
 <h4 id="Creating-the-JDL-创建-JDL"><a href="#Creating-the-JDL-创建-JDL" class="headerlink" title="Creating the JDL 创建 JDL"></a>Creating the JDL 创建 JDL</h4><blockquote>
 <p>Now let us create our JDL. Head over to the <a href="https://www.jhipster.tech/jdl-studio/" target="_blank" rel="noopener">JDL Studio</a>(<em>use the older version for now as JDL 3 update is not released for the new JDL studio yet</em>) or your favorite IDE/Editor(<em>You can use</em> <a href="https://www.jhipster.tech/jhipster-ide/" target="_blank" rel="noopener"><em>JHipster IDE</em></a> <em>plugin if you like</em>).</p>
@@ -431,17 +431,17 @@
 <p>Now point your favorite browser to <a href="http://localhost:8080/" target="_blank" rel="noopener">http://localhost:8080/</a> and see the E-Commerce microservice application in action.</p>
 </blockquote>
 <p>( 正确启动完成后 ) 用你喜欢的浏览器打开  <a href="http://localhost:8080/" target="_blank" rel="noopener">http://localhost:8080/</a>  可以看到 E-Commerce 微服务应用正在运行了~</p>
-<p><img src="../images/jdl-01.png" alt="E-Commerce"></p>
+<p><img src="https://github.com/MichaelMENG/MichaelMENG.github.io/blob/master/images/jdl-01.png" alt="E-Commerce"></p>
 <blockquote>
 <p>You can see the JHipster registry in action at <a href="http://localhost:8761/#/" target="_blank" rel="noopener">http://localhost:8761/</a></p>
 </blockquote>
 <p>你可以看到 *<em>JHipster registry *</em> 正在运行，<a href="http://localhost:8761/" target="_blank" rel="noopener">http://localhost:8761/</a></p>
-<p><img src="../images/jdl-02.png" alt="JHipster registry"></p>
+<p><img src="https://github.com/MichaelMENG/MichaelMENG.github.io/blob/master/images/jdl-02.png" alt="JHipster registry"></p>
 <blockquote>
 <p>And finally the JHipster console at <a href="http://localhost:5601/" target="_blank" rel="noopener">http://localhost:5601</a>/</p>
 </blockquote>
 <p>最后，<strong>JHipster console</strong> at <a href="http://localhost:5601/" target="_blank" rel="noopener">http://localhost:5601</a>/</p>
-<p><img src="../images/jdl-03.png" alt="JHipster Console- Kibana dashboard"></p>
+<p><img src="https://github.com/MichaelMENG/MichaelMENG.github.io/blob/master/images/jdl-03.png" alt="JHipster Console- Kibana dashboard"></p>
 <blockquote>
 <p>Once you are done playing around, you can shut everything down by running the below command on the <strong>docker-compose</strong> folder</p>
 </blockquote>
