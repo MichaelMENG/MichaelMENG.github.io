@@ -8,13 +8,13 @@
   <link rel="dns-prefetch" href="https://www.dreamstep36.com">
   <title>在 Kubernetes 中，如何动态配置本地存储？ | Dreamstep36</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="[转] 在 Kubernetes 中，如何动态配置本地存储？在企业 IT 架构转型的过程中，存储一直是个不可避免的大问题。 Kubernetes 中使用节点的本地存储资源有 emptyDir、hostPath、Local PV 等几种方式。这之中，emptyDir 无法持久化数据，hostPath 方式需要手动管理卷的生命周期，运维压力大。因此在某些场景下，如果用户出于性能和运维成本考虑需要使用">
+  <meta name="description" content="在企业 IT 架构转型的过程中，存储一直是个不可避免的大问题。 Kubernetes 中使用节点的本地存储资源有 emptyDir、hostPath、Local PV 等几种方式。这之中，emptyDir 无法持久化数据，hostPath 方式需要手动管理卷的生命周期，运维压力大。因此在某些场景下，如果用户出于性能和运维成本考虑需要使用本地存储，Local PV 似乎是唯一选择。">
 <meta name="keywords" content="Kubernetes">
 <meta property="og:type" content="article">
 <meta property="og:title" content="在 Kubernetes 中，如何动态配置本地存储？">
 <meta property="og:url" content="https://www.dreamstep36.com/2019/06/01/在-Kubernetes-中，如何动态配置本地存储？/index.html">
 <meta property="og:site_name" content="Dreamstep36">
-<meta property="og:description" content="[转] 在 Kubernetes 中，如何动态配置本地存储？在企业 IT 架构转型的过程中，存储一直是个不可避免的大问题。 Kubernetes 中使用节点的本地存储资源有 emptyDir、hostPath、Local PV 等几种方式。这之中，emptyDir 无法持久化数据，hostPath 方式需要手动管理卷的生命周期，运维压力大。因此在某些场景下，如果用户出于性能和运维成本考虑需要使用">
+<meta property="og:description" content="在企业 IT 架构转型的过程中，存储一直是个不可避免的大问题。 Kubernetes 中使用节点的本地存储资源有 emptyDir、hostPath、Local PV 等几种方式。这之中，emptyDir 无法持久化数据，hostPath 方式需要手动管理卷的生命周期，运维压力大。因此在某些场景下，如果用户出于性能和运维成本考虑需要使用本地存储，Local PV 似乎是唯一选择。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1559388316707&di=009653dab47050c3f318f2495c8bfbee&imgtype=0&src=http%3A%2F%2Fwww.soft6.com%2Fuploadfile%2F2017%2F1009%2F20171009035234769.jpg">
 <meta property="og:image" content="https://static001.infoq.cn/resource/image/9a/80/9ac03df41cc38270bc71077348cbcd80.png">
@@ -25,10 +25,10 @@
 <meta property="og:image" content="https://static001.infoq.cn/resource/image/69/ba/69e054f10f729825fd75d7579b1458ba.png">
 <meta property="og:image" content="https://static001.infoq.cn/resource/image/03/80/03f4c78ec82bd7002d6874ff915a2c80.png">
 <meta property="og:image" content="https://static001.infoq.cn/resource/image/27/65/27f887103532b1c3d25c42cbfb5f2d65.png">
-<meta property="og:updated_time" content="2019-06-01T09:01:40.634Z">
+<meta property="og:updated_time" content="2019-06-01T11:07:07.460Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="在 Kubernetes 中，如何动态配置本地存储？">
-<meta name="twitter:description" content="[转] 在 Kubernetes 中，如何动态配置本地存储？在企业 IT 架构转型的过程中，存储一直是个不可避免的大问题。 Kubernetes 中使用节点的本地存储资源有 emptyDir、hostPath、Local PV 等几种方式。这之中，emptyDir 无法持久化数据，hostPath 方式需要手动管理卷的生命周期，运维压力大。因此在某些场景下，如果用户出于性能和运维成本考虑需要使用">
+<meta name="twitter:description" content="在企业 IT 架构转型的过程中，存储一直是个不可避免的大问题。 Kubernetes 中使用节点的本地存储资源有 emptyDir、hostPath、Local PV 等几种方式。这之中，emptyDir 无法持久化数据，hostPath 方式需要手动管理卷的生命周期，运维压力大。因此在某些场景下，如果用户出于性能和运维成本考虑需要使用本地存储，Local PV 似乎是唯一选择。">
 <meta name="twitter:image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1559388316707&di=009653dab47050c3f318f2495c8bfbee&imgtype=0&src=http%3A%2F%2Fwww.soft6.com%2Fuploadfile%2F2017%2F1009%2F20171009035234769.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Dreamstep36" type="application/atom+xml">
@@ -183,8 +183,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1559388316707&di=009653dab47050c3f318f2495c8bfbee&imgtype=0&src=http%3A%2F%2Fwww.soft6.com%2Fuploadfile%2F2017%2F1009%2F20171009035234769.jpg" alt></p>
-<h3 id="转-在-Kubernetes-中，如何动态配置本地存储？"><a href="#转-在-Kubernetes-中，如何动态配置本地存储？" class="headerlink" title="[转] 在 Kubernetes 中，如何动态配置本地存储？"></a>[转] 在 Kubernetes 中，如何动态配置本地存储？</h3><p>在企业 IT 架构转型的过程中，存储一直是个不可避免的大问题。</p>
+        <p><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1559388316707&di=009653dab47050c3f318f2495c8bfbee&imgtype=0&src=http%3A%2F%2Fwww.soft6.com%2Fuploadfile%2F2017%2F1009%2F20171009035234769.jpg" alt><br>在企业 IT 架构转型的过程中，存储一直是个不可避免的大问题。</p>
 <p>Kubernetes 中使用节点的本地存储资源有 emptyDir、hostPath、Local PV 等几种方式。这之中，emptyDir 无法持久化数据，hostPath 方式需要手动管理卷的生命周期，运维压力大。因此在某些场景下，如果用户出于性能和运维成本考虑需要使用本地存储，Local PV 似乎是唯一选择。</p>
 <a id="more"></a>
 <h4 id="1-什么是-Local-PV？"><a href="#1-什么是-Local-PV？" class="headerlink" title="1 什么是 Local PV？"></a>1 什么是 Local PV？</h4><p>所谓 Local PV（本地持久化存储），<strong>指的就是利用机器上的磁盘来存放业务需要持久化的数据</strong>，和远端存储类似，此时数据依然独立于 Pod 的生命周期，即使业务 Pod 被删除，数据也不会丢失。</p>
@@ -249,17 +248,12 @@
 <p>类似异常处理很多，限于篇幅，这里不一一列举。如果你对这方面的创新和进展感兴趣，欢迎关注<strong>才云科技公众号（ID：Caicloud2015）</strong>，之后我们还有会奉送更多一线技术内容。</p>
 <p>当然，如果你对动态配置本地存储还有疑问或是有新思路，欢迎留言讨论，才云有多个面向开发者的技术社群，期待你的加入。</p>
 <p><strong>参考文献</strong></p>
-<ol>
-<li><p><strong>[Volumes - Kubernetes]</strong>：</p>
-<p><a href="https://kubernetes.io/docs/concepts/storage/volumes/#local" target="_blank" rel="noopener">https://kubernetes.io/docs/concepts/storage/volumes/#local</a></p>
-</li>
-<li><p><strong>[Volume Topology-aware Scheduling]</strong>：</p>
-<p><a href="https://github.com/kubernetes/community/blob/master/contributors/design-proposals/storage/volume-topology-scheduling.md" target="_blank" rel="noopener">https://github.com/kubernetes/community/blob/master/contributors/design-proposals/storage/volume-topology-scheduling.md</a></p>
-</li>
-<li><p><strong>[Scheduler extender]</strong>：</p>
-<p><a href="https://github.com/kubernetes/community/blob/master/contributors/design-proposals/scheduling/scheduler_extender.md" target="_blank" rel="noopener">https://github.com/kubernetes/community/blob/master/contributors/design-proposals/scheduling/scheduler_extender.md</a></p>
-</li>
-</ol>
+<p><strong>[Volumes - Kubernetes]</strong>：</p>
+<p>   <a href="https://kubernetes.io/docs/concepts/storage/volumes/#local" target="_blank" rel="noopener">https://kubernetes.io/docs/concepts/storage/volumes/#local</a></p>
+<p><strong>[Volume Topology-aware Scheduling]</strong>：</p>
+<p>   <a href="https://github.com/kubernetes/community/blob/master/contributors/design-proposals/storage/volume-topology-scheduling.md" target="_blank" rel="noopener">https://github.com/kubernetes/community/blob/master/contributors/design-proposals/storage/volume-topology-scheduling.md</a></p>
+<p><strong>[Scheduler extender]</strong>：</p>
+<p>   <a href="https://github.com/kubernetes/community/blob/master/contributors/design-proposals/scheduling/scheduler_extender.md" target="_blank" rel="noopener">https://github.com/kubernetes/community/blob/master/contributors/design-proposals/scheduling/scheduler_extender.md</a></p>
 <p><strong>本文转载自公众号才云 Caicloud（ID：Caicloud2015）</strong></p>
 <p><strong>原文链接</strong>：<a href="https://mp.weixin.qq.com/s/aUl0GWn7HZLT53MjVDf1Fw" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/aUl0GWn7HZLT53MjVDf1Fw</a></p>
 
@@ -395,7 +389,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#转-在-Kubernetes-中，如何动态配置本地存储？"><span class="toc-number">1.</span> <span class="toc-text">[转] 在 Kubernetes 中，如何动态配置本地存储？</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-什么是-Local-PV？"><span class="toc-number">1.1.</span> <span class="toc-text">1 什么是 Local PV？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-设计方案"><span class="toc-number">1.2.</span> <span class="toc-text">2 设计方案</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-结语"><span class="toc-number">1.3.</span> <span class="toc-text">3 结语</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-什么是-Local-PV？"><span class="toc-number">1.</span> <span class="toc-text">1 什么是 Local PV？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-设计方案"><span class="toc-number">2.</span> <span class="toc-text">2 设计方案</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-结语"><span class="toc-number">3.</span> <span class="toc-text">3 结语</span></a></li></ol>
                     </div>
                 </span>
             </div>
