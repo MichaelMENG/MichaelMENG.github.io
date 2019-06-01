@@ -260,7 +260,7 @@
 <h2 id="批量删除-Evicted-Pods"><a href="#批量删除-Evicted-Pods" class="headerlink" title="批量删除 Evicted Pods"></a>批量删除 Evicted Pods</h2><blockquote>
 <p>第一种写法</p>
 </blockquote>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>!/bin/bash</span><br><span class="line">for each in $(kubectl get pods|grep Evicted|awk '&#123;print $1&#125;');</span><br><span class="line">do</span><br><span class="line">  kubectl delete pods $each</span><br><span class="line">done</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">!/bin/bash</span></span><br><span class="line">for each in $(kubectl get pods|grep Evicted|awk '&#123;print $1&#125;');</span><br><span class="line">do</span><br><span class="line">  kubectl delete pods $each</span><br><span class="line">done</span><br></pre></td></tr></table></figure>
         
       
 
