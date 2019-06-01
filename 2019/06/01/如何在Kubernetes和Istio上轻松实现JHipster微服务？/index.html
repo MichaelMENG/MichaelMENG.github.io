@@ -27,7 +27,7 @@
 <meta property="og:image" content="https://cdn-images-1.medium.com/max/800/0*cyhS1_B0LFO54e48">
 <meta property="og:image" content="https://cdn-images-1.medium.com/max/800/1*X4XtKtIeMapPEyt_nfvftA.png">
 <meta property="og:image" content="https://cdn-images-1.medium.com/max/800/0*4nQUsagF6TVupK-5">
-<meta property="og:updated_time" content="2019-06-01T12:52:00.849Z">
+<meta property="og:updated_time" content="2019-06-01T13:06:37.921Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="如何在 Kubernetes 和 Istio 上轻松实现 JHipster 微服务？">
 <meta name="twitter:description" content="How to set up JHipster microservices with Istio service mesh on Kubernetes如何在 Kubernetes 和 Istio 上轻松实现 JHipster 微服务？Istio 是当前 DevOps 和云原生项目中最酷的一个。对于那些还没有特别了解 Istio 的人，简单地说几句吧，Istio is a service mesh">
@@ -224,7 +224,7 @@
 
 <blockquote>
 <p>Make sure to use version <strong>1.0.2</strong> since the latest version seems to have issues connecting to the MySQL database containers.</p>
-<p>( 译者注：当前的版本是 1.1.2 问题已经解决)</p>
+<p>( 译者注：当前的版本是 1.1.7 问题已经解决)</p>
 </blockquote>
 <p>现在让我们将 Istio 安装到 Kubernetes 集群中，方法是通过 Istio 提供的 manifests 和 helm 模板。</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> kubectl apply -f ~/istio/install/kubernetes/helm/istio/templates/crds.yaml</span><br><span class="line"></span><br><span class="line"><span class="meta">$</span> kubectl apply -f ~/istio/install/kubernetes/istio-demo.yaml --as=admin --as-group=system:masters</span><br></pre></td></tr></table></figure>
