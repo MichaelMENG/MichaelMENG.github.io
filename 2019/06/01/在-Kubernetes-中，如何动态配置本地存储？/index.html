@@ -6,19 +6,29 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://www.dreamstep36.com">
-  <title>Archives | Dreamstep36</title>
+  <title>在 Kubernetes 中，如何动态配置本地存储？ | Dreamstep36</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="IT从业人员">
-<meta name="keywords" content="Microservices,SpringBoot,SpringCloud,Docker,Kubernetes,DevOps,Linux,PMP,Solution,Java,Golang,Scala,Flutter">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Dreamstep36">
-<meta property="og:url" content="https://www.dreamstep36.com/archives/index.html">
+  <meta name="description" content="[转] 在 Kubernetes 中，如何动态配置本地存储？在企业 IT 架构转型的过程中，存储一直是个不可避免的大问题。 Kubernetes 中使用节点的本地存储资源有 emptyDir、hostPath、Local PV 等几种方式。这之中，emptyDir 无法持久化数据，hostPath 方式需要手动管理卷的生命周期，运维压力大。因此在某些场景下，如果用户出于性能和运维成本考虑需要使用本">
+<meta name="keywords" content="Kubernetes">
+<meta property="og:type" content="article">
+<meta property="og:title" content="在 Kubernetes 中，如何动态配置本地存储？">
+<meta property="og:url" content="https://www.dreamstep36.com/2019/06/01/在-Kubernetes-中，如何动态配置本地存储？/index.html">
 <meta property="og:site_name" content="Dreamstep36">
-<meta property="og:description" content="IT从业人员">
+<meta property="og:description" content="[转] 在 Kubernetes 中，如何动态配置本地存储？在企业 IT 架构转型的过程中，存储一直是个不可避免的大问题。 Kubernetes 中使用节点的本地存储资源有 emptyDir、hostPath、Local PV 等几种方式。这之中，emptyDir 无法持久化数据，hostPath 方式需要手动管理卷的生命周期，运维压力大。因此在某些场景下，如果用户出于性能和运维成本考虑需要使用本">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://static001.infoq.cn/resource/image/9a/80/9ac03df41cc38270bc71077348cbcd80.png">
+<meta property="og:image" content="https://static001.infoq.cn/resource/image/11/57/11461d747b910cf8f322e86d5c9b2757.png">
+<meta property="og:image" content="https://static001.infoq.cn/resource/image/bc/00/bc1f1641be1a5b2dd3c48fc71988af00.png">
+<meta property="og:image" content="https://static001.infoq.cn/resource/image/93/1d/93a6753230396dc0341fc733300ac81d.png">
+<meta property="og:image" content="https://static001.infoq.cn/resource/image/37/d1/37629be74b243bc89fe548f5c21de7d1.png">
+<meta property="og:image" content="https://static001.infoq.cn/resource/image/69/ba/69e054f10f729825fd75d7579b1458ba.png">
+<meta property="og:image" content="https://static001.infoq.cn/resource/image/03/80/03f4c78ec82bd7002d6874ff915a2c80.png">
+<meta property="og:image" content="https://static001.infoq.cn/resource/image/27/65/27f887103532b1c3d25c42cbfb5f2d65.png">
+<meta property="og:updated_time" content="2019-06-01T08:40:26.196Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Dreamstep36">
-<meta name="twitter:description" content="IT从业人员">
+<meta name="twitter:title" content="在 Kubernetes 中，如何动态配置本地存储？">
+<meta name="twitter:description" content="[转] 在 Kubernetes 中，如何动态配置本地存储？在企业 IT 架构转型的过程中，存储一直是个不可避免的大问题。 Kubernetes 中使用节点的本地存储资源有 emptyDir、hostPath、Local PV 等几种方式。这之中，emptyDir 无法持久化数据，hostPath 方式需要手动管理卷的生命周期，运维压力大。因此在某些场景下，如果用户出于性能和运维成本考虑需要使用本">
+<meta name="twitter:image" content="https://static001.infoq.cn/resource/image/9a/80/9ac03df41cc38270bc71077348cbcd80.png">
   
     <link rel="alternative" href="/atom.xml" title="Dreamstep36" type="application/atom+xml">
   
@@ -146,37 +156,140 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-在-Kubernetes-中，如何动态配置本地存储？" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      在 Kubernetes 中，如何动态配置本地存储？
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
+
+        
+        
+	<!-- 不蒜子统计 -->
+	<span id="busuanzi_container_page_pv" style="display:none" class="archive-article-date">
+		  <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+			</span>
+
 <a href="/2019/06/01/在-Kubernetes-中，如何动态配置本地存储？/" class="archive-article-date">
   	<time datetime="2019-06-01T08:32:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-01</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/06/01/在-Kubernetes-中，如何动态配置本地存储？/">在 Kubernetes 中，如何动态配置本地存储？</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="转-在-Kubernetes-中，如何动态配置本地存储？"><a href="#转-在-Kubernetes-中，如何动态配置本地存储？" class="headerlink" title="[转] 在 Kubernetes 中，如何动态配置本地存储？"></a>[转] 在 Kubernetes 中，如何动态配置本地存储？</h3><p>在企业 IT 架构转型的过程中，存储一直是个不可避免的大问题。</p>
+<p>Kubernetes 中使用节点的本地存储资源有 emptyDir、hostPath、Local PV 等几种方式。这之中，emptyDir 无法持久化数据，hostPath 方式需要手动管理卷的生命周期，运维压力大。因此在某些场景下，如果用户出于性能和运维成本考虑需要使用本地存储，Local PV 似乎是唯一选择。</p>
+<a id="more"></a>
+<h4 id="1-什么是-Local-PV？"><a href="#1-什么是-Local-PV？" class="headerlink" title="1 什么是 Local PV？"></a>1 什么是 Local PV？</h4><p>所谓 Local PV（本地持久化存储），<strong>指的就是利用机器上的磁盘来存放业务需要持久化的数据</strong>，和远端存储类似，此时数据依然独立于 Pod 的生命周期，即使业务 Pod 被删除，数据也不会丢失。</p>
+<p>同时，和远端存储相比，本地存储可以避免网络 IO 开销，拥有更高的读写性能，所以分布式文件系统和分布式数据库这类对 IO 要求很高的应用非常适合本地存储。</p>
+<h4 id="2-设计方案"><a href="#2-设计方案" class="headerlink" title="2 设计方案"></a>2 设计方案</h4><p>在具体介绍如何动态配置本地存储前，我们先来介绍一下 Kubernetes 上游对于 Local PV 的一些支持情况：</p>
+<ul>
+<li>Kubernetes v1.7： 正式引入 Local PV；</li>
+<li>Kubernetes v1.10： Local PV 进入 Beta；</li>
+<li>Kubernetes v1.14： Local PV 进入 GA。</li>
+</ul>
+<p>在今年 3 月发布的 Kubernetes v1.14 中，社区对此的评价是：</p>
+<blockquote>
+<p>出于性能和成本考量，分布式文件系统和数据库一直是 Local PV 的主要用例。相比云服务供应商，本地 SSD 提供的性能远比远程磁盘优秀；而相比裸机，除了性能，本地存储通常更便宜，并且使用它是配置分布式文件系统的必要条件。</p>
+</blockquote>
+<p>目前，Local PV 的本地持久存储允许我们直接使用节点上的一块磁盘、一个分区或者一个目录作为持久卷的存储后端，但暂时还不提供动态配置支持，也就是说：你得先把 PV 准备好。</p>
+<p><strong>不同于其他类型的存储，本地存储强依赖于节点</strong>。换言之，它在调度 Pod 的时候还要考虑到这些 Local PV 对容量和拓扑域的要求。</p>
+<p>这里我先介绍一下延迟绑定机制和 volume topology-aware scheduling。延迟绑定机制可以让 PVC 的绑定推迟到有 Pod 使用它并且完成调度后，而 volume topology-aware scheduling 则可以让 Kubernetes 的调度器知道卷的拓扑约束，也就是这个存储卷只能在特定的区域或节点上使用（访问），让调度器在调度 Pod 的时候必须考虑这一限制条件。</p>
+<p>在介绍了这些背景之后，我们来看一个使用本地存储的 PV 示例：</p>
+<p><img src="https://static001.infoq.cn/resource/image/9a/80/9ac03df41cc38270bc71077348cbcd80.png" alt="img"></p>
+<p>其他内容和一个普通 PV 无异，只是多了一个 <code>nodeAffinity</code>。</p>
+<p>这个字段的值使得 Kubernetes 调度器能够把使用这个 PV 的 Pod 调度到正确的 Node 上。</p>
+<p>对于本地存储的动态配置，除了实现最基础的根据 StorageClass 和 PVC 动态创建 Persistent Volume 外，<strong>它还要让 Kubernetes 的调度器能够感知本地存储节点的剩余容量，选择存储量足够大的节点</strong>，能够将使用本地存储的 Pod 调度到正确的拓扑域上，例如上面例子中的一个节点或者一个特定的区域。</p>
+<p>为了方便对本地存储节点的磁盘进行管理，本地存储功能的底层选择使用 LVM 来实现。LVM 是 Linux 环境下对磁盘分区进行管理的一种机制，是建立在硬盘和分区之上的一个逻辑层，具有很高的灵活性。下面是 LVM 架构的一个示意图：</p>
+<p><img src="https://static001.infoq.cn/resource/image/11/57/11461d747b910cf8f322e86d5c9b2757.png" alt="img"></p>
+<p>图片源于网络</p>
+<p>而为了让 Kubernetes 的调度器能够感知本地存储节点的剩余容量，我们选择使用 Kubernetes Scheduler Extender，使用一个 webhook 来扩展原生调度器的功能，这种方法实现起来简单、易于维护和使用且无侵入性，不修改源代码。</p>
+<p><strong>所以整个组件由两部分组成：一个是 LVM Manager，它以 DaemonSet 的形式运行，负责管理每个节点上的磁盘，汇报节点磁盘的容量和剩余容量，动态创建 PV 等；另一个是个 local storage scheduler 调度模块，负责为使用本地存储的 Pod 选择合适（有足够容量）的节点</strong>。</p>
+<p>StorageClass 需要设置 provisioner 字段的值为我们自定义的 local-volume-provisioner 之类的，表示需要动态创建 Persistent Volume：</p>
+<p><img src="https://static001.infoq.cn/resource/image/bc/00/bc1f1641be1a5b2dd3c48fc71988af00.png" alt="img"></p>
+<p>创建 StorageClass 时需要选择的节点和磁盘等信息会先记录在 parameters 中，数据结构定义如下（JSON 格式化成普通字符串后存储在 parameters 中）：</p>
+<p><img src="https://static001.infoq.cn/resource/image/93/1d/93a6753230396dc0341fc733300ac81d.png" alt="img"></p>
+<p>然后 LVM Manager 会根据这个信息在对应的节点上将选择的磁盘合并成一个 LVM 的卷组（VG），方便后续管理。</p>
+<p>考虑到可扩展性，<strong>和 StorageClass、Node 关联的磁盘、VG 等信息会记录在一个新增的自定义资源（Custom Resources，以下简称 CR）里面</strong>，而不是直接将信息记录在对应的 StorageClass 和 Node 的 annotation 中。原因如下：</p>
+<ul>
+<li>其一，我们需要自定义的结构化数据；</li>
+<li>其二，我们把本地存储作为一种扩展资源。它区别于 CPU 和内存，包含了类型、节点和磁盘等众多属性，并且一个节点可以关联多个本地存储资源。</li>
+</ul>
+<p>一组 StorageClass、Node 和磁盘信息就有一条记录，新的 CR 的定义如下（注意，以下结构只是为了方便说明和阅读，并不是 Kubernetes 推荐的标准结构）：</p>
+<p><img src="https://static001.infoq.cn/resource/image/37/d1/37629be74b243bc89fe548f5c21de7d1.png" alt="img"></p>
+<p>关系示意图如下：</p>
+<p><img src="https://static001.infoq.cn/resource/image/69/ba/69e054f10f729825fd75d7579b1458ba.png" alt="img"></p>
+<p>几乎所有和 LVM 相关的操作都只需要监听和更新这一个对象。LVM Manager 监听这个对象，在需要的 Node 上动态创建 VG 并定时更新这个对象中的 VG 的容量和剩余容量等；Scheduler 根据这个对象上的容量信息辅助调度。</p>
+<p>然后对于 local storage scheduler 模块，首先我们要配置 Kubernetes Scheduler，为其增加一个 extender，使其在进行 node filter 的时候会访问我们的 local storage scheduler webhook 以达到我们想要的对节点进行二次筛选的效果。下面是一个配置的示例：</p>
+<p><img src="https://static001.infoq.cn/resource/image/03/80/03f4c78ec82bd7002d6874ff915a2c80.png" alt="img"></p>
+<p>下面有一个增加了 scheduler extender 之后的调度流程示例：</p>
+<p><img src="https://static001.infoq.cn/resource/image/27/65/27f887103532b1c3d25c42cbfb5f2d65.png" alt="img"></p>
+<p>最后，我再总结一下整个动态配置的正常流程：</p>
+<ul>
+<li>创建 StorageClass 并配置想要选择的节点和对应的磁盘等信息；</li>
+<li>LVM Manager 为对应的节点创建 VG；</li>
+<li>LVM Manager 同时需要负责定期上报 VG 的容量信息；</li>
+<li>创建 PVC 和使用它的 Pod；</li>
+<li>Kubernetes 调度器为 Pod 选择合适的节点，然后访问 Extender webhook；</li>
+<li>local storage scheduler 对选择的节点根据容量条件进行二次过滤；</li>
+<li>Kubernetes 调度器最后再选中一个节点，并且把该节点名称也存储到 PVC 的 <code>volume.kubernetes.io/selected-node</code> annotation 中；</li>
+<li>dynamic provisioner 介入，根据 PVC 的 <code>volume.kubernetes.io/selected-node</code> annotation 的值，在这个节点上根据 PVC 的要求创建一个 LVM 的逻辑卷（LV），再创建对应的 PV；</li>
+<li>volume 绑定完成，Pod 和 Node 绑定，调度完成。</li>
+</ul>
+<h4 id="3-结语"><a href="#3-结语" class="headerlink" title="3 结语"></a>3 结语</h4><p><strong>动态本地存储涉及多个组件的交互，异常处理尤为重要</strong>。</p>
+<p>例如，若 NodeLocalStorage 对象的容量信息没有及时更新，导致选中的节点其实没有剩余容量了，那么相应的 LVM 的逻辑卷（LV）也创建不出来，provisioning 失败。</p>
+<p>这时，local-storage-provisioner 就要将 PVC 的 <code>volume.kubernetes.io/selected-node</code>annotation 清空，接下来 Kubernetes Scheduler 会重新调度。</p>
+<p>类似异常处理很多，限于篇幅，这里不一一列举。如果你对这方面的创新和进展感兴趣，欢迎关注<strong>才云科技公众号（ID：Caicloud2015）</strong>，之后我们还有会奉送更多一线技术内容。</p>
+<p>当然，如果你对动态配置本地存储还有疑问或是有新思路，欢迎留言讨论，才云有多个面向开发者的技术社群，期待你的加入。</p>
+<p><strong>参考文献</strong></p>
+<ol>
+<li><p><strong>[Volumes - Kubernetes]</strong>：</p>
+<p><a href="https://kubernetes.io/docs/concepts/storage/volumes/#local" target="_blank" rel="noopener">https://kubernetes.io/docs/concepts/storage/volumes/#local</a></p>
+</li>
+<li><p><strong>[Volume Topology-aware Scheduling]</strong>：</p>
+<p><a href="https://github.com/kubernetes/community/blob/master/contributors/design-proposals/storage/volume-topology-scheduling.md" target="_blank" rel="noopener">https://github.com/kubernetes/community/blob/master/contributors/design-proposals/storage/volume-topology-scheduling.md</a></p>
+</li>
+<li><p><strong>[Scheduler extender]</strong>：</p>
+<p><a href="https://github.com/kubernetes/community/blob/master/contributors/design-proposals/scheduling/scheduler_extender.md" target="_blank" rel="noopener">https://github.com/kubernetes/community/blob/master/contributors/design-proposals/scheduling/scheduler_extender.md</a></p>
+</li>
+</ol>
+<p><strong>本文转载自公众号才云 Caicloud（ID：Caicloud2015）</strong>。</p>
+<p><strong>原文链接</strong>：</p>
+<p>**<a href="https://mp.weixin.qq.com/s/aUl0GWn7HZLT53MjVDf1Fw" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/aUl0GWn7HZLT53MjVDf1Fw</a></p>
 
-        <div class="article-info info-on-right">
-          
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -188,281 +301,137 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://www.dreamstep36.com/2019/06/01/在-Kubernetes-中，如何动态配置本地存储？/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2019/05/19/Microservices-Tips/" class="archive-article-date">
-  	<time datetime="2019-05-19T06:24:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-19</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/05/19/Microservices-Tips/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Microservices Tips</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/19/Microservices-Tips/">Microservices Tips</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Microservices</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Spring Cloud</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Service Mesh</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Istio</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#转-在-Kubernetes-中，如何动态配置本地存储？"><span class="toc-number">1.</span> <span class="toc-text">[转] 在 Kubernetes 中，如何动态配置本地存储？</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-什么是-Local-PV？"><span class="toc-number">1.1.</span> <span class="toc-text">1 什么是 Local PV？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-设计方案"><span class="toc-number">1.2.</span> <span class="toc-text">2 设计方案</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-结语"><span class="toc-number">1.3.</span> <span class="toc-text">3 结语</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2019/05/13/Kubernetes-Tips/" class="archive-article-date">
-  	<time datetime="2019-05-13T03:53:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-13</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/13/Kubernetes-Tips/">Kubernetes Tips</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Docker</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Kubernetes</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2019/05/13/Docker-Tips/" class="archive-article-date">
-  	<time datetime="2019-05-13T03:43:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/13/Docker-Tips/">Docker Tips</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Docker</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2019/05/13/Vagrant-Tips-md/" class="archive-article-date">
-  	<time datetime="2019-05-13T02:43:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/13/Vagrant-Tips-md/">Vagrant Tips</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Vagrant</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2019/05/08/30分钟创建全栈微服务应用/" class="archive-article-date">
-  	<time datetime="2019-05-08T08:25:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-08</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/08/30分钟创建全栈微服务应用/">30分钟创建全栈微服务应用 - JHipster Domain Language</a>
-    </h1>
-  
+  <div id="gitment-ctn"></div> 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Docker</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Spring Cloud</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">JHipster</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">JDL</a>
-        		</li>
-      		
-		</ul>
-	</div>
+<link rel="stylesheet" href="https://jjeejj.github.io/css/gitment.css">
+<script src="https://jjeejj.github.io/js/gitment.js"></script>
 
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+<script>
+var gitment = new Gitment({
+  id: "Sat Jun 01 2019 16:32:51 GMT+0800",
+  owner: 'MichaelMENG',
+  repo: 'MichaelMENG.github.io',
+  oauth: {
+    client_id: 'dfc6139fac6fb43fbf57',
+    client_secret: '40afe54fe1175180be2f4b0a564f81cf1cb05570',
+  },
+})
+gitment.render('gitment-ctn')
+</script>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2019/05/08/hello-world/" class="archive-article-date">
-  	<time datetime="2019-05-08T02:13:51.020Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-08</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/08/hello-world/">Hello World</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Hello</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -494,8 +463,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: true,
