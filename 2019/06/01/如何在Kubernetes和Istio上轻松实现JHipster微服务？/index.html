@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Dreamstep36">
 <meta property="og:description" content="How to set up JHipster microservices with Istio service mesh on Kubernetes如何在Kubernetes和Istio上轻松实现JHipster微服务？Istio 是当前 DevOps 和云原生项目中最酷的一个。对于那些还没有特别了解 Istio 的人，简单地说几句吧，Istio is a service mesh Istio">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://img0.imgtn.bdimg.com/it/u=191080354,3337513400&fm=26&gp=0.jpg">
+<meta property="og:image" content="http://i0.wp.com/softwareengineeringdaily.com/wp-content/uploads/2018/01/IstioServiceMesh.png?resize=685,425&ssl=1">
 <meta property="og:image" content="https://cdn-images-1.medium.com/max/800/1*_STCerKXb4L3Hutyn4P5Gw.png">
 <meta property="og:image" content="https://cdn-images-1.medium.com/max/800/1*UmNJ-Ue362-OltPOxt-OFQ.png">
 <meta property="og:image" content="https://cdn-images-1.medium.com/max/800/1*H-6_dz1-aYXQ-fzWEuJcRw.png">
@@ -27,11 +27,11 @@
 <meta property="og:image" content="https://cdn-images-1.medium.com/max/800/0*cyhS1_B0LFO54e48">
 <meta property="og:image" content="https://cdn-images-1.medium.com/max/800/1*X4XtKtIeMapPEyt_nfvftA.png">
 <meta property="og:image" content="https://cdn-images-1.medium.com/max/800/0*4nQUsagF6TVupK-5">
-<meta property="og:updated_time" content="2019-06-01T12:28:40.846Z">
+<meta property="og:updated_time" content="2019-06-01T12:31:34.914Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="如何在Kubernetes和Istio上轻松实现JHipster微服务？">
 <meta name="twitter:description" content="How to set up JHipster microservices with Istio service mesh on Kubernetes如何在Kubernetes和Istio上轻松实现JHipster微服务？Istio 是当前 DevOps 和云原生项目中最酷的一个。对于那些还没有特别了解 Istio 的人，简单地说几句吧，Istio is a service mesh Istio">
-<meta name="twitter:image" content="http://img0.imgtn.bdimg.com/it/u=191080354,3337513400&fm=26&gp=0.jpg">
+<meta name="twitter:image" content="http://i0.wp.com/softwareengineeringdaily.com/wp-content/uploads/2018/01/IstioServiceMesh.png?resize=685,425&ssl=1">
   
     <link rel="alternative" href="/atom.xml" title="Dreamstep36" type="application/atom+xml">
   
@@ -185,7 +185,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="http://img0.imgtn.bdimg.com/it/u=191080354,3337513400&fm=26&gp=0.jpg" alt="Istio"></p>
+        <p><img src="http://i0.wp.com/softwareengineeringdaily.com/wp-content/uploads/2018/01/IstioServiceMesh.png?resize=685,425&ssl=1" alt="Istio"></p>
 <h2 id="How-to-set-up-JHipster-microservices-with-Istio-service-mesh-on-Kubernetes"><a href="#How-to-set-up-JHipster-microservices-with-Istio-service-mesh-on-Kubernetes" class="headerlink" title="How to set up JHipster microservices with Istio service mesh on Kubernetes"></a>How to set up JHipster microservices with Istio service mesh on Kubernetes</h2><h2 id="如何在Kubernetes和Istio上轻松实现JHipster微服务？"><a href="#如何在Kubernetes和Istio上轻松实现JHipster微服务？" class="headerlink" title="如何在Kubernetes和Istio上轻松实现JHipster微服务？"></a>如何在Kubernetes和Istio上轻松实现JHipster微服务？</h2><p>Istio 是当前 DevOps 和云原生项目中最酷的一个。对于那些还没有特别了解 Istio 的人，简单地说几句吧，<a href="https://istio.io/docs/concepts/what-is-istio/" target="_blank" rel="noopener">Istio is a service mesh</a> Istio 是一个为分布式应用架构而生的服务网格( Service Mesh )，特别是为了在云上运行 kubernetes 应用。Istio 与 Kubernetes 配合得非常好，好到你会认为它可能就是 Kubernetes 的一部分。</p>
 <a id="more"></a>
 <p>假如你仍然不太清楚服务网格( Service Mesh ) 和 Istio 到底是什么？就让我们来介绍一下 Istio 吧。</p>
@@ -210,33 +210,33 @@
 <h3 id="准备-Kubernetes-集群"><a href="#准备-Kubernetes-集群" class="headerlink" title="准备 Kubernetes 集群"></a>准备 Kubernetes 集群</h3><p>首先，让我们准备 Kubernetes 集群来部署 Istio 以及我们的容器应用。下面的示例适合于你喜欢的任何平台。</p>
 <h4 id="先决条件"><a href="#先决条件" class="headerlink" title="先决条件"></a>先决条件</h4><p><a href="https://kubernetes.io/docs/tasks/tools/install-kubectl/" target="_blank" rel="noopener"><strong>kubectl</strong></a> 用来与 Kubernetes 交互的命令行工具，请安装 &amp; 配置好。</p>
 <h4 id="Create-a-cluster-on-Azure-Kubernetes-Service-AKS"><a href="#Create-a-cluster-on-Azure-Kubernetes-Service-AKS" class="headerlink" title="Create a cluster on Azure Kubernetes Service(AKS)"></a>Create a cluster on Azure Kubernetes Service(AKS)</h4><h4 id="Create-a-cluster-on-Google-Kubernetes-Engine-GKE"><a href="#Create-a-cluster-on-Google-Kubernetes-Engine-GKE" class="headerlink" title="Create a cluster on Google Kubernetes Engine(GKE)"></a>Create a cluster on Google Kubernetes Engine(GKE)</h4><h3 id="安装-amp-配置-Istio"><a href="#安装-amp-配置-Istio" class="headerlink" title="安装 &amp; 配置 Istio"></a>安装 &amp; 配置 Istio</h3><p>安装步骤</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> ~/</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> cd ~/</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">export</span> ISTIO_VERSION=1.0.2</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> export ISTIO_VERSION=1.0.2</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> curl -L https://git.io/getLatestIstio | sh -</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> curl -L https://git.io/getLatestIstio | sh -</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> ln -sf istio-<span class="variable">$ISTIO_VERSION</span> istio</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> ln -sf istio-$ISTIO_VERSION istio</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">export</span> PATH=~/istio/bin:<span class="variable">$PATH</span></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> export PATH=~/istio/bin:$PATH</span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <p>Make sure to use version <strong>1.0.2</strong> since the latest version seems to have issues connecting to the MySQL database containers.</p>
 <p>( 译者注：当前的版本是 1.1.2 问题已经解决)</p>
 </blockquote>
 <p>现在让我们将 Istio 安装到 Kubernetes 集群中，方法是通过 Istio 提供的 manifests 和 helm 模板。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> kubectl apply -f ~/istio/install/kubernetes/helm/istio/templates/crds.yaml</span></span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> kubectl apply -f ~/istio/install/kubernetes/istio-demo.yaml --as=admin --as-group=system:masters</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> kubectl apply -f ~/istio/install/kubernetes/helm/istio/templates/crds.yaml</span><br><span class="line"></span><br><span class="line"><span class="meta">$</span> kubectl apply -f ~/istio/install/kubernetes/istio-demo.yaml --as=admin --as-group=system:masters</span><br></pre></td></tr></table></figure>
 
 <p>然后，等待 pods 完成启动 &amp; 运行，这些 pods 会部署到 <code>istio-system</code> 名称空间。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> watch kubectl get pods -n istio-system</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> watch kubectl get pods -n istio-system</span><br></pre></td></tr></table></figure>
 
 <p>当 pods 完全启动后，退出循环 watch 并且运行下面的命令来获取 Ingress wateway 服务的详细信息。它是暴露外部 IP 的唯一服务。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> watch kubectl get pods -n istio-system</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> watch kubectl get pods -n istio-system</span><br></pre></td></tr></table></figure>
 
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">NAME                   TYPE           CLUSTER-IP     EXTERNAL-IPistio-ingressgateway      LoadBalancer      10.27.249.83   35.195.81.130</span><br></pre></td></tr></table></figure>
 
 <p>这个外部 IP 非常重要，我们可以将它保存到一个环境变量中，以便在后续的步骤中方便地使用它。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">export</span> \</span></span><br><span class="line">  INGRESS_IP=$(kubectl -n istio-system get svc \</span><br><span class="line">             istio-ingressgateway \</span><br><span class="line">             -o jsonpath='&#123;.status.loadBalancer.ingress[0].ip&#125;')</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> export \</span><br><span class="line">  INGRESS_IP=$(kubectl -n istio-system get svc \</span><br><span class="line">             istio-ingressgateway \</span><br><span class="line">             -o jsonpath='&#123;.status.loadBalancer.ingress[0].ip&#125;')</span><br></pre></td></tr></table></figure>
 
 <p>现在 Kubernetes 集群已经准备好运行 Istio 了。</p>
 <p><em>For advanced Istio setup options refer to <a href="https://istio.io/docs/setup/kubernetes/" target="_blank" rel="noopener">https://istio.io/docs/setup/kubernetes/</a></em></p>
@@ -260,24 +260,24 @@
 <p><img src="https://cdn-images-1.medium.com/max/800/0*ROg2XrRkHVHA4Xib" alt></p>
 <p>你可以用你喜欢的 IDE/Editor 来查看生成的代码。</p>
 <h3 id="Kuberctl-将应用部署到-Kubernetes"><a href="#Kuberctl-将应用部署到-Kubernetes" class="headerlink" title="Kuberctl 将应用部署到 Kubernetes"></a>Kuberctl 将应用部署到 Kubernetes</h3><p>现在让我们部署我们的应用，运行 <code>./gradlew bootWar -Pprod jibDockerBuild</code> 命令，分别在 store, product, invoice, and notification 文件夹，来生成 docker 镜像。镜像生成后，运行以下命令将其 push 到 docker repo 。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> docker image tag store deepu105/store</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> docker image tag store deepu105/store</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> docker push deepu105/store</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> docker push deepu105/store</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> docker image tag invoice deepu105/invoice</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> docker image tag invoice deepu105/invoice</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> docker push deepu105/invoice</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> docker push deepu105/invoice</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> docker image tag notification deepu105/notification</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> docker image tag notification deepu105/notification</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> docker push deepu105/notification</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> docker push deepu105/notification</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> docker image tag product deepu105/product</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> docker image tag product deepu105/product</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> docker push deepu105/product</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> docker push deepu105/product</span><br></pre></td></tr></table></figure>
 
 <p>镜像全部推送到 docker repo 后，进入命令生成的 Kubernetes 目录，执行如下生成的 kubectl-apply .sh 文件 ( 假如你用的是 Windows 系统，你可以手动 kubectl-apply.sh 单步执行)</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> kubernetes &amp; ./kubectl-apply.sh</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> cd kubernetes &amp; ./kubectl-apply.sh</span><br></pre></td></tr></table></figure>
 
 <p>运行</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">watch kubectl get pods -n jhipster</span><br></pre></td></tr></table></figure>
@@ -285,29 +285,29 @@
 <p>来查看状态</p>
 <h3 id="Deployed-applications-部署完成"><a href="#Deployed-applications-部署完成" class="headerlink" title="Deployed applications 部署完成"></a>Deployed applications 部署完成</h3><p>当所有 pods 都是正常运行状态时，我们就可以看一看部署的应用了。</p>
 <h4 id="Application-gateway"><a href="#Application-gateway" class="headerlink" title="Application gateway"></a>Application gateway</h4><p>Store gateway 是我们微服务应用的入口点。以下命令可以得到 Store 应用的 URL</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">echo</span> store.<span class="variable">$INGRESS_IP</span>.nip.io</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> echo store.$INGRESS_IP.nip.io</span><br></pre></td></tr></table></figure>
 
 <p>我们之前在创建 Istio 设置里，已经将 INGFRESS_IP 存在一个环境变量中，在浏览器中打开 URL ，查看一下我们的应用，并试着为微服务创建一些实体。</p>
 <p><img src="https://cdn-images-1.medium.com/max/800/0*Qd6y_H-ObCeorQkg" alt></p>
 <h4 id="Monitoring-监控"><a href="#Monitoring-监控" class="headerlink" title="Monitoring 监控"></a>Monitoring 监控</h4><p>Istio 的初始设置包括了已经配置好的 Grafana and Prometheus，以便收集应用容器的数据，让我们来看一看吧。</p>
 <p>默认，只有 Ingress gateway 暴露外部 IP，所以我们需要用 Kuberctl 的 port forwarding 来创建一个安全的通道，以便获取需要的服务。</p>
 <p>让我们来创建一个 Grafana 通道</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> kubectl -n istio-system \port-forward $(kubectl -n istio-system get pod \</span></span><br><span class="line">    -l app=grafana -o jsonpath='&#123;.items[0].metadata.name&#125;') 3000:3000</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> kubectl -n istio-system \port-forward $(kubectl -n istio-system get pod \</span><br><span class="line">    -l app=grafana -o jsonpath='&#123;.items[0].metadata.name&#125;') 3000:3000</span><br></pre></td></tr></table></figure>
 
 <p>浏览器打开 <a href="localhost:3000" target="_blank" rel="noopener">localhost:3000</a> 来查看 Grafana 面板。</p>
 <p><img src="https://cdn-images-1.medium.com/max/800/0*zaX0S8relpT4q__T" alt></p>
 <p>Grafana 使用通过 Prometheus 获取的指标数据。当然，我们也可以通过创建一个安全通道，在浏览器打开  <a href="localhost:9090" target="_blank" rel="noopener">localhost:9090</a> 来直接查看 Prometheus 的数据图表。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> kubectl -n istio-system \port-forward $(kubectl -n istio-system get pod -l \</span></span><br><span class="line">    app=prometheus -o jsonpath='&#123;.items[0].metadata.name&#125;') 9090:9090</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> kubectl -n istio-system \port-forward $(kubectl -n istio-system get pod -l \</span><br><span class="line">    app=prometheus -o jsonpath='&#123;.items[0].metadata.name&#125;') 9090:9090</span><br></pre></td></tr></table></figure>
 
 <p><img src="https://cdn-images-1.medium.com/max/800/0*W4obHNne_wQJfAuU" alt></p>
 <h4 id="Observability-微服务-可观察性"><a href="#Observability-微服务-可观察性" class="headerlink" title="Observability ( 微服务 )可观察性"></a>Observability ( 微服务 )可观察性</h4><p>关于微服务的可观察性，Istio （默认）配置 Jaeger 作为分布式跟踪和服务图表(指标) 的查看方式。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> kubectl -n istio-system \port-forward $(kubectl -n istio-system get pod -l \</span></span><br><span class="line">    app=jaeger -o jsonpath='&#123;.items[0].metadata.name&#125;') 16686:16686</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> kubectl -n istio-system \port-forward $(kubectl -n istio-system get pod -l \</span><br><span class="line">    app=jaeger -o jsonpath='&#123;.items[0].metadata.name&#125;') 16686:16686</span><br></pre></td></tr></table></figure>
 
 <p><img src="https://cdn-images-1.medium.com/max/800/0*cyhS1_B0LFO54e48" alt></p>
 <p>你可以试着在应用里发送一些请求，然后就可以通过查询相关的服务，在跟踪面板( tracing dashboard ) 看到他们。你可以点击相关的请求（ request ）来查看跟踪的细节。</p>
 <p><img src="https://cdn-images-1.medium.com/max/800/1*X4XtKtIeMapPEyt_nfvftA.png" alt></p>
 <p>现在让我们为 Service graph 创建一个通道并在浏览器打开它。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> kubectl -n istio-system \port-forward $(kubectl -n istio-system get pod -l \</span></span><br><span class="line">    app=servicegraph -o jsonpath='&#123;.items[0].metadata.name&#125;') 8088:8088</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> kubectl -n istio-system \port-forward $(kubectl -n istio-system get pod -l \</span><br><span class="line">    app=servicegraph -o jsonpath='&#123;.items[0].metadata.name&#125;') 8088:8088</span><br></pre></td></tr></table></figure>
 
 <p><img src="https://cdn-images-1.medium.com/max/800/0*4nQUsagF6TVupK-5" alt></p>
 <h3 id="Conclusion-结论"><a href="#Conclusion-结论" class="headerlink" title="Conclusion 结论"></a>Conclusion 结论</h3><p>Istio 提供了以更加 Kubernetes-native 的方式来构建分布式微服务的机制，并将维护这种机制的复杂性以及相关的责任一力承担，使您远离这些（与业务不相干的）事情的困扰，( 可以将精力放在业务代码上)。这意味着你不必再去考虑那些(非业务)模块的代码啊、部署啊什么的，例如：服务发现( Service discovery)，分布式跟踪( tracing )等等。</p>
