@@ -17,8 +17,8 @@
 <meta property="og:description" content="How to set up JHipster microservices with Istio service mesh on Kubernetes如何在 Kubernetes 和 Istio 上轻松实现 JHipster 微服务？Istio 是当前 DevOps 和云原生项目中最酷的一个。对于那些还没有特别了解 Istio 的人，简单地说几句吧，Istio is a service mesh I">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://cdn-images-1.medium.com/max/800/1*_STCerKXb4L3Hutyn4P5Gw.png">
-<meta property="og:image" content="https://cdn-images-1.medium.com/max/800/1*UmNJ-Ue362-OltPOxt-OFQ.png">
-<meta property="og:image" content="https://cdn-images-1.medium.com/max/800/1*H-6_dz1-aYXQ-fzWEuJcRw.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/MichaelMENG/MichaelMENG.github.io/master/images/istio-architecture.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/MichaelMENG/MichaelMENG.github.io/master/images/original-microservices.png">
 <meta property="og:image" content="https://cdn-images-1.medium.com/max/800/0*ROg2XrRkHVHA4Xib">
 <meta property="og:image" content="https://cdn-images-1.medium.com/max/800/0*Qd6y_H-ObCeorQkg">
 <meta property="og:image" content="https://cdn-images-1.medium.com/max/800/0*zaX0S8relpT4q__T">
@@ -26,7 +26,7 @@
 <meta property="og:image" content="https://cdn-images-1.medium.com/max/800/0*cyhS1_B0LFO54e48">
 <meta property="og:image" content="https://cdn-images-1.medium.com/max/800/1*X4XtKtIeMapPEyt_nfvftA.png">
 <meta property="og:image" content="https://cdn-images-1.medium.com/max/800/0*4nQUsagF6TVupK-5">
-<meta property="og:updated_time" content="2019-06-01T13:38:25.499Z">
+<meta property="og:updated_time" content="2019-06-03T03:27:06.671Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="如何在 Kubernetes 和 Istio 上轻松实现 JHipster 微服务？">
 <meta name="twitter:description" content="How to set up JHipster microservices with Istio service mesh on Kubernetes如何在 Kubernetes 和 Istio 上轻松实现 JHipster 微服务？Istio 是当前 DevOps 和云原生项目中最酷的一个。对于那些还没有特别了解 Istio 的人，简单地说几句吧，Istio is a service mesh I">
@@ -242,11 +242,11 @@
 <p><em>For advanced Istio setup options refer to <a href="https://istio.io/docs/setup/kubernetes/" target="_blank" rel="noopener">https://istio.io/docs/setup/kubernetes/</a></em></p>
 <h3 id="创建微服务应用"><a href="#创建微服务应用" class="headerlink" title="创建微服务应用"></a>创建微服务应用</h3><p>我在之前的一篇博客中，演示了如何用 JHipster &amp; JDL 快速创建全栈微服务应用，如果你想了解其中的细节，可以先读一读我的那篇博客 ( English：<a href="https://medium.com/@deepu105/create-full-microservice-stack-using-jhipster-domain-language-under-30-minutes-ecc6e7fc3f77" target="_blank" rel="noopener">here</a>  中文：<a href="https://www.dreamstep36.com/2019/05/08/30%E5%88%86%E9%92%9F%E5%88%9B%E5%BB%BA%E5%85%A8%E6%A0%88%E5%BE%AE%E6%9C%8D%E5%8A%A1%E5%BA%94%E7%94%A8/">30分钟创建全栈微服务应用 - JHipster Domain Language</a>)。这个示例中，我们将沿用之前的应用，但我们将不会再用 Eureka 服务发现。同时，请注意 <code>store</code> 应用被分成了 <code>Gateway</code> 和 <code>Product</code> 2 个应用。</p>
 <h4 id="架构"><a href="#架构" class="headerlink" title="架构"></a>架构</h4><p>下面就是我们今天要创建和部署的微服务架构</p>
-<p><img src="https://cdn-images-1.medium.com/max/800/1*UmNJ-Ue362-OltPOxt-OFQ.png" alt="Architecture"></p>
+<p><img src="https://raw.githubusercontent.com/MichaelMENG/MichaelMENG.github.io/master/images/istio-architecture.png" alt="Architecture"></p>
 <p>它由 1 个 Gateway  应用和 3 个微服务应用组成。其中每一个应用都有自己的数据库。你可以看到，每一个应用都有一个 Envoy 代理作为 sidecar ，绑定在其所在的容器上。Istio control plane 组件也同时部署到集群中，其中还包括了 Prometheus, Grafana, and Jaeger。</p>
 <p>Istio 的 Ingress gateway 是外部流量的唯一入口，它将外部的请求分别路由到不同的微服务。同时，所有集群容器的遥测( Telemetry )数据被收集，其中包括应用、数据库以及 Istio 组件的所有信息。</p>
 <p>相比较之前的架构 ( English：<a href="https://medium.com/@deepu105/create-full-microservice-stack-using-jhipster-domain-language-under-30-minutes-ecc6e7fc3f77" target="_blank" rel="noopener">here</a>  中文：<a href="https://www.dreamstep36.com/2019/05/08/30%E5%88%86%E9%92%9F%E5%88%9B%E5%BB%BA%E5%85%A8%E6%A0%88%E5%BE%AE%E6%9C%8D%E5%8A%A1%E5%BA%94%E7%94%A8/">30分钟创建全栈微服务应用 - JHipster Domain Language</a>)，你可以清楚地看到，我们将 JHipster registry 和 Netflix OSS 组件替换成了 Istio ，另外还有 ELK monitoring stack 被替换成了由 Istio 配置好的 Prometheus, Grafana and Jaeger。为方便查看、对比，下面给出原始的、没有 Istio 的架构。</p>
-<p><img src="https://cdn-images-1.medium.com/max/800/1*H-6_dz1-aYXQ-fzWEuJcRw.png" alt="Original Architecture"></p>
+<p><img src="https://raw.githubusercontent.com/MichaelMENG/MichaelMENG.github.io/master/images/original-microservices.png" alt="Original Architecture"></p>
 <h4 id="Application-JDL-应用-JDL"><a href="#Application-JDL-应用-JDL" class="headerlink" title="Application JDL 应用 JDL"></a>Application JDL 应用 JDL</h4><p>让我们看一看修改后的 JDL 声明，你可以看到我们定义了 <code>serviceDiscoveryType no</code> ，因为我们要用 Istio 来替换 Eureka 。</p>
 <p>下面就是我们定义好的，用于 Kubernetes 部署的  JDL 文件。</p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">deployment</span> <span class="string">&#123;</span>  </span><br><span class="line">  <span class="string">deploymentType</span> <span class="string">kubernetes</span></span><br><span class="line">  <span class="string">appsFolders</span> <span class="string">[store,</span> <span class="string">invoice,</span> <span class="string">notification,</span> <span class="string">product]</span></span><br><span class="line">  <span class="string">dockerRepositoryName</span> <span class="string">"deepu105"</span></span><br><span class="line">  <span class="string">serviceDiscoveryType</span> <span class="literal">no</span></span><br><span class="line">  <span class="string">istio</span> <span class="string">autoInjection</span></span><br><span class="line">  <span class="string">istioRoute</span> <span class="literal">true</span></span><br><span class="line">  <span class="string">kubernetesServiceType</span> <span class="string">Ingress</span></span><br><span class="line">  <span class="string">kubernetesNamespace</span> <span class="string">jhipster</span></span><br><span class="line">  <span class="string">ingressDomain</span> <span class="string">"35.195.81.130.nip.io"</span></span><br><span class="line"><span class="string">&#125;</span></span><br></pre></td></tr></table></figure>
