@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.8.0">
+<head>
   <meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://www.dreamstep36.com">
   <title>Docker Tips | Dreamstep36</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="CentOS docker 运行权限设置12341. sudo groupadd docker # 一般安装docker后已经创建2. sudo gpasswd -a vagrant docker # 用户vagrant加入docker组3. sudo service docker restart # 重启docker4. exit -&amp;gt; vagrant ssh # 退出 &amp;amp; 重新进">
-<meta name="keywords" content="Docker">
+  <meta name="description" content="CentOS docker 运行权限设置12341. sudo groupadd docker # 一般安装docker后已经创建2. sudo gpasswd -a vagrant docker # 用户vagrant加入docker组3. sudo service docker restart # 重启docker4. exit -&gt; vagrant ssh # 退出 &amp; 重新进">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Docker Tips">
 <meta property="og:url" content="https://www.dreamstep36.com/2019/05/13/Docker-Tips/index.html">
 <meta property="og:site_name" content="Dreamstep36">
-<meta property="og:description" content="CentOS docker 运行权限设置12341. sudo groupadd docker # 一般安装docker后已经创建2. sudo gpasswd -a vagrant docker # 用户vagrant加入docker组3. sudo service docker restart # 重启docker4. exit -&amp;gt; vagrant ssh # 退出 &amp;amp; 重新进">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-13T04:59:41.459Z">
+<meta property="og:description" content="CentOS docker 运行权限设置12341. sudo groupadd docker # 一般安装docker后已经创建2. sudo gpasswd -a vagrant docker # 用户vagrant加入docker组3. sudo service docker restart # 重启docker4. exit -&gt; vagrant ssh # 退出 &amp; 重新进">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-05-13T03:43:37.000Z">
+<meta property="article:modified_time" content="2019-05-13T04:59:40.000Z">
+<meta property="article:author" content="Michael MENG">
+<meta property="article:tag" content="Docker">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Docker Tips">
-<meta name="twitter:description" content="CentOS docker 运行权限设置12341. sudo groupadd docker # 一般安装docker后已经创建2. sudo gpasswd -a vagrant docker # 用户vagrant加入docker组3. sudo service docker restart # 重启docker4. exit -&amp;gt; vagrant ssh # 退出 &amp;amp; 重新进">
   
     <link rel="alternative" href="/atom.xml" title="Dreamstep36" type="application/atom+xml">
   
@@ -37,8 +37,8 @@
 
   
 
-</head>
-</html>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
@@ -51,10 +51,8 @@
 			<img src="https://avatars1.githubusercontent.com/u/3099376?s=460&amp;v=4" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">Michael MENG</a></h1>
+		  <h1 class="header-author"><a href="/"></a></h1>
 		</hgroup>
-		
-		<p class="header-subtitle">君之梦兮</p>
 		
 
 		<nav class="header-menu">
@@ -105,10 +103,8 @@
 				<img src="https://avatars1.githubusercontent.com/u/3099376?s=460&amp;v=4" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">Michael MENG</h1>
+			  <h1 class="header-author js-header-author"></h1>
 			</hgroup>
-			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>君之梦兮<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -161,7 +157,7 @@
         
         
 	<!-- 不蒜子统计 -->
-	<span id="busuanzi_container_page_pv" style="display:none" class="archive-article-date">
+	<span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
 		  <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
 			</span>
 
@@ -174,30 +170,29 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h3 id="CentOS-docker-运行权限设置"><a href="#CentOS-docker-运行权限设置" class="headerlink" title="CentOS docker 运行权限设置"></a>CentOS docker 运行权限设置</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1. sudo groupadd docker # 一般安装docker后已经创建</span><br><span class="line">2. sudo gpasswd -a vagrant docker # 用户vagrant加入docker组</span><br><span class="line">3. sudo service docker restart # 重启docker</span><br><span class="line">4. exit -&gt; vagrant ssh # 退出 &amp; 重新进入</span><br></pre></td></tr></table></figure>
-
-<a id="more"></a>
+<span id="more"></span>
 <h3 id="Docker-底层技术"><a href="#Docker-底层技术" class="headerlink" title="Docker 底层技术"></a>Docker 底层技术</h3><blockquote>
 <ul>
-<li><strong><em>Namespaces</em></strong> - 隔离 pid, net, ipc, mnt, uts </li>
-<li><strong><em>Control groups</em></strong> - 资源限制 cgroups </li>
-<li><strong><em>Union file systems</em></strong> - Container 和 Image 分层 </li>
+<li><em><strong>Namespaces</strong></em> - 隔离 pid, net, ipc, mnt, uts </li>
+<li><em><strong>Control groups</strong></em> - 资源限制 cgroups </li>
+<li><em><strong>Union file systems</strong></em> - Container 和 Image 分层 </li>
 </ul>
 </blockquote>
-<h3 id="Docker-secret-的两种方式"><a href="#Docker-secret-的两种方式" class="headerlink" title="Docker secret 的两种方式"></a>Docker secret 的两种方式</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> 文件</span><br><span class="line">docker secret create my-pw password</span><br><span class="line"><span class="meta">#</span> 命令行</span><br><span class="line">echo "adminadmin" | docker secret create my-pw2 -</span><br></pre></td></tr></table></figure>
+<h3 id="Docker-secret-的两种方式"><a href="#Docker-secret-的两种方式" class="headerlink" title="Docker secret 的两种方式"></a>Docker secret 的两种方式</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 文件</span></span><br><span class="line">docker secret create my-pw password</span><br><span class="line"><span class="meta">#</span><span class="bash"> 命令行</span></span><br><span class="line">echo &quot;adminadmin&quot; | docker secret create my-pw2 - </span><br></pre></td></tr></table></figure>
 
-<h3 id="RabbitMQ-Docker-设置"><a href="#RabbitMQ-Docker-设置" class="headerlink" title="RabbitMQ Docker 设置"></a>RabbitMQ Docker 设置</h3><p><strong><em>问题</em></strong></p>
+<h3 id="RabbitMQ-Docker-设置"><a href="#RabbitMQ-Docker-设置" class="headerlink" title="RabbitMQ Docker 设置"></a>RabbitMQ Docker 设置</h3><p><em><strong>问题</strong></em></p>
 <blockquote>
 <p>RabbitMQ的原始镜像没有设置admin用户及相应的权限</p>
 </blockquote>
-<p><strong><em>解决</em></strong></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> 镜像</span><br><span class="line">docker pull rabbitmq:3.7.7-management</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 创建容器</span><br><span class="line">docker run -d --name rabbitmq --hostname my-rabbit -p 5672:5672 -p 15672:15672 rabbitmq:3.7.7-management</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 进入容器</span><br><span class="line">docker exec -it rabbitmq /bin/bash</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 添加用户</span><br><span class="line">rabbitmqctl add_user admin 123456</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 添加权限</span><br><span class="line">rabbitmqctl set_permissions -p "/" admin ".*" ".*" ".*"</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 修改用户角色</span><br><span class="line">rabbitmqctl set_user_tags admin administrator</span><br></pre></td></tr></table></figure>
+<p><em><strong>解决</strong></em></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 镜像</span></span><br><span class="line">docker pull rabbitmq:3.7.7-management</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 创建容器</span></span><br><span class="line">docker run -d --name rabbitmq --hostname my-rabbit -p 5672:5672 -p 15672:15672 rabbitmq:3.7.7-management</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 进入容器</span></span><br><span class="line">docker exec -it rabbitmq /bin/bash</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 添加用户</span></span><br><span class="line">rabbitmqctl add_user admin 123456</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 添加权限</span></span><br><span class="line">rabbitmqctl set_permissions -p &quot;/&quot; admin &quot;.*&quot; &quot;.*&quot; &quot;.*&quot;</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 修改用户角色</span></span><br><span class="line">rabbitmqctl set_user_tags admin administrator</span><br></pre></td></tr></table></figure>
 
 <h3 id="Docker-mirror-amp-Insecure-registry-设置"><a href="#Docker-mirror-amp-Insecure-registry-设置" class="headerlink" title="Docker mirror &amp; Insecure-registry 设置"></a>Docker mirror &amp; Insecure-registry 设置</h3><blockquote>
 <p>Harbor默认需要配置SSL，如果不配置，需要在 docker 端配置 insecure-registry 才可以 PUSH </p>
 </blockquote>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/docker/daemon.json</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  // registry-mirrors, for example: Aliyun</span><br><span class="line">  "registry-mirrors": ["https://xxxxxx.mirror.aliyuncs.com"],</span><br><span class="line">  "insecure-registries" : ["hub.dreams.com"]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="comment">// registry-mirrors, for example: Aliyun</span></span><br><span class="line">  <span class="attr">&quot;registry-mirrors&quot;</span>: [<span class="string">&quot;https://xxxxxx.mirror.aliyuncs.com&quot;</span>],</span><br><span class="line">  <span class="attr">&quot;insecure-registries&quot;</span> : [<span class="string">&quot;hub.dreams.com&quot;</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl reload docker</span><br></pre></td></tr></table></figure>
 
@@ -215,14 +210,14 @@
 <p>所以，容器中的进程，一定不要跑后台，因为容器中只有一个进程，跑后台就会终止。</p>
 <p>例如：运行 nginx 容器 command</p>
 </blockquote>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nginx -g 'daemon off;'</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nginx -g &#x27;daemon off;&#x27;</span><br></pre></td></tr></table></figure>
 
 <h3 id="通过Container生成Image"><a href="#通过Container生成Image" class="headerlink" title="通过Container生成Image"></a>通过Container生成Image</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker commit -a “xxx &lt;xxx@163.com&gt;” -p RUNNING_CONTAINER_NAME IMAGE_NAME</span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <p>一般情况下，要用 -p 参数，暂停容器的运行</p>
 </blockquote>
-<h3 id="改变Image的默认运行方式"><a href="#改变Image的默认运行方式" class="headerlink" title="改变Image的默认运行方式"></a>改变Image的默认运行方式</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker commit -a 'xxx &lt;xxx@163.com&gt;' -c 'CMD ["/bin/httpd","-f”,"-h","/data/html"]' -p b1 dreamstep36/busybox:httpd</span><br></pre></td></tr></table></figure>
+<h3 id="改变Image的默认运行方式"><a href="#改变Image的默认运行方式" class="headerlink" title="改变Image的默认运行方式"></a>改变Image的默认运行方式</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker commit -a &#x27;xxx &lt;xxx@163.com&gt;&#x27; -c &#x27;CMD [&quot;/bin/httpd&quot;,&quot;-f”,&quot;-h&quot;,&quot;/data/html&quot;]&#x27; -p b1 dreamstep36/busybox:httpd</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 
       
@@ -366,7 +361,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#CentOS-docker-运行权限设置"><span class="toc-number">1.</span> <span class="toc-text">CentOS docker 运行权限设置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Docker-底层技术"><span class="toc-number">2.</span> <span class="toc-text">Docker 底层技术</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Docker-secret-的两种方式"><span class="toc-number">3.</span> <span class="toc-text">Docker secret 的两种方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#RabbitMQ-Docker-设置"><span class="toc-number">4.</span> <span class="toc-text">RabbitMQ Docker 设置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Docker-mirror-amp-Insecure-registry-设置"><span class="toc-number">5.</span> <span class="toc-text">Docker mirror &amp; Insecure-registry 设置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#资源需要做隔离-Linux-Namespaces"><span class="toc-number">6.</span> <span class="toc-text">资源需要做隔离 ( Linux Namespaces )</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#容器中只有一个进程"><span class="toc-number">7.</span> <span class="toc-text">容器中只有一个进程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#通过Container生成Image"><span class="toc-number">8.</span> <span class="toc-text">通过Container生成Image</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#改变Image的默认运行方式"><span class="toc-number">9.</span> <span class="toc-text">改变Image的默认运行方式</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#CentOS-docker-%E8%BF%90%E8%A1%8C%E6%9D%83%E9%99%90%E8%AE%BE%E7%BD%AE"><span class="toc-number">1.</span> <span class="toc-text">CentOS docker 运行权限设置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Docker-%E5%BA%95%E5%B1%82%E6%8A%80%E6%9C%AF"><span class="toc-number">2.</span> <span class="toc-text">Docker 底层技术</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Docker-secret-%E7%9A%84%E4%B8%A4%E7%A7%8D%E6%96%B9%E5%BC%8F"><span class="toc-number">3.</span> <span class="toc-text">Docker secret 的两种方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#RabbitMQ-Docker-%E8%AE%BE%E7%BD%AE"><span class="toc-number">4.</span> <span class="toc-text">RabbitMQ Docker 设置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Docker-mirror-amp-Insecure-registry-%E8%AE%BE%E7%BD%AE"><span class="toc-number">5.</span> <span class="toc-text">Docker mirror &amp; Insecure-registry 设置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B5%84%E6%BA%90%E9%9C%80%E8%A6%81%E5%81%9A%E9%9A%94%E7%A6%BB-Linux-Namespaces"><span class="toc-number">6.</span> <span class="toc-text">资源需要做隔离 ( Linux Namespaces )</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%B9%E5%99%A8%E4%B8%AD%E5%8F%AA%E6%9C%89%E4%B8%80%E4%B8%AA%E8%BF%9B%E7%A8%8B"><span class="toc-number">7.</span> <span class="toc-text">容器中只有一个进程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%9A%E8%BF%87Container%E7%94%9F%E6%88%90Image"><span class="toc-number">8.</span> <span class="toc-text">通过Container生成Image</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%94%B9%E5%8F%98Image%E7%9A%84%E9%BB%98%E8%AE%A4%E8%BF%90%E8%A1%8C%E6%96%B9%E5%BC%8F"><span class="toc-number">9.</span> <span class="toc-text">改变Image的默认运行方式</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -413,7 +408,7 @@ gitment.render('gitment-ctn')
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2019 Michael MENG
+    		&copy; 2021 Michael MENG
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -425,7 +420,7 @@ gitment.render('gitment-ctn')
 		<span id="busuanzi_container_site_pv">
 						本站总访问量<span id="busuanzi_value_site_pv"></span>次        </span>
 		<span class="post-meta-divider">|</span>
-		<span id="busuanzi_container_site_uv" style="display:none">
+		<span id="busuanzi_container_site_uv" style='display:none'>
 						本站访客数<span id="busuanzi_value_site_uv"></span>人        </span>
 		<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
  
@@ -509,15 +504,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Hello</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Vagrant</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Kubernetes</a>
+                <a href="javascript:void(0)" class="js-tag color4">JHipster</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -537,15 +524,35 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Vagrant</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Hello</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Kubernetes</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Micro-services</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">JHipster</a>
+                <a href="javascript:void(0)" class="js-tag color4">JDL</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">JDL</a>
+                <a href="javascript:void(0)" class="js-tag color2">devops</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">企业数字化转型</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">CI/CD</a>
               </li>
             
             <div class="clearfix"></div>
@@ -553,7 +560,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
         </div>
         <ul class="search-ul">
           <p q-show="jsonFail" style="padding: 20px; font-size: 12px;">
-            缺失模块。<br>1、请确保node版本大于6.2<br>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br> npm i hexo-generator-json-content --save<br><br>
+            缺失模块。<br/>1、请确保node版本大于6.2<br/>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br/> npm i hexo-generator-json-content --save<br/><br/>
             3、在根目录_config.yml里添加配置：
 <pre style="font-size: 12px;" q-show="jsonFail">
   jsonContent:

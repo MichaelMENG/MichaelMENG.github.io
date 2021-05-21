@@ -1,21 +1,20 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.8.0">
+<head>
   <meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://www.dreamstep36.com">
   <title>如何在 Kubernetes 和 Istio 上轻松实现 JHipster 微服务？ | Dreamstep36</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="How to set up JHipster microservices with Istio service mesh on Kubernetes如何在 Kubernetes 和 Istio 上轻松实现 JHipster 微服务？Istio 是当前 DevOps 和云原生项目中最酷的一个。对于那些还没有特别了解 Istio 的人，简单地说几句吧，Istio is a service mesh I">
-<meta name="keywords" content="Kubernetes,Spring Cloud,Istio,Micro-services,JHipster,JDL">
 <meta property="og:type" content="article">
 <meta property="og:title" content="如何在 Kubernetes 和 Istio 上轻松实现 JHipster 微服务？">
-<meta property="og:url" content="https://www.dreamstep36.com/2019/06/01/如何在Kubernetes和Istio上轻松实现JHipster微服务？/index.html">
+<meta property="og:url" content="https://www.dreamstep36.com/2019/06/01/%E5%A6%82%E4%BD%95%E5%9C%A8Kubernetes%E5%92%8CIstio%E4%B8%8A%E8%BD%BB%E6%9D%BE%E5%AE%9E%E7%8E%B0JHipster%E5%BE%AE%E6%9C%8D%E5%8A%A1%EF%BC%9F/index.html">
 <meta property="og:site_name" content="Dreamstep36">
 <meta property="og:description" content="How to set up JHipster microservices with Istio service mesh on Kubernetes如何在 Kubernetes 和 Istio 上轻松实现 JHipster 微服务？Istio 是当前 DevOps 和云原生项目中最酷的一个。对于那些还没有特别了解 Istio 的人，简单地说几句吧，Istio is a service mesh I">
-<meta property="og:locale" content="zh-CN">
+<meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/MichaelMENG/MichaelMENG.github.io/master/images/istio-architecture.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/MichaelMENG/MichaelMENG.github.io/master/images/istio-microservices.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/MichaelMENG/MichaelMENG.github.io/master/images/original-microservices.png">
@@ -26,10 +25,16 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/MichaelMENG/MichaelMENG.github.io/master/images/jaeger-01.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/MichaelMENG/MichaelMENG.github.io/master/images/tracing-dashboard.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/MichaelMENG/MichaelMENG.github.io/master/images/service-graph.png">
-<meta property="og:updated_time" content="2019-06-03T03:35:48.780Z">
+<meta property="article:published_time" content="2019-06-01T12:23:49.000Z">
+<meta property="article:modified_time" content="2019-06-03T03:35:48.000Z">
+<meta property="article:author" content="Michael MENG">
+<meta property="article:tag" content="JHipster">
+<meta property="article:tag" content="Spring Cloud">
+<meta property="article:tag" content="Istio">
+<meta property="article:tag" content="Kubernetes">
+<meta property="article:tag" content="Micro-services">
+<meta property="article:tag" content="JDL">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="如何在 Kubernetes 和 Istio 上轻松实现 JHipster 微服务？">
-<meta name="twitter:description" content="How to set up JHipster microservices with Istio service mesh on Kubernetes如何在 Kubernetes 和 Istio 上轻松实现 JHipster 微服务？Istio 是当前 DevOps 和云原生项目中最酷的一个。对于那些还没有特别了解 Istio 的人，简单地说几句吧，Istio is a service mesh I">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/MichaelMENG/MichaelMENG.github.io/master/images/istio-architecture.png">
   
     <link rel="alternative" href="/atom.xml" title="Dreamstep36" type="application/atom+xml">
@@ -48,8 +53,8 @@
 
   
 
-</head>
-</html>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
@@ -62,10 +67,8 @@
 			<img src="https://avatars1.githubusercontent.com/u/3099376?s=460&amp;v=4" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">Michael MENG</a></h1>
+		  <h1 class="header-author"><a href="/"></a></h1>
 		</hgroup>
-		
-		<p class="header-subtitle">君之梦兮</p>
 		
 
 		<nav class="header-menu">
@@ -116,10 +119,8 @@
 				<img src="https://avatars1.githubusercontent.com/u/3099376?s=460&amp;v=4" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">Michael MENG</h1>
+			  <h1 class="header-author js-header-author"></h1>
 			</hgroup>
-			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>君之梦兮<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -172,11 +173,11 @@
         
         
 	<!-- 不蒜子统计 -->
-	<span id="busuanzi_container_page_pv" style="display:none" class="archive-article-date">
+	<span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
 		  <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
 			</span>
 
-<a href="/2019/06/01/如何在Kubernetes和Istio上轻松实现JHipster微服务？/" class="archive-article-date">
+<a href="/2019/06/01/%E5%A6%82%E4%BD%95%E5%9C%A8Kubernetes%E5%92%8CIstio%E4%B8%8A%E8%BD%BB%E6%9D%BE%E5%AE%9E%E7%8E%B0JHipster%E5%BE%AE%E6%9C%8D%E5%8A%A1%EF%BC%9F/" class="archive-article-date">
   	<time datetime="2019-06-01T12:23:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-01</time>
 </a>
         
@@ -184,32 +185,32 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="How-to-set-up-JHipster-microservices-with-Istio-service-mesh-on-Kubernetes"><a href="#How-to-set-up-JHipster-microservices-with-Istio-service-mesh-on-Kubernetes" class="headerlink" title="How to set up JHipster microservices with Istio service mesh on Kubernetes"></a>How to set up JHipster microservices with Istio service mesh on Kubernetes</h2><h2 id="如何在-Kubernetes-和-Istio-上轻松实现-JHipster-微服务？"><a href="#如何在-Kubernetes-和-Istio-上轻松实现-JHipster-微服务？" class="headerlink" title="如何在 Kubernetes 和 Istio 上轻松实现 JHipster 微服务？"></a>如何在 Kubernetes 和 Istio 上轻松实现 JHipster 微服务？</h2><p>Istio 是当前 DevOps 和云原生项目中最酷的一个。对于那些还没有特别了解 Istio 的人，简单地说几句吧，<a href="https://istio.io/docs/concepts/what-is-istio/" target="_blank" rel="noopener">Istio is a service mesh</a> Istio 是一个为分布式应用架构而生的服务网格( Service Mesh )，特别是为了在云上运行 kubernetes 应用。Istio 与 Kubernetes 配合得非常好，好到你会认为它可能就是 Kubernetes 的一部分。</p>
-<a id="more"></a>
+        <h2 id="How-to-set-up-JHipster-microservices-with-Istio-service-mesh-on-Kubernetes"><a href="#How-to-set-up-JHipster-microservices-with-Istio-service-mesh-on-Kubernetes" class="headerlink" title="How to set up JHipster microservices with Istio service mesh on Kubernetes"></a>How to set up JHipster microservices with Istio service mesh on Kubernetes</h2><h2 id="如何在-Kubernetes-和-Istio-上轻松实现-JHipster-微服务？"><a href="#如何在-Kubernetes-和-Istio-上轻松实现-JHipster-微服务？" class="headerlink" title="如何在 Kubernetes 和 Istio 上轻松实现 JHipster 微服务？"></a>如何在 Kubernetes 和 Istio 上轻松实现 JHipster 微服务？</h2><p>Istio 是当前 DevOps 和云原生项目中最酷的一个。对于那些还没有特别了解 Istio 的人，简单地说几句吧，<a target="_blank" rel="noopener" href="https://istio.io/docs/concepts/what-is-istio/">Istio is a service mesh</a> Istio 是一个为分布式应用架构而生的服务网格( Service Mesh )，特别是为了在云上运行 kubernetes 应用。Istio 与 Kubernetes 配合得非常好，好到你会认为它可能就是 Kubernetes 的一部分。</p>
+<span id="more"></span>
 <p>假如你仍然不太清楚服务网格( Service Mesh ) 和 Istio 到底是什么？就让我们来介绍一下 Istio 吧。</p>
 <p>Istio 在一个分布式应用架构中，提供了如下一些功能：</p>
 <ul>
-<li>服务发现( Service Discovery ) - 也就是传统意义上由平台提供的功能，如： <a href="https://github.com/Netflix/eureka/wiki" target="_blank" rel="noopener">Netflix Eureka </a>or <a href="https://www.consul.io/" target="_blank" rel="noopener">Consul</a></li>
-<li>自动负载平衡( Automatic load balancing ) - 同样地，你可能会用 <a href="https://github.com/Netflix/zuul/wiki" target="_blank" rel="noopener">Netflix Zuul</a> 来实现</li>
-<li>路由、断路器、重试、容错、错误注入攻击防范( Routing, circuit breaking, retries, fail-overs, fault injection ) - 同样，你可能会用 <a href="https://github.com/Netflix/ribbon/wiki" target="_blank" rel="noopener">Netflix Ribbon</a>, <a href="https://github.com/Netflix/Hystrix" target="_blank" rel="noopener">Hytrix</a> 等等</li>
-<li>监控指标、日志和跟踪( Metrics, logs, and traces ) - <a href="https://www.elastic.co/elk-stack" target="_blank" rel="noopener">ELK</a> or <a href="https://cloud.google.com/stackdriver/" target="_blank" rel="noopener">Stack driver</a></li>
+<li>服务发现( Service Discovery ) - 也就是传统意义上由平台提供的功能，如： <a target="_blank" rel="noopener" href="https://github.com/Netflix/eureka/wiki">Netflix Eureka </a>or <a target="_blank" rel="noopener" href="https://www.consul.io/">Consul</a></li>
+<li>自动负载平衡( Automatic load balancing ) - 同样地，你可能会用 <a target="_blank" rel="noopener" href="https://github.com/Netflix/zuul/wiki">Netflix Zuul</a> 来实现</li>
+<li>路由、断路器、重试、容错、错误注入攻击防范( Routing, circuit breaking, retries, fail-overs, fault injection ) - 同样，你可能会用 <a target="_blank" rel="noopener" href="https://github.com/Netflix/ribbon/wiki">Netflix Ribbon</a>, <a target="_blank" rel="noopener" href="https://github.com/Netflix/Hystrix">Hytrix</a> 等等</li>
+<li>监控指标、日志和跟踪( Metrics, logs, and traces ) - <a target="_blank" rel="noopener" href="https://www.elastic.co/elk-stack">ELK</a> or <a target="_blank" rel="noopener" href="https://cloud.google.com/stackdriver/">Stack driver</a></li>
 <li>微服务之间安全通信( Secure service-to-service communication )</li>
 </ul>
 <p>Istio 的架构图</p>
 <p><img src="https://raw.githubusercontent.com/MichaelMENG/MichaelMENG.github.io/master/images/istio-architecture.png" alt="Istio Architecture"></p>
 <p>它分为 2 个不同的 plane</p>
-<p><strong>Data plane</strong> 由 <a href="https://www.envoyproxy.io/" target="_blank" rel="noopener">Envoy</a> 构成，Envoy 是一个在应用容器( application containers ) 中被部署为 sidecar 的代理，他们控制着容器中所有输入 &amp; 输出的信息。</p>
+<p><strong>Data plane</strong> 由 <a target="_blank" rel="noopener" href="https://www.envoyproxy.io/">Envoy</a> 构成，Envoy 是一个在应用容器( application containers ) 中被部署为 sidecar 的代理，他们控制着容器中所有输入 &amp; 输出的信息。</p>
 <p><strong>Control plane</strong> 用 Pilot 来管理和配置代理，以便路由信息。同时也设置 Mixer 来保证配置的策略，并且收集数据。它也有其它的组件，如：Citadel 管理安全相关，Galley 管理配置等等。</p>
-<p>Istio 默认会配置  <a href="https://grafana.com/" target="_blank" rel="noopener">Grafana</a>, <a href="https://prometheus.io/" target="_blank" rel="noopener">Prometheus</a> and <a href="https://www.jaegertracing.io/" target="_blank" rel="noopener">Jaeger</a> 实例，实现系统监控和可观察性的功能。当然你用它默认的，也可以用你自己的系统监控栈。 </p>
+<p>Istio 默认会配置  <a target="_blank" rel="noopener" href="https://grafana.com/">Grafana</a>, <a target="_blank" rel="noopener" href="https://prometheus.io/">Prometheus</a> and <a target="_blank" rel="noopener" href="https://www.jaegertracing.io/">Jaeger</a> 实例，实现系统监控和可观察性的功能。当然你用它默认的，也可以用你自己的系统监控栈。 </p>
 <p>我希望这些能让你对 Istio 有一个大概的了解，现在让我们回到文章的主题。</p>
-<h3 id="Devoxx-2018"><a href="#Devoxx-2018" class="headerlink" title="Devoxx 2018"></a>Devoxx 2018</h3><p>我和  <a href="https://www.julien-dubois.com/" target="_blank" rel="noopener">Julien Dubois</a> 在 <a href="https://dvbe18.confinabox.com/talk/XCM-6395/JHipster_5_-_What's_new_and_noteworthy" target="_blank" rel="noopener">Devoxx 2018</a> 演示了一些 Demo ，并且承诺会写一篇详细的博客来介绍它。</p>
+<h3 id="Devoxx-2018"><a href="#Devoxx-2018" class="headerlink" title="Devoxx 2018"></a>Devoxx 2018</h3><p>我和  <a target="_blank" rel="noopener" href="https://www.julien-dubois.com/">Julien Dubois</a> 在 <a target="_blank" rel="noopener" href="https://dvbe18.confinabox.com/talk/XCM-6395/JHipster_5_-_What's_new_and_noteworthy">Devoxx 2018</a> 演示了一些 Demo ，并且承诺会写一篇详细的博客来介绍它。</p>
 <p>请观看 JHipster + Istio in action 的视频</p>
 <p>同时，也可以在 Speaker Deck 上看到 slides </p>
 <h3 id="准备-Kubernetes-集群"><a href="#准备-Kubernetes-集群" class="headerlink" title="准备 Kubernetes 集群"></a>准备 Kubernetes 集群</h3><p>首先，让我们准备 Kubernetes 集群来部署 Istio 以及我们的容器应用。下面的示例适合于你喜欢的任何平台。</p>
-<h4 id="先决条件"><a href="#先决条件" class="headerlink" title="先决条件"></a>先决条件</h4><p><a href="https://kubernetes.io/docs/tasks/tools/install-kubectl/" target="_blank" rel="noopener"><strong>kubectl</strong></a> 用来与 Kubernetes 交互的命令行工具，请安装 &amp; 配置好。</p>
-<h4 id="Create-a-cluster-on-Azure-Kubernetes-Service-AKS"><a href="#Create-a-cluster-on-Azure-Kubernetes-Service-AKS" class="headerlink" title="Create a cluster on Azure Kubernetes Service(AKS)"></a>Create a cluster on Azure Kubernetes Service(AKS)</h4><p>如想了解，请见原文 <a href="https://medium.freecodecamp.org/jhipster-microservices-with-istio-service-mesh-on-kubernetes-a7d0158ba9a3" target="_blank" rel="noopener">How to set up JHipster microservices with Istio service mesh on Kubernetes</a></p>
-<h4 id="Create-a-cluster-on-Google-Kubernetes-Engine-GKE"><a href="#Create-a-cluster-on-Google-Kubernetes-Engine-GKE" class="headerlink" title="Create a cluster on Google Kubernetes Engine(GKE)"></a>Create a cluster on Google Kubernetes Engine(GKE)</h4><p>如想了解，请见原文 <a href="https://medium.freecodecamp.org/jhipster-microservices-with-istio-service-mesh-on-kubernetes-a7d0158ba9a3" target="_blank" rel="noopener">How to set up JHipster microservices with Istio service mesh on Kubernetes</a></p>
-<h4 id="译者提示，下面的示例，假设你已经有了一个-Kubernetes-集群环境，无论在哪儿"><a href="#译者提示，下面的示例，假设你已经有了一个-Kubernetes-集群环境，无论在哪儿" class="headerlink" title="译者提示，下面的示例，假设你已经有了一个 Kubernetes 集群环境，无论在哪儿~"></a><font color="RED">译者提示，下面的示例，假设你已经有了一个 Kubernetes 集群环境，无论在哪儿~</font></h4><h3 id="安装-amp-配置-Istio"><a href="#安装-amp-配置-Istio" class="headerlink" title="安装 &amp; 配置 Istio"></a>安装 &amp; 配置 Istio</h3><p>安装步骤</p>
+<h4 id="先决条件"><a href="#先决条件" class="headerlink" title="先决条件"></a>先决条件</h4><p><a target="_blank" rel="noopener" href="https://kubernetes.io/docs/tasks/tools/install-kubectl/"><strong>kubectl</strong></a> 用来与 Kubernetes 交互的命令行工具，请安装 &amp; 配置好。</p>
+<h4 id="Create-a-cluster-on-Azure-Kubernetes-Service-AKS"><a href="#Create-a-cluster-on-Azure-Kubernetes-Service-AKS" class="headerlink" title="Create a cluster on Azure Kubernetes Service(AKS)"></a>Create a cluster on Azure Kubernetes Service(AKS)</h4><p>如想了解，请见原文 <a target="_blank" rel="noopener" href="https://medium.freecodecamp.org/jhipster-microservices-with-istio-service-mesh-on-kubernetes-a7d0158ba9a3">How to set up JHipster microservices with Istio service mesh on Kubernetes</a></p>
+<h4 id="Create-a-cluster-on-Google-Kubernetes-Engine-GKE"><a href="#Create-a-cluster-on-Google-Kubernetes-Engine-GKE" class="headerlink" title="Create a cluster on Google Kubernetes Engine(GKE)"></a>Create a cluster on Google Kubernetes Engine(GKE)</h4><p>如想了解，请见原文 <a target="_blank" rel="noopener" href="https://medium.freecodecamp.org/jhipster-microservices-with-istio-service-mesh-on-kubernetes-a7d0158ba9a3">How to set up JHipster microservices with Istio service mesh on Kubernetes</a></p>
+<h4 id="译者提示，下面的示例，假设你已经有了一个-Kubernetes-集群环境，无论在哪儿"><a href="#译者提示，下面的示例，假设你已经有了一个-Kubernetes-集群环境，无论在哪儿" class="headerlink" title="译者提示，下面的示例，假设你已经有了一个 Kubernetes 集群环境，无论在哪儿~"></a><font color=RED>译者提示，下面的示例，假设你已经有了一个 Kubernetes 集群环境，无论在哪儿~</font></h4><h3 id="安装-amp-配置-Istio"><a href="#安装-amp-配置-Istio" class="headerlink" title="安装 &amp; 配置 Istio"></a>安装 &amp; 配置 Istio</h3><p>安装步骤</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> ~/</span></span><br></pre></td></tr></table></figure>
 
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">export</span> ISTIO_VERSION=1.0.2</span></span><br></pre></td></tr></table></figure>
@@ -225,7 +226,7 @@
 <p>( 译者注：当前的版本是 1.1.7 问题已经解决)</p>
 </blockquote>
 <p>现在让我们将 Istio 安装到 Kubernetes 集群中，方法是通过 Istio 提供的 manifests 和 helm 模板。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> kubectl apply -f ~/istio/install/kubernetes/helm/istio/templates/crds.yaml</span></span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> kubectl apply -f ~/istio/install/kubernetes/istio-demo.yaml --as=admin --as-group=system:masters</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> kubectl apply -f ~/istio/install/kubernetes/helm/istio/templates/crds.yaml</span></span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> kubectl apply -f ~/istio/install/kubernetes/istio-demo.yaml --as=admin --as-group=system:masters</span></span><br></pre></td></tr></table></figure>
 
 <p>然后，等待 pods 完成启动 &amp; 运行，这些 pods 会部署到 <code>istio-system</code> 名称空间。</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> watch kubectl get pods -n istio-system</span></span><br></pre></td></tr></table></figure>
@@ -236,20 +237,20 @@
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">NAME                   TYPE           CLUSTER-IP     EXTERNAL-IPistio-ingressgateway      LoadBalancer      10.27.249.83   35.195.81.130</span><br></pre></td></tr></table></figure>
 
 <p>这个外部 IP 非常重要，我们可以将它保存到一个环境变量中，以便在后续的步骤中方便地使用它。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">export</span> \</span></span><br><span class="line">  INGRESS_IP=$(kubectl -n istio-system get svc \</span><br><span class="line">             istio-ingressgateway \</span><br><span class="line">             -o jsonpath='&#123;.status.loadBalancer.ingress[0].ip&#125;')</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">export</span> \</span></span><br><span class="line"><span class="bash">  INGRESS_IP=$(kubectl -n istio-system get svc \</span></span><br><span class="line"><span class="bash">             istio-ingressgateway \</span></span><br><span class="line"><span class="bash">             -o jsonpath=<span class="string">&#x27;&#123;.status.loadBalancer.ingress[0].ip&#125;&#x27;</span>)</span></span><br></pre></td></tr></table></figure>
 
 <p>现在 Kubernetes 集群已经准备好运行 Istio 了。</p>
-<p><em>For advanced Istio setup options refer to <a href="https://istio.io/docs/setup/kubernetes/" target="_blank" rel="noopener">https://istio.io/docs/setup/kubernetes/</a></em></p>
-<h3 id="创建微服务应用"><a href="#创建微服务应用" class="headerlink" title="创建微服务应用"></a>创建微服务应用</h3><p>我在之前的一篇博客中，演示了如何用 JHipster &amp; JDL 快速创建全栈微服务应用，如果你想了解其中的细节，可以先读一读我的那篇博客 ( English：<a href="https://medium.com/@deepu105/create-full-microservice-stack-using-jhipster-domain-language-under-30-minutes-ecc6e7fc3f77" target="_blank" rel="noopener">here</a>  中文：<a href="https://www.dreamstep36.com/2019/05/08/30%E5%88%86%E9%92%9F%E5%88%9B%E5%BB%BA%E5%85%A8%E6%A0%88%E5%BE%AE%E6%9C%8D%E5%8A%A1%E5%BA%94%E7%94%A8/">30分钟创建全栈微服务应用 - JHipster Domain Language</a>)。这个示例中，我们将沿用之前的应用，但我们将不会再用 Eureka 服务发现。同时，请注意 <code>store</code> 应用被分成了 <code>Gateway</code> 和 <code>Product</code> 2 个应用。</p>
+<p><em>For advanced Istio setup options refer to <a target="_blank" rel="noopener" href="https://istio.io/docs/setup/kubernetes/">https://istio.io/docs/setup/kubernetes/</a></em></p>
+<h3 id="创建微服务应用"><a href="#创建微服务应用" class="headerlink" title="创建微服务应用"></a>创建微服务应用</h3><p>我在之前的一篇博客中，演示了如何用 JHipster &amp; JDL 快速创建全栈微服务应用，如果你想了解其中的细节，可以先读一读我的那篇博客 ( English：<a target="_blank" rel="noopener" href="https://medium.com/@deepu105/create-full-microservice-stack-using-jhipster-domain-language-under-30-minutes-ecc6e7fc3f77">here</a>  中文：<a href="https://www.dreamstep36.com/2019/05/08/30%E5%88%86%E9%92%9F%E5%88%9B%E5%BB%BA%E5%85%A8%E6%A0%88%E5%BE%AE%E6%9C%8D%E5%8A%A1%E5%BA%94%E7%94%A8/">30分钟创建全栈微服务应用 - JHipster Domain Language</a>)。这个示例中，我们将沿用之前的应用，但我们将不会再用 Eureka 服务发现。同时，请注意 <code>store</code> 应用被分成了 <code>Gateway</code> 和 <code>Product</code> 2 个应用。</p>
 <h4 id="架构"><a href="#架构" class="headerlink" title="架构"></a>架构</h4><p>下面就是我们今天要创建和部署的微服务架构</p>
 <p><img src="https://raw.githubusercontent.com/MichaelMENG/MichaelMENG.github.io/master/images/istio-microservices.png" alt="Architecture"></p>
 <p>它由 1 个 Gateway  应用和 3 个微服务应用组成。其中每一个应用都有自己的数据库。你可以看到，每一个应用都有一个 Envoy 代理作为 sidecar ，绑定在其所在的容器上。Istio control plane 组件也同时部署到集群中，其中还包括了 Prometheus, Grafana, and Jaeger。</p>
 <p>Istio 的 Ingress gateway 是外部流量的唯一入口，它将外部的请求分别路由到不同的微服务。同时，所有集群容器的遥测( Telemetry )数据被收集，其中包括应用、数据库以及 Istio 组件的所有信息。</p>
-<p>相比较之前的架构 ( English：<a href="https://medium.com/@deepu105/create-full-microservice-stack-using-jhipster-domain-language-under-30-minutes-ecc6e7fc3f77" target="_blank" rel="noopener">here</a>  中文：<a href="https://www.dreamstep36.com/2019/05/08/30%E5%88%86%E9%92%9F%E5%88%9B%E5%BB%BA%E5%85%A8%E6%A0%88%E5%BE%AE%E6%9C%8D%E5%8A%A1%E5%BA%94%E7%94%A8/">30分钟创建全栈微服务应用 - JHipster Domain Language</a>)，你可以清楚地看到，我们将 JHipster registry 和 Netflix OSS 组件替换成了 Istio ，另外还有 ELK monitoring stack 被替换成了由 Istio 配置好的 Prometheus, Grafana and Jaeger。为方便查看、对比，下面给出原始的、没有 Istio 的架构。</p>
+<p>相比较之前的架构 ( English：<a target="_blank" rel="noopener" href="https://medium.com/@deepu105/create-full-microservice-stack-using-jhipster-domain-language-under-30-minutes-ecc6e7fc3f77">here</a>  中文：<a href="https://www.dreamstep36.com/2019/05/08/30%E5%88%86%E9%92%9F%E5%88%9B%E5%BB%BA%E5%85%A8%E6%A0%88%E5%BE%AE%E6%9C%8D%E5%8A%A1%E5%BA%94%E7%94%A8/">30分钟创建全栈微服务应用 - JHipster Domain Language</a>)，你可以清楚地看到，我们将 JHipster registry 和 Netflix OSS 组件替换成了 Istio ，另外还有 ELK monitoring stack 被替换成了由 Istio 配置好的 Prometheus, Grafana and Jaeger。为方便查看、对比，下面给出原始的、没有 Istio 的架构。</p>
 <p><img src="https://raw.githubusercontent.com/MichaelMENG/MichaelMENG.github.io/master/images/original-microservices.png" alt="Original Architecture"></p>
 <h4 id="Application-JDL-应用-JDL"><a href="#Application-JDL-应用-JDL" class="headerlink" title="Application JDL 应用 JDL"></a>Application JDL 应用 JDL</h4><p>让我们看一看修改后的 JDL 声明，你可以看到我们定义了 <code>serviceDiscoveryType no</code> ，因为我们要用 Istio 来替换 Eureka 。</p>
 <p>下面就是我们定义好的，用于 Kubernetes 部署的  JDL 文件。</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">deployment</span> <span class="string">&#123;</span>  </span><br><span class="line">  <span class="string">deploymentType</span> <span class="string">kubernetes</span></span><br><span class="line">  <span class="string">appsFolders</span> <span class="string">[store,</span> <span class="string">invoice,</span> <span class="string">notification,</span> <span class="string">product]</span></span><br><span class="line">  <span class="string">dockerRepositoryName</span> <span class="string">"deepu105"</span></span><br><span class="line">  <span class="string">serviceDiscoveryType</span> <span class="literal">no</span></span><br><span class="line">  <span class="string">istio</span> <span class="string">autoInjection</span></span><br><span class="line">  <span class="string">istioRoute</span> <span class="literal">true</span></span><br><span class="line">  <span class="string">kubernetesServiceType</span> <span class="string">Ingress</span></span><br><span class="line">  <span class="string">kubernetesNamespace</span> <span class="string">jhipster</span></span><br><span class="line">  <span class="string">ingressDomain</span> <span class="string">"35.195.81.130.nip.io"</span></span><br><span class="line"><span class="string">&#125;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">deployment</span> &#123;  </span><br><span class="line">  <span class="string">deploymentType</span> <span class="string">kubernetes</span></span><br><span class="line">  <span class="string">appsFolders</span> [<span class="string">store</span>, <span class="string">invoice</span>, <span class="string">notification</span>, <span class="string">product</span>]</span><br><span class="line">  <span class="string">dockerRepositoryName</span> <span class="string">&quot;deepu105&quot;</span></span><br><span class="line">  <span class="string">serviceDiscoveryType</span> <span class="literal">no</span></span><br><span class="line">  <span class="string">istio</span> <span class="string">autoInjection</span></span><br><span class="line">  <span class="string">istioRoute</span> <span class="literal">true</span></span><br><span class="line">  <span class="string">kubernetesServiceType</span> <span class="string">Ingress</span></span><br><span class="line">  <span class="string">kubernetesNamespace</span> <span class="string">jhipster</span></span><br><span class="line">  <span class="string">ingressDomain</span> <span class="string">&quot;35.195.81.130.nip.io&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p><code>serviceDiscoveryType</code> 被禁用，同时我们设置了 Istio 的 <code>autoInjection</code> 支持 –— Envoy sidecars 会自己加入到每一个应用容器中，通过 enable <code>istioRoute</code> 选项，Istio 会为每一个应用生成相关的路由。</p>
 <p><code>kubernetesServiceType</code>设置为 <code>Ingress</code>，这个非常重要，因为 Istio 只能通过 Ingress controller 的服务类型才能正常工作。对 Ingress 来说，我们需要设置领域的 DNS ，这也是为什么 Istio ingress gateway IP 是需要的。现在我们需要一个 DNS ，在实际的案例中，你应该用 DNS （ 自己的真实域名 ）去映射 IP ，但只是为了测试和演示的目的，你可以用一个通配的 DNS 服务，如：nip.io 去解决 IP 的问题，增加 nip.io 到你的 IP ( 注：/etc/hosts )，并将它作为 Ingress 的域名。</p>
@@ -257,7 +258,7 @@
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir istio-demo &amp;&amp; cd istio-demo$ jhipster import-jdl app-istio.jdl</span><br></pre></td></tr></table></figure>
 
 <p>命令会生成所有的应用代码，并且会分别下载所有的 NPM 依赖。当应用生成后，应用的部署清单也会生成，并且会有一些有用的、后续如何部署的指示文字呈现在屏幕上</p>
-<p><img src="https://raw.githubusercontent.com/MichaelMENG/MichaelMENG.github.io/master/images/code-result.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/MichaelMENG/MichaelMENG.github.io/master/images/code-result.png"></p>
 <p>你可以用你喜欢的 IDE/Editor 来查看生成的代码。</p>
 <h3 id="Kuberctl-将应用部署到-Kubernetes"><a href="#Kuberctl-将应用部署到-Kubernetes" class="headerlink" title="Kuberctl 将应用部署到 Kubernetes"></a>Kuberctl 将应用部署到 Kubernetes</h3><p>现在让我们部署我们的应用，运行 <code>./gradlew bootWar -Pprod jibDockerBuild</code> 命令，分别在 store, product, invoice, and notification 文件夹，来生成 docker 镜像。镜像生成后，运行以下命令将其 push 到 docker repo 。</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> docker image tag store deepu105/store</span></span><br></pre></td></tr></table></figure>
@@ -288,28 +289,28 @@
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">echo</span> store.<span class="variable">$INGRESS_IP</span>.nip.io</span></span><br></pre></td></tr></table></figure>
 
 <p>我们之前在创建 Istio 设置里，已经将 INGFRESS_IP 存在一个环境变量中，在浏览器中打开 URL ，查看一下我们的应用，并试着为微服务创建一些实体。</p>
-<p><img src="https://raw.githubusercontent.com/MichaelMENG/MichaelMENG.github.io/master/images/jhipster-01.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/MichaelMENG/MichaelMENG.github.io/master/images/jhipster-01.png"></p>
 <h4 id="Monitoring-监控"><a href="#Monitoring-监控" class="headerlink" title="Monitoring 监控"></a>Monitoring 监控</h4><p>Istio 的初始设置包括了已经配置好的 Grafana and Prometheus，以便收集应用容器的数据，让我们来看一看吧。</p>
 <p>默认，只有 Ingress gateway 暴露外部 IP，所以我们需要用 Kuberctl 的 port forwarding 来创建一个安全的通道，以便获取需要的服务。</p>
 <p>让我们来创建一个 Grafana 通道</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> kubectl -n istio-system \port-forward $(kubectl -n istio-system get pod \</span></span><br><span class="line">    -l app=grafana -o jsonpath='&#123;.items[0].metadata.name&#125;') 3000:3000</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> kubectl -n istio-system \port-forward $(kubectl -n istio-system get pod \</span></span><br><span class="line"><span class="bash">    -l app=grafana -o jsonpath=<span class="string">&#x27;&#123;.items[0].metadata.name&#125;&#x27;</span>) 3000:3000</span></span><br></pre></td></tr></table></figure>
 
-<p>浏览器打开 <a href="localhost:3000" target="_blank" rel="noopener">localhost:3000</a> 来查看 Grafana 面板。</p>
-<p><img src="https://raw.githubusercontent.com/MichaelMENG/MichaelMENG.github.io/master/images/grafana-01.png" alt></p>
-<p>Grafana 使用通过 Prometheus 获取的指标数据。当然，我们也可以通过创建一个安全通道，在浏览器打开  <a href="localhost:9090" target="_blank" rel="noopener">localhost:9090</a> 来直接查看 Prometheus 的数据图表。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> kubectl -n istio-system \port-forward $(kubectl -n istio-system get pod -l \</span></span><br><span class="line">    app=prometheus -o jsonpath='&#123;.items[0].metadata.name&#125;') 9090:9090</span><br></pre></td></tr></table></figure>
+<p>浏览器打开 <a href="localhost:3000">localhost:3000</a> 来查看 Grafana 面板。</p>
+<p><img src="https://raw.githubusercontent.com/MichaelMENG/MichaelMENG.github.io/master/images/grafana-01.png"></p>
+<p>Grafana 使用通过 Prometheus 获取的指标数据。当然，我们也可以通过创建一个安全通道，在浏览器打开  <a href="localhost:9090">localhost:9090</a> 来直接查看 Prometheus 的数据图表。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> kubectl -n istio-system \port-forward $(kubectl -n istio-system get pod -l \</span></span><br><span class="line"><span class="bash">    app=prometheus -o jsonpath=<span class="string">&#x27;&#123;.items[0].metadata.name&#125;&#x27;</span>) 9090:9090</span></span><br></pre></td></tr></table></figure>
 
-<p><img src="https://raw.githubusercontent.com/MichaelMENG/MichaelMENG.github.io/master/images/prometheus-01.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/MichaelMENG/MichaelMENG.github.io/master/images/prometheus-01.png"></p>
 <h4 id="Observability-微服务-可观察性"><a href="#Observability-微服务-可观察性" class="headerlink" title="Observability ( 微服务 )可观察性"></a>Observability ( 微服务 )可观察性</h4><p>关于微服务的可观察性，Istio （默认）配置 Jaeger 作为分布式跟踪和服务图表(指标) 的查看方式。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> kubectl -n istio-system \port-forward $(kubectl -n istio-system get pod -l \</span></span><br><span class="line">    app=jaeger -o jsonpath='&#123;.items[0].metadata.name&#125;') 16686:16686</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> kubectl -n istio-system \port-forward $(kubectl -n istio-system get pod -l \</span></span><br><span class="line"><span class="bash">    app=jaeger -o jsonpath=<span class="string">&#x27;&#123;.items[0].metadata.name&#125;&#x27;</span>) 16686:16686</span></span><br></pre></td></tr></table></figure>
 
-<p><img src="https://raw.githubusercontent.com/MichaelMENG/MichaelMENG.github.io/master/images/jaeger-01.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/MichaelMENG/MichaelMENG.github.io/master/images/jaeger-01.png"></p>
 <p>你可以试着在应用里发送一些请求，然后就可以通过查询相关的服务，在跟踪面板( tracing dashboard ) 看到他们。你可以点击相关的请求（ request ）来查看跟踪的细节。</p>
-<p><img src="https://raw.githubusercontent.com/MichaelMENG/MichaelMENG.github.io/master/images/tracing-dashboard.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/MichaelMENG/MichaelMENG.github.io/master/images/tracing-dashboard.png"></p>
 <p>现在让我们为 Service graph 创建一个通道并在浏览器打开它。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> kubectl -n istio-system \port-forward $(kubectl -n istio-system get pod -l \</span></span><br><span class="line">    app=servicegraph -o jsonpath='&#123;.items[0].metadata.name&#125;') 8088:8088</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> kubectl -n istio-system \port-forward $(kubectl -n istio-system get pod -l \</span></span><br><span class="line"><span class="bash">    app=servicegraph -o jsonpath=<span class="string">&#x27;&#123;.items[0].metadata.name&#125;&#x27;</span>) 8088:8088</span></span><br></pre></td></tr></table></figure>
 
-<p><img src="https://raw.githubusercontent.com/MichaelMENG/MichaelMENG.github.io/master/images/service-graph.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/MichaelMENG/MichaelMENG.github.io/master/images/service-graph.png"></p>
 <h3 id="Conclusion-结论"><a href="#Conclusion-结论" class="headerlink" title="Conclusion 结论"></a>Conclusion 结论</h3><p>Istio 提供了以更加 Kubernetes-native 的方式来构建分布式微服务的机制，并将维护这种机制的复杂性以及相关的责任一力承担，使您远离这些（与业务不相干的）事情的困扰，( 可以将精力放在业务代码上)。这意味着你不必再去考虑那些(非业务)模块的代码啊、部署啊什么的，例如：服务发现( Service discovery)，分布式跟踪( tracing )等等。</p>
 <p>Istio 官方文档中说：</p>
 <blockquote>
@@ -320,7 +321,7 @@
 <p>“In the future, all the code you ever write will be business logic.”</p>
 </blockquote>
 <p>未来，你写的所有代码，将会是 ( 也仅仅是 )  你的业务逻辑！！！</p>
-<p>英文原文：<a href="https://medium.freecodecamp.org/jhipster-microservices-with-istio-service-mesh-on-kubernetes-a7d0158ba9a3" target="_blank" rel="noopener">How to set up JHipster microservices with Istio service mesh on Kubernetes</a></p>
+<p>英文原文：<a target="_blank" rel="noopener" href="https://medium.freecodecamp.org/jhipster-microservices-with-istio-service-mesh-on-kubernetes-a7d0158ba9a3">How to set up JHipster microservices with Istio service mesh on Kubernetes</a></p>
 
       
 
@@ -355,7 +356,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Kubernetes</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">JHipster</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
@@ -367,11 +368,11 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Micro-services</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Kubernetes</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">JHipster</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Micro-services</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
@@ -431,7 +432,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://www.dreamstep36.com/2019/06/01/如何在Kubernetes和Istio上轻松实现JHipster微服务？/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://www.dreamstep36.com/2019/06/01/%E5%A6%82%E4%BD%95%E5%9C%A8Kubernetes%E5%92%8CIstio%E4%B8%8A%E8%BD%BB%E6%9D%BE%E5%AE%9E%E7%8E%B0JHipster%E5%BE%AE%E6%9C%8D%E5%8A%A1%EF%BC%9F/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -455,7 +456,7 @@
     </a>
   
   
-    <a href="/2019/06/01/在-Kubernetes-中，如何动态配置本地存储？/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2019/06/01/%E5%9C%A8-Kubernetes-%E4%B8%AD%EF%BC%8C%E5%A6%82%E4%BD%95%E5%8A%A8%E6%80%81%E9%85%8D%E7%BD%AE%E6%9C%AC%E5%9C%B0%E5%AD%98%E5%82%A8%EF%BC%9F/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">在 Kubernetes 中，如何动态配置本地存储？</div>
       <i class="icon-circle-right"></i>
     </a>
@@ -483,7 +484,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#How-to-set-up-JHipster-microservices-with-Istio-service-mesh-on-Kubernetes"><span class="toc-number">1.</span> <span class="toc-text">How to set up JHipster microservices with Istio service mesh on Kubernetes</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#如何在-Kubernetes-和-Istio-上轻松实现-JHipster-微服务？"><span class="toc-number">2.</span> <span class="toc-text">如何在 Kubernetes 和 Istio 上轻松实现 JHipster 微服务？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Devoxx-2018"><span class="toc-number">2.1.</span> <span class="toc-text">Devoxx 2018</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#准备-Kubernetes-集群"><span class="toc-number">2.2.</span> <span class="toc-text">准备 Kubernetes 集群</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#先决条件"><span class="toc-number">2.2.1.</span> <span class="toc-text">先决条件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Create-a-cluster-on-Azure-Kubernetes-Service-AKS"><span class="toc-number">2.2.2.</span> <span class="toc-text">Create a cluster on Azure Kubernetes Service(AKS)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Create-a-cluster-on-Google-Kubernetes-Engine-GKE"><span class="toc-number">2.2.3.</span> <span class="toc-text">Create a cluster on Google Kubernetes Engine(GKE)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#译者提示，下面的示例，假设你已经有了一个-Kubernetes-集群环境，无论在哪儿"><span class="toc-number">2.2.4.</span> <span class="toc-text">译者提示，下面的示例，假设你已经有了一个 Kubernetes 集群环境，无论在哪儿~</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装-amp-配置-Istio"><span class="toc-number">2.3.</span> <span class="toc-text">安装 &amp; 配置 Istio</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#创建微服务应用"><span class="toc-number">2.4.</span> <span class="toc-text">创建微服务应用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#架构"><span class="toc-number">2.4.1.</span> <span class="toc-text">架构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Application-JDL-应用-JDL"><span class="toc-number">2.4.2.</span> <span class="toc-text">Application JDL 应用 JDL</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#生成-amp-部署应用"><span class="toc-number">2.4.3.</span> <span class="toc-text">生成 &amp; 部署应用</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Kuberctl-将应用部署到-Kubernetes"><span class="toc-number">2.5.</span> <span class="toc-text">Kuberctl 将应用部署到 Kubernetes</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deployed-applications-部署完成"><span class="toc-number">2.6.</span> <span class="toc-text">Deployed applications 部署完成</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Application-gateway"><span class="toc-number">2.6.1.</span> <span class="toc-text">Application gateway</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Monitoring-监控"><span class="toc-number">2.6.2.</span> <span class="toc-text">Monitoring 监控</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Observability-微服务-可观察性"><span class="toc-number">2.6.3.</span> <span class="toc-text">Observability ( 微服务 )可观察性</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Conclusion-结论"><span class="toc-number">2.7.</span> <span class="toc-text">Conclusion 结论</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#How-to-set-up-JHipster-microservices-with-Istio-service-mesh-on-Kubernetes"><span class="toc-number">1.</span> <span class="toc-text">How to set up JHipster microservices with Istio service mesh on Kubernetes</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E5%9C%A8-Kubernetes-%E5%92%8C-Istio-%E4%B8%8A%E8%BD%BB%E6%9D%BE%E5%AE%9E%E7%8E%B0-JHipster-%E5%BE%AE%E6%9C%8D%E5%8A%A1%EF%BC%9F"><span class="toc-number">2.</span> <span class="toc-text">如何在 Kubernetes 和 Istio 上轻松实现 JHipster 微服务？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Devoxx-2018"><span class="toc-number">2.1.</span> <span class="toc-text">Devoxx 2018</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%86%E5%A4%87-Kubernetes-%E9%9B%86%E7%BE%A4"><span class="toc-number">2.2.</span> <span class="toc-text">准备 Kubernetes 集群</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%88%E5%86%B3%E6%9D%A1%E4%BB%B6"><span class="toc-number">2.2.1.</span> <span class="toc-text">先决条件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Create-a-cluster-on-Azure-Kubernetes-Service-AKS"><span class="toc-number">2.2.2.</span> <span class="toc-text">Create a cluster on Azure Kubernetes Service(AKS)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Create-a-cluster-on-Google-Kubernetes-Engine-GKE"><span class="toc-number">2.2.3.</span> <span class="toc-text">Create a cluster on Google Kubernetes Engine(GKE)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AF%91%E8%80%85%E6%8F%90%E7%A4%BA%EF%BC%8C%E4%B8%8B%E9%9D%A2%E7%9A%84%E7%A4%BA%E4%BE%8B%EF%BC%8C%E5%81%87%E8%AE%BE%E4%BD%A0%E5%B7%B2%E7%BB%8F%E6%9C%89%E4%BA%86%E4%B8%80%E4%B8%AA-Kubernetes-%E9%9B%86%E7%BE%A4%E7%8E%AF%E5%A2%83%EF%BC%8C%E6%97%A0%E8%AE%BA%E5%9C%A8%E5%93%AA%E5%84%BF"><span class="toc-number">2.2.4.</span> <span class="toc-text">译者提示，下面的示例，假设你已经有了一个 Kubernetes 集群环境，无论在哪儿~</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85-amp-%E9%85%8D%E7%BD%AE-Istio"><span class="toc-number">2.3.</span> <span class="toc-text">安装 &amp; 配置 Istio</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E5%BE%AE%E6%9C%8D%E5%8A%A1%E5%BA%94%E7%94%A8"><span class="toc-number">2.4.</span> <span class="toc-text">创建微服务应用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9E%B6%E6%9E%84"><span class="toc-number">2.4.1.</span> <span class="toc-text">架构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Application-JDL-%E5%BA%94%E7%94%A8-JDL"><span class="toc-number">2.4.2.</span> <span class="toc-text">Application JDL 应用 JDL</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%94%9F%E6%88%90-amp-%E9%83%A8%E7%BD%B2%E5%BA%94%E7%94%A8"><span class="toc-number">2.4.3.</span> <span class="toc-text">生成 &amp; 部署应用</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Kuberctl-%E5%B0%86%E5%BA%94%E7%94%A8%E9%83%A8%E7%BD%B2%E5%88%B0-Kubernetes"><span class="toc-number">2.5.</span> <span class="toc-text">Kuberctl 将应用部署到 Kubernetes</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deployed-applications-%E9%83%A8%E7%BD%B2%E5%AE%8C%E6%88%90"><span class="toc-number">2.6.</span> <span class="toc-text">Deployed applications 部署完成</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Application-gateway"><span class="toc-number">2.6.1.</span> <span class="toc-text">Application gateway</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Monitoring-%E7%9B%91%E6%8E%A7"><span class="toc-number">2.6.2.</span> <span class="toc-text">Monitoring 监控</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Observability-%E5%BE%AE%E6%9C%8D%E5%8A%A1-%E5%8F%AF%E8%A7%82%E5%AF%9F%E6%80%A7"><span class="toc-number">2.6.3.</span> <span class="toc-text">Observability ( 微服务 )可观察性</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Conclusion-%E7%BB%93%E8%AE%BA"><span class="toc-number">2.7.</span> <span class="toc-text">Conclusion 结论</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -530,7 +531,7 @@ gitment.render('gitment-ctn')
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2019 Michael MENG
+    		&copy; 2021 Michael MENG
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -542,7 +543,7 @@ gitment.render('gitment-ctn')
 		<span id="busuanzi_container_site_pv">
 						本站总访问量<span id="busuanzi_value_site_pv"></span>次        </span>
 		<span class="post-meta-divider">|</span>
-		<span id="busuanzi_container_site_uv" style="display:none">
+		<span id="busuanzi_container_site_uv" style='display:none'>
 						本站访客数<span id="busuanzi_value_site_uv"></span>人        </span>
 		<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
  
@@ -626,15 +627,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Hello</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Vagrant</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Kubernetes</a>
+                <a href="javascript:void(0)" class="js-tag color4">JHipster</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -654,15 +647,35 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Vagrant</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Hello</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Kubernetes</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Micro-services</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">JHipster</a>
+                <a href="javascript:void(0)" class="js-tag color4">JDL</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">JDL</a>
+                <a href="javascript:void(0)" class="js-tag color2">devops</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">企业数字化转型</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">CI/CD</a>
               </li>
             
             <div class="clearfix"></div>
@@ -670,7 +683,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
         </div>
         <ul class="search-ul">
           <p q-show="jsonFail" style="padding: 20px; font-size: 12px;">
-            缺失模块。<br>1、请确保node版本大于6.2<br>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br> npm i hexo-generator-json-content --save<br><br>
+            缺失模块。<br/>1、请确保node版本大于6.2<br/>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br/> npm i hexo-generator-json-content --save<br/><br/>
             3、在根目录_config.yml里添加配置：
 <pre style="font-size: 12px;" q-show="jsonFail">
   jsonContent:
